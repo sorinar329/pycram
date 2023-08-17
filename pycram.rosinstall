@@ -9,7 +9,7 @@ repositories:
     version: master
   pycram:
     type: git
-    url: git@github.com:cram2/pycram.git
+    url: git@github.com:sunava/pycram.git
     version: dev
   pr2_common:
     type: git
