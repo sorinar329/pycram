@@ -10,6 +10,8 @@ from pycram.designators.action_designator import *
 from pycram.enums import Arms
 from pycram.designators.object_designator import *
 
+
+
 world = BulletWorld()
 world.set_gravity([0, 0, -9.8])
 plane = Object("floor", "environment", "plane.urdf", world=world)
@@ -44,16 +46,16 @@ kitchen.set_color([0.2, 0, 0.4, 0.6])
 with simulated_robot:
     ParkArmsAction([Arms.BOTH]).resolve().perform()
 
-    MoveTorsoAction([0.3]).resolve().perform()
-    pickup_pose = CostmapLocation(target=milk_desig.resolve(), reachable_for=robot_desig).resolve()
+    NavigateAction([Pose([0, 1, 0], [0, 0, 0, 1])]).resolve().perform()
 
-    #pickup_pose = CostmapLocation(target=milk.resolve(), reachable_for=robot.resolve())
-    pickup_arm = pickup_pose.reachable_arms[0]
+    LookAtAction(targets=[milk_desig.resolve().pose]).resolve().perform()
 
-    NavigateAction(target_locations=[pickup_pose.pose]).resolve().perform()
+    obj_desig = DetectAction(milk_desig).resolve().perform()
 
-     LookAtAction(target_object=milk_desig.resolve()).resolve().perform()
-    #
+    print(obj_desig)
+
+    obj_desig.
+
     # #Detect object
     # #try to detect object via camera, if it fails..
     #

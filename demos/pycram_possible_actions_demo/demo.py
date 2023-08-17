@@ -9,6 +9,8 @@ from pycram.designators.location_designator import *
 from pycram.designators.action_designator import *
 from pycram.enums import Arms
 
+from pycram.src.pycram.designator import ObjectDesignatorDescription
+
 world = BulletWorld()
 world.set_gravity([0, 0, -9.8])
 

@@ -614,7 +614,7 @@ class DetectAction(ActionDesignatorDescription):
         """
 
         @with_tree
-        def perform(self) -> Any:
+        def perform(self) -> ObjectDesignatorDescription.Object:
             return DetectingMotion(object_type=self.object_designator.type).resolve().perform()
 
         def to_sql(self) -> Base:
