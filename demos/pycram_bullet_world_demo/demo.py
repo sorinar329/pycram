@@ -7,25 +7,22 @@ from pycram.process_module import with_simulated_robot
 from pycram.bullet_world import BulletWorld, Object
 from pycram.language import macros, par
 
-
 world = BulletWorld()
 world.set_gravity([0, 0, -9.8])
 plane = Object("floor", "environment", "plane.urdf", world=world)
 robot = Object("boxy", "robot", "../../resources/" + robot_description.name + ".urdf")
 
 spawning_poses = {
-    'milk': [1.3, 1, 0.93],
-    'spoon': [1.35, 0.9, 0.78],
-    'cereal': [1.3, 0.6, 0.94],
-    'bowl': [1.3, 0.8, 0.94]
+    'milk': Pose([1.3, 1, 0.93]),
+    'spoon': Pose([1.35, 0.9, 0.78]),
+    'cereal': Pose([1.3, 0.6, 0.94]),
+    'bowl': Pose([1.3, 0.8, 0.94])
 }
 
 
 kitchen = Object("kitchen", "environment", "kitchen.urdf")
 milk = Object("milk", "milk", "milk.stl", spawning_poses["milk"])
 spoon = Object("spoon", "spoon", "spoon.stl", spawning_poses["spoon"])
-if robot_description.name == "boxy":
-    spoon.set_orientation([0, 0, 1, 0])
 kitchen.attach(spoon, link="sink_area_left_upper_drawer_main")
 cereal = Object("cereal", "cereal", "breakfast_cereal.stl", spawning_poses["cereal"])
 bowl = Object("bowl", "bowl", "bowl.stl", spawning_poses["bowl"])
