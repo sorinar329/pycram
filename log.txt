@@ -1,0 +1,4994 @@
+commit c4b8cb338d648edb28a0ad06257f2d415077f32d
+Author: sunava <hassouna@uni-bremen.de>
+Date:   Thu Aug 17 15:01:11 2023 +0200
+
+    pouring update
+
+commit b7e011a5e960884e3c759464998d7d32123b2513
+Author: Vanessa Hassouna <33067562+sunava@users.noreply.github.com>
+Date:   Thu Aug 17 10:41:00 2023 +0200
+
+    Update pycram.rosinstall
+
+commit f20cbd48d19aec178e5109d062f23d3465582469
+Author: Vanessa Hassouna <hassouna@uni-bremen.de>
+Date:   Thu Aug 17 11:32:34 2023 +0200
+
+    pouring start
+
+commit af182df76667495643c356d2abae88d06f110b0a
+Author: Arthur Niedzwiecki <arthur.niedzwiecki@gmail.com>
+Date:   Fri Aug 11 16:08:09 2023 +0200
+
+    Update remarks.rst
+
+commit 45806d7840dcce1c4f15ffba1bdfd2aceb7e064f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Aug 9 15:36:47 2023 +0200
+
+    Update installation.rst for new Pose
+
+commit 079245e10778d7ad1c07e8c235b01a0950caba04
+Merge: 72dd8c0 ba4a710
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Aug 8 15:58:06 2023 +0200
+
+    Merge pull request #88 from Tigul/fix-object-remove
+    
+    [bullet-world] fixes in remove method to avoid crashes
+
+commit ba4a7101bd2b28683b9b8800baf58612eb443eb8
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Aug 8 15:55:35 2023 +0200
+
+    [bullet-world] fixes in remove method to avoid crashes
+
+commit 72dd8c07939a3721fe8575639873881fe9a31740
+Merge: ca1366c d9c957f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 4 15:18:23 2023 +0200
+
+    Merge pull request #86 from Tigul/pose
+    
+    Pose
+
+commit d9c957f06028f6ef555e9a51090b13a14009fe56
+Merge: 3e117b0 ca1366c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 4 15:14:32 2023 +0200
+
+    Merge branch 'dev' of github.com:cram2/pycram into pose
+
+commit 3e117b0100138e13788226c2cf6a82a516fb5350
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 4 14:23:20 2023 +0200
+
+    [giskard] Added new pose
+
+commit ca1366cfd804bcc654d9174479d446031fc20700
+Merge: 5dd26d7 427e3be
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 4 14:10:51 2023 +0200
+
+    Merge pull request #87 from tthielke/bulletworld-fix-rotation
+    
+    [bullet-world] fixed error when rotating objects
+
+commit 427e3be33c57c8b3d2b74c95368457ee658f01e1
+Author: tthielke <tthielke@uni-bremen.de>
+Date:   Mon Jul 31 19:06:34 2023 +0200
+
+    [bullet-world] fixed error when rotating objects
+
+commit ad59b6b5b82d7fcf9fcffd66fad1f5e7e0587cd3
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 31 14:29:38 2023 +0200
+
+    [Pose] position, orientation, translation and rotation now use property for setting
+
+commit 7c5ff2a3bac2a8e699943ce444d7935a4febd33c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jul 28 14:59:13 2023 +0200
+
+    [local transfomer] Some cleanup and fixed links in doc
+
+commit 5fa9adc803d8e01cdac0043a493e678670a0c152
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jul 27 12:02:15 2023 +0200
+
+    [helper deprecate] Removed since not used anymore
+
+commit 3fcdc50ee3a5dc6a692e9177c0333b8e8e35300d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jul 27 11:28:46 2023 +0200
+
+    [doc] Fixed warnings when building documentation
+
+commit 6949ff437f6e758fbe4f84de1d3c688577d8018d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jul 26 16:59:57 2023 +0200
+
+    [ros utils] made stop publishing non private
+
+commit f5f1f6f263f29d1de51f12a02c3cc2aa001f56d8
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jul 26 14:27:43 2023 +0200
+
+    [example] new example for Pose
+
+commit 4c9544bcb197ebc19d9b8b4bfca86037af800199
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jul 25 15:51:21 2023 +0200
+
+    [tests] Finished tests for new pose
+
+commit 087ee8a691d09c404d3a3fe59bda8df29adfbe60
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jul 25 15:50:49 2023 +0200
+
+    [examples] Finished examples for new pose
+
+commit 65ec25bd8c73037c7a1824b1f9963b623fe8fe7c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 24 16:20:26 2023 +0200
+
+    [examples] first examples for new pose
+
+commit dba78e7d7b6e0bee394bcd8fefb36276836f10bc
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 24 16:16:10 2023 +0200
+
+    [pose] position and orientation properties
+
+commit c208211839e171dfe011dff8d4c79a44f2aaf355
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 24 13:46:56 2023 +0200
+
+    [test/action desig] Fixed transport action
+
+commit acc35ac20a6df6f44727f56ef43c2f5ba6cfcd50
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jul 21 12:56:31 2023 +0200
+
+    [refactor] minior changes and more adaption of new pose
+
+commit 5feed02edb310db92c779a3bcc40bf24f16b1c1c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jul 21 12:56:09 2023 +0200
+
+    [pose] added setters and improved copy
+
+commit fb0783198741c18e212136b10a695a441122e57c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jul 21 12:55:47 2023 +0200
+
+    [tests] new pose for tests
+
+commit fbbcbd50822dc4cd899c985d58fd310f129f921e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jul 21 12:55:30 2023 +0200
+
+    [designators] New pose for designators
+
+commit 6cced876033760375ccbc42c63ff94378464ffc9
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jul 20 16:26:16 2023 +0200
+
+    [refactor] minor refactor and added new poses to pose_gen
+
+commit d7ccbf29b9e28945ed78b38643ce9bb2eefb9a51
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jul 20 15:04:10 2023 +0200
+
+    [costmap] new poses
+
+commit 61c59997b5acbf3b1a2ed7eab5ab26ab6b268b4d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jul 20 14:03:52 2023 +0200
+
+    [ik] clean up
+
+commit f2d8391077d5aea2dfc4d321b48f9c91f63e7ba3
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jul 20 14:02:43 2023 +0200
+
+    [ik] new higher level request ik method
+
+commit 495d380a5c20b56560682db2fbcf952371638653
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jul 20 11:09:08 2023 +0200
+
+    [pose] added equal and doc
+
+commit c5dda15ebfabea6c01af8ef96cf862cdeabf905f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jul 19 15:36:17 2023 +0200
+
+    [bullet reasoning] new Pose for btr and tests
+
+commit c9c9835e475e584536f4d23f048e3e0d08292abc
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jul 18 17:17:20 2023 +0200
+
+    [pose] added inverse_times and distance
+
+commit 84fb229abfcce68a46b6254be28aa9629b3123b3
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 17 17:21:45 2023 +0200
+
+    [ros] Fixed doc links
+
+commit 4901faae468da090a73e6deaba3374771794baf8
+Merge: d0c200c 5dd26d7
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 17 16:35:06 2023 +0200
+
+    Merge branch 'dev' of github.com:cram2/pycram into pose
+
+commit d0c200cea95ef6646b31900454386fde1d1c3e04
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 17 16:29:05 2023 +0200
+
+    [local transformer] more refactor and doc
+
+commit f6bf03ce1425033baeb10f469eb0fc93acbb0154
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 17 16:28:47 2023 +0200
+
+    [ros] New ros utils
+
+commit 368a50b083ffc4a88be1d51d7d78f4cf6bb20fea
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jul 14 15:20:37 2023 +0200
+
+    [bullet-world] attachments to new pose
+
+commit a40f59a3ec0b2764f7b350b29bbe4fb15e72a79a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jul 14 15:20:11 2023 +0200
+
+    [pose/transformer] Transform class and better singelton
+
+commit d76b54f987fca9244ad7cfdb7e8e0fbeb0f42c7a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 10 16:27:12 2023 +0200
+
+    [bullet-world] changed Object class to new pose
+
+commit 5dd26d798a2ae1c5dec1ed52db2f7efab4a478f2
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 10 12:47:56 2023 +0200
+
+    [examples] fixed error when building doc
+
+commit 5a540d8cc7ec61bc95eef62b55272d88647f3e4e
+Merge: d1f9a58 960f9d8
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 10 12:29:10 2023 +0200
+
+    Merge branch 'dev' of github.com:Tigul/pycram-1 into pose
+
+commit 960f9d8e2f16951c4055c8fbdf619b625d035b74
+Merge: 532ee36 8f86929
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 10 12:22:33 2023 +0200
+
+    Merge pull request #85 from tthielke/examples-fix-import
+    
+    [examples] arms import fixed
+
+commit 532ee3621d3018513b2570ac794ad95f85f898cc
+Merge: c6e4c3a 5e6397d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 10 12:06:49 2023 +0200
+
+    Merge pull request #84 from Tigul/robot-desc-managment
+    
+    Robot desc managment
+
+commit c6e4c3a1e41ea3a5f9bcc2f739bc8de1b046da74
+Merge: a750d54 e47b1e7
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 10 11:46:14 2023 +0200
+
+    Merge pull request #83 from Tigul/new-process-modules
+    
+    New process module architecture
+
+commit e47b1e7fe80d8b338fdd3a10d5489881adc19b50
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 10 11:21:05 2023 +0200
+
+    [Process Modules] Fixed issues from PR
+
+commit 8f869299052f763af9c6c66e7dc7b577a98219a1
+Author: tthielke <tthielke@uni-bremen.de>
+Date:   Fri Jul 7 16:24:25 2023 +0200
+
+    [examples] arms import fixed
+
+commit d1f9a586ac638fafb1f93cd23a4bf6c7af64fc82
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jul 7 16:13:02 2023 +0200
+
+    [process modules] removed local transformer import
+
+commit fa1f879078d2f6460852b76f31c81096f311e020
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jul 7 16:12:30 2023 +0200
+
+    [Pose] first integration with transformer
+
+commit 728d2506cc2a8c7bc23e8ae572d4b874638edf81
+Merge: a81796d 2ddef64
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jul 7 11:28:20 2023 +0200
+
+    Merge branch 'new-process-modules' of github.com:Tigul/pycram-1 into pose
+
+commit a81796db271eb684b161ce27784c7c858170866b
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jul 7 11:27:41 2023 +0200
+
+    [Pose, local-transformer, bullet] First draft new pose
+
+commit 5e6397d5c1054fd376dcf43db426297f5b30e906
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jul 6 10:52:31 2023 +0200
+
+    [refactor] changed robot description in examples
+
+commit b5fc866a9164e2430a1dd317fc3091ee33e09908
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jul 6 10:47:08 2023 +0200
+
+    [refactor] refactored robot description usage in more files
+
+commit a6e385692e99b2f49ef3db4b6f56bff48fceed14
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jul 6 10:03:26 2023 +0200
+
+    [refactor] Changed managment of robot description and import
+
+commit 2ddef64221dc9fd85ad2d6e5a043a45b2cfd842d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jul 5 16:28:20 2023 +0200
+
+    [bullet-world] removed duplicate reste_bullet_world
+
+commit 2e2ccc943860b761e1f287df762a1531c156e811
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jul 5 16:13:46 2023 +0200
+
+    [process module] Added singleton pattern for Process Module Manager
+
+commit f3c3dd0aecccf4ea95126f739057b8f48ad80d5b
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jul 5 15:45:39 2023 +0200
+
+    [process modules] added Lock for queueing execution
+
+commit 3198762250ed4db3ff8de88a87d535a73be66280
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jul 5 15:17:27 2023 +0200
+
+    [process modules] removed avaialabele process modules
+
+commit 8232333eeded01d7d1ab959b2545d2ead5487f39
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jul 4 17:13:12 2023 +0200
+
+    [process-module] Added more documentation
+
+commit 7dac708ab3c06d2de83b4d13c6807219ad3bf845
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jul 4 14:28:12 2023 +0200
+
+    [process modules] Modified architecture and all PMs to new architecture
+
+commit f6ddba301e0d587600e03c87bf3a3d0674c530c2
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jul 4 14:05:13 2023 +0200
+
+    [designators] moved parent designator descriptions to designator.py
+
+commit 1f079e420f8c53fb34eb9094aa54074c777c8755
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 3 16:19:39 2023 +0200
+
+    [Process modules] New architecture for Process Module managment
+
+commit a750d54edaf4c16f84e47c445b3ff0fcac8daa3d
+Merge: ba744ef f5d2715
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 3 12:54:34 2023 +0200
+
+    Merge pull request #82 from Tigul/more-action-desigs
+    
+    More action desigs
+
+commit f5d271595f3743849f5750ae8b0abbfdd2da6143
+Merge: e0f3104 ba744ef
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 3 12:54:18 2023 +0200
+
+    Merge branch 'dev' of github.com:cram2/pycram into more-action-desigs
+
+commit ba744efcfee97714ca0613923d52d5f24dad60e0
+Merge: f8f526e 433191e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 29 11:11:51 2023 +0200
+
+    Merge pull request #81 from tomsch420/dev
+    
+    MetaData for Logging
+
+commit 433191ec1773c54892565daef12efcf615b1f531
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Jun 28 12:29:32 2023 +0200
+
+    [ORM] ORM Objects now use enums.
+
+commit e0f3104a36744ada6a11eed50544312b739ad4c8
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jun 27 13:26:53 2023 +0200
+
+    [location-desig] increased number of samples in costmap Location
+
+commit 6a15a3354f80a007b92b6ddfa81b1bc74ce70e27
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jun 27 11:07:19 2023 +0200
+
+    [local transformer] small refactor
+
+commit ebb49d492dea65d047c547a513d3a0d6f1772a2c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jun 27 11:06:48 2023 +0200
+
+    [location-desig] Accessing Location now takes robot as desigator
+
+commit dbdbbc0a555426b13a0cfe729266013485fd6052
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jun 27 11:05:52 2023 +0200
+
+    [examples] small fixes and explanation
+
+commit efbd6cabc7314bb6c83d02d1ead6c72b8ada92fb
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jun 26 19:22:20 2023 +0200
+
+    [examples] added accessing
+
+commit 3e827417241eb7993d136c789033653b8010447a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 23 16:05:26 2023 +0200
+
+    [location-desig] doc for Accessing Location
+
+commit 560c4170f6b7db411b0d6eb8bada6afb0ef83ab4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 23 15:48:27 2023 +0200
+
+    [action-desig] clean up of old code
+
+commit d60a83d535b226877c3433993397d571e15f0165
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 23 15:47:24 2023 +0200
+
+    [location-desig] finished costmap for opening drawer
+
+commit 359a9724549c702d8c9007e6d07090243f130445
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 23 11:10:39 2023 +0200
+
+    [pr2-pm] code refactory
+
+commit 0e809af81b3021bf306116f0720837ed64b02867
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri Jun 23 09:58:28 2023 +0200
+
+    [ORM] MetaData description is now a required field.
+
+commit 70021c6f1d33f75701efcf4d173ca707f7fa33f6
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 22 17:52:14 2023 +0200
+
+    [location-desig] finished location desig for accessing drawer
+
+commit 5a10d55ab303bc35f8bf318535477c15757e314d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jun 21 17:02:54 2023 +0200
+
+    [pose-gen/valid] Parameter for allowing collision between objects and links
+
+commit e95c6d46c53efaab183398146a0e3489aea0c93d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jun 21 17:02:16 2023 +0200
+
+    [bullet-reasoning] Contact method returns links in contact
+
+commit 5d379b9a78c30de495626731ff8de5b6824c5e40
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jun 21 17:01:33 2023 +0200
+
+    [bullet-world] better representtaion and methods for finding joint of specific type and complete joint state
+
+commit deff588d9744b82a6429482bb66467a4af842179
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Jun 21 13:12:51 2023 +0200
+
+    [Doc] Updated ORM Doc and tutorial with respect to metadata.
+
+commit 3b4179f690079c2f066b528366d3831e85a5c841
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Jun 21 12:55:40 2023 +0200
+
+    [ORM] Added a MetaData table that contains information about the process and pycram version etc. Wrote tests and fully integrated it.
+
+commit 4f0c4fea5f7ea5ab61ea66e0f0bebb7bf1721b58
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jun 19 16:01:34 2023 +0200
+
+    [motion/action-deisg] added Closing designator
+
+commit f8f526e1bf18eb0f6ecec1781dd16b13d89e913c
+Merge: 01f6471 68fbfcf
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jun 14 14:27:05 2023 +0200
+
+    Merge pull request #80 from tomsch420/costmap-learning
+    
+    Costmap learning with examples
+
+commit 68fbfcfe70d0460b692405a6b76ea0d80bebbb77
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Jun 14 14:24:16 2023 +0200
+
+    [Test] Fixed tests for ORM and JPTs.
+
+commit c2501a2f021284e4637b58d271016ffc4069bff6
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Jun 14 14:20:25 2023 +0200
+
+    [Test] Fixed tests for ORM and JPTs.
+
+commit e60a26ccd2561766494c04e99c5226c7f6a90a72
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Jun 14 14:15:58 2023 +0200
+
+    [Test] Fixed tests for ORM and JPTs..
+
+commit f80d506f37b10f5d06fd5025646cc8ef6eb5036f
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Tue Jun 13 16:34:49 2023 +0200
+
+    [Doc] Fixed issues from PR.
+
+commit 33ba3f58fb617d8dbef97094e43b49e50f09d7e2
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 9 15:47:04 2023 +0200
+
+    [location-desig/pr2-pms] working opening plan and desig
+
+commit 3b7732245616ca1e66381199bcceebc0222961c0
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 9 15:46:25 2023 +0200
+
+    [bullet-world/pose-gen] small fixes
+
+commit e48c1912ee6337aea90a8ade2f45a0319b3bb4a0
+Merge: 1bac3f5 01f6471
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Jun 8 16:02:42 2023 +0200
+
+    Merge remote-tracking branch 'pycram/dev' into costmap-learning
+
+commit 1bac3f5389640cf453435a0b9c2317a5c9711088
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Jun 8 15:58:11 2023 +0200
+
+    [Resolver] Added Documentation for resolvers.
+
+commit a54f49f5b8405c4b7b4e71da56ebff4a0e120a44
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 8 13:55:12 2023 +0200
+
+    [object-desig] fixed bullet_world_object reference in ObjectPart
+
+commit 043ff8552e8bcf05164b38bf26c7be1998640d5a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 8 13:54:42 2023 +0200
+
+    [location-desig] new Designator for opening, first version
+
+commit 69c4dac6f6890836b49b64e648c97af92ef6b4d5
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 8 13:53:40 2023 +0200
+
+    [bullet-world] small fixes
+
+commit 01f64712ccedff69cbdedd60d9731538be33c658
+Merge: 772a9bf 6e1371a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jun 7 16:16:14 2023 +0200
+
+    Merge pull request #79 from Tigul/occupany-exculsion
+    
+    Occupany exculsion
+
+commit 06f1dac204807ff6c97212a4eeb597cf32bd1378
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jun 7 16:13:04 2023 +0200
+
+    [motion-desig] Motion designator for opening
+
+commit f06a350c9151b4635b0b8830e3458d81a51d6b2c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jun 7 16:12:14 2023 +0200
+
+    [action-desig] Plan for opening action
+
+commit 560dc3936b867c75355adf716e534cd7636f2e9e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jun 7 16:11:38 2023 +0200
+
+    [bullet-world] more methods for joints
+
+commit 772a9bf94af1e6c5f66d725fc8572453b9df73cf
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jun 7 16:09:43 2023 +0200
+
+    [doc] Install guide with concrete paths
+
+commit dba982cfae7a6bc991dd5026f14339caa117fe86
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jun 7 16:08:17 2023 +0200
+
+    [doc] Updated install guide to not use roscd
+
+commit 1c4150b37a059507d0a9a5f3bd702eab12128909
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Jun 7 11:49:12 2023 +0200
+
+    [Costmaps] Removed unnecessary prints and fixed a bug in database_location.py.
+
+commit ffc20d0f4131b56a896cef1864a55eade85bd770
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Tue Jun 6 17:23:42 2023 +0200
+
+    [Costmaps] Implemented and integrated database locations.
+
+commit ecac3ddbd63e18deeddebbcb2405b6c00eb44e11
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jun 6 16:55:05 2023 +0200
+
+    [tests] added testcase for transporting
+
+commit 9b87d6770149eee0b4d90566303faccbeb2f95cb
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jun 6 12:28:26 2023 +0200
+
+    [examples] added transporting Action
+
+commit 442127bf6d5874b21617100d2474a4265e3c02fe
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jun 6 12:12:40 2023 +0200
+
+    [action-desig] Fixed transporting plan
+
+commit 6e1371aa73c8c780477949ec264083f9499b6f62
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jun 5 16:45:27 2023 +0200
+
+    [test] added case for occupancy costmap attachment exclusion
+
+commit d3e1ddbdeff2919791cd03ff4df8950c1dc224cb
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri Jun 2 16:50:42 2023 +0200
+
+    [JPT Costmaps] Integrated conditional leaves into jpt costmaps.
+
+commit d68b31cbb0c6542f6f2b6981a51e59190426ad7c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 2 16:08:12 2023 +0200
+
+    [costmaps] added exclusion of attached objects to occupancy
+
+commit 52da36bd7fbdda495e7430f09bddb413f27371c4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 2 15:16:50 2023 +0200
+
+    [action-desig] plan for transporting action
+
+commit 345c46f834b793fa086661aef0d3c8060a212eba
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 2 11:55:16 2023 +0200
+
+    [ext/giskard] Fixed import for autoAPI
+
+commit e6c95c7a7f4b54a1229a8fb4032b52fbb86317e9
+Merge: 7adbe0a e1c501e
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri Jun 2 10:31:26 2023 +0200
+
+    Merge remote-tracking branch 'pycram/dev' into costmap-learning
+    
+    # Conflicts:
+    #       src/pycram/costmaps.py
+    #       src/pycram/designators/action_designator.py
+    #       src/pycram/designators/object_designator.py
+
+commit 7adbe0a372cc5dd7049707c64e777d36faa232f8
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Jun 1 16:59:00 2023 +0200
+
+    [JPT Costmaps] Finished tests and inline documentation for jpt costmaps.
+
+commit e1c501e25679c1af2f12d2473874e4c29a5bad5a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 1 15:56:14 2023 +0200
+
+    [costmaps] Fixed id missmatch in Occupancy generation
+
+commit 359cac19f96ac4423e912d76aba0abea745e4921
+Merge: 7753cca 681ea47
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 1 10:58:50 2023 +0200
+
+    Merge pull request #51 from Tigul/giskard-interface
+    
+    Giskard interface
+
+commit 681ea475058a16dd5ea901b9ef2472e82852283f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 1 10:56:13 2023 +0200
+
+    [ext/giskard] More doc
+
+commit 67545acbd3abcf05b571ea71788ee8d230a622c6
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed May 31 17:16:03 2023 +0200
+
+    [ext/giskard] Some small changes and more doc
+
+commit 1394f574616ce4f1d9e440d70542e1bc9f74e756
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed May 31 15:02:24 2023 +0200
+
+    [ext/giskard] Formatting and doc
+
+commit 01e16888cb5a6d9dfab92af20ae954affbc67251
+Merge: 2d9c9d7 7753cca
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed May 31 14:06:51 2023 +0200
+
+    Merge branch 'dev' of github.com:cram2/pycram into giskard-interface
+
+commit 7753cca72261b76eda9db91464009afad8db7e45
+Merge: 7a56ab3 ccceeb8
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed May 31 13:56:08 2023 +0200
+
+    Merge pull request #78 from Tigul/docu-extension
+    
+    Designator documentation
+
+commit ccceeb80e7c2e4db2029eef1838c7cbc7b4b483b
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed May 31 13:50:37 2023 +0200
+
+    [doc] New high-level documentation for designator
+
+commit 22693b4dcf2a22a576e6425f00a771bff869936f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue May 30 15:24:14 2023 +0200
+
+    [readme] Updated links
+
+commit 7a56ab36743c2f49e43c89807f125468ca8266e4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue May 30 11:19:56 2023 +0200
+
+    [resources] added apartment urdf
+
+commit aea018f2eaf8fb05263e6f2bc6c5981cc2c9a5f4
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed May 24 14:33:56 2023 +0200
+
+    [ORM] Included more data in the ORM logged objects. Also BulletWorld objects in the pickup action now get saved their position before picked up. Added loading bar for insterting from task tree.
+
+commit 1ae98f9cfbd4d293b55116c2f55d4a773b888c87
+Merge: 240ff7b f7fdb0a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue May 23 16:54:40 2023 +0200
+
+    Merge pull request #76 from tomsch420/workflows
+    
+    Workflows and readthedocs configuration
+
+commit f7fdb0a86d39118bd65b99ac472cb3272c7fc5ff
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Tue May 23 16:51:55 2023 +0200
+
+    [Workflow] removed graphviz
+
+commit 7065eb24e429422f69fbe823a12c56a4dab18e6c
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Tue May 23 16:45:07 2023 +0200
+
+    [Workflow] fixed typo
+
+commit 6dc012d14dcbed99443fb7289d6fa402a6c2e2d5
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Tue May 23 16:35:34 2023 +0200
+
+    [Workflow] Added .readthedocs.yaml.
+
+commit 3aec67669800835d8ba2fb9d1627004348c139d8
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Tue May 23 16:10:05 2023 +0200
+
+    [Workflow] Added sphinx building workflow.
+
+commit 650a7cce71d4c52b3823f78b7e4a84671b373e1e
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Tue May 23 16:09:40 2023 +0200
+
+    [Workflow] Added sphinx building workflow.
+
+commit 240ff7b13e534b165d91ba16ad2a1c980c7737ad
+Merge: 3b2f9bd fd53f52
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue May 23 10:14:47 2023 +0200
+
+    Merge pull request #75 from Tigul/docu-extension
+    
+    New and more documentation
+
+commit 028ab9f06b9fdbd5efe0f9b24bbe40fa6c3e0dab
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Mon May 22 14:00:49 2023 +0200
+
+    [ORM] Made the robot state logging more explicit and expressive. Base.create_all() will now create all tables without explicit importing them.
+
+commit fd53f520abc34d205005305d06c68e8bf603c40f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 22 11:47:21 2023 +0200
+
+    [readme] updated doc and tutorial section
+
+commit 0e7a401e80ab246a87e193c9928ef29c406fa71e
+Merge: 50ab19b 3b2f9bd
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Mon May 22 09:22:03 2023 +0200
+
+    Merge remote-tracking branch 'pycram/dev' into costmap-learning
+    
+    # Conflicts:
+    #       src/pycram/bullet_world.py
+
+commit 50ab19b17eb29672368bba99e76510a3ca386ce9
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri May 19 16:49:09 2023 +0200
+
+    [Costmaps] Finished integrating Occupancy costmaps in JPTCostmaps. Working on sampling strategy.
+
+commit 1ac5b0fe979d56845bf87ade9d69424a7c02a1b6
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 19 13:01:30 2023 +0200
+
+    [bullet world] fixes links in doc
+
+commit 1790bb170fec6138a75b69a071b83e15d22ba9e1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 19 12:51:49 2023 +0200
+
+    [object designator] added documentation
+
+commit 0c8b359af4ca5159ccaff43f89004fec2c98c79d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 19 12:20:10 2023 +0200
+
+    [motion designator] added documentation
+
+commit 696fa8904ec8505db47a69a73d8f220413709960
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed May 17 12:17:08 2023 +0200
+
+    [Costmaps] Started integrating Occupancy costmaps in JPTCostmaps.
+
+commit 6285db11d0baa67385500705e913de43a356c0f9
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed May 17 11:20:11 2023 +0200
+
+    [location-designator] Updated documentation
+
+commit 90d3c6c403a2392f86835106e21ca6fec22fbe4d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed May 17 09:33:39 2023 +0200
+
+    [location designator] moved pose to parent class
+
+commit 660dec6c07ec14bbffb987dff290af405488dbf2
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue May 16 16:26:48 2023 +0200
+
+    [action-designator] updated documentation
+
+commit 47b121f27ceeee01b0e9b434592c89e001843fc9
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue May 16 12:14:14 2023 +0200
+
+    [doc] updated installation
+
+commit 21de4845a12113467171b760e3802e9835a11c43
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue May 16 10:58:20 2023 +0200
+
+    [event] added delayed evaluation for typing
+
+commit 2b148cecf099ef3a7753fbeebcafd7ffa0606cd6
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue May 16 10:57:55 2023 +0200
+
+    [pr2-process module] fixed bug in looking
+
+commit 1d5ff98680324fa7cac85530936c37feca19dc70
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 15 16:58:22 2023 +0200
+
+    [event] added documentation
+
+commit 814fbca4b5e82017c451454df6824f84393af90c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 15 16:57:59 2023 +0200
+
+    [designator] slightly updated doc
+
+commit 3f5245870e06781dfe13a70a47cd73a86c004abb
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 15 16:23:46 2023 +0200
+
+    [doc/examples] added readme
+
+commit eab4a6b95d30b94a717c04a601a1548d28780da4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 15 15:34:06 2023 +0200
+
+    [doc] added thumbnails
+
+commit 01bc81a943927f87136fb6c74031181400ed97cd
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 15 12:27:13 2023 +0200
+
+    [example] finished motion designator example
+
+commit e1991ed552c26b77353b1fdf918f64d59d1e17c1
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Mon May 15 10:30:39 2023 +0200
+
+    [Resolver] Started to test implementation for jpt resolvers.
+
+commit 1416a0b1e69b6447780c23ce6da043fbcc3a8788
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri May 12 17:10:16 2023 +0200
+
+    [Costmaps] Started integrating JPT Location designators.
+
+commit 7ca030c3f576688fa54e75c4010930b1eb5cfd7c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 12 14:49:51 2023 +0200
+
+    [examples] added motion designator example
+
+commit e6bf1bc050d25efa13e4c95d94dd938b46b8cd11
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 12 11:59:42 2023 +0200
+
+    [doc] sorted examples into own page
+
+commit cb7e8fd93ec130b1e5e6d7c2488b9075006fc0f8
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 12 11:32:54 2023 +0200
+
+    [bullet-world] check for ros node init, needed for sphix autoAPI
+
+commit 2f61ebfdd0eea3149b1134896baeb7b2a69ddf86
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu May 11 16:42:48 2023 +0200
+
+    [gitignore] added notebook checkpoints
+
+commit 1fbd05ed233ad1bef9ef7f5154e91833dd7aabda
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu May 11 16:41:27 2023 +0200
+
+    [gitignore] fixed spelling
+
+commit 0636676e97b94c6cfc20339efa2a15d89a82d713
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu May 11 16:38:41 2023 +0200
+
+    [example] added location desig notebook
+
+commit 8bfd3001fbcbf6716051f4a325b6db8750f9b1ef
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu May 11 16:35:48 2023 +0200
+
+    [examples] added examples for object designator
+
+commit b6f8de869fab9be9576f2a4597c5c5cbaa6b7e51
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu May 11 14:17:59 2023 +0200
+
+    [examples] added location designator example
+
+commit b9a3fd358e74f9dfc06bbd09f262a385937079e9
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu May 11 14:10:45 2023 +0200
+
+    [doc] added action desig example sym link
+
+commit 6f5517241ac9eadf35ce83d00a7765c39e277d10
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed May 10 16:53:43 2023 +0200
+
+    [examples] fixed detect heading
+
+commit 198d2d17ceaf68408e1085bd26b20096c7d31b70
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed May 10 16:34:14 2023 +0200
+
+    [doc] added action designatgor example to doc
+
+commit 380802708d210cdab9da3f57796a32395012d82e
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed May 10 16:07:06 2023 +0200
+
+    [ORM] Added column for data versioning
+
+commit a4d9c8d61db2aa01a2e0ca0ff1b675ba4a461bf7
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed May 10 16:06:44 2023 +0200
+
+    [btr-reasoning/motion-desig] fixed bug for detecting
+
+commit 5548c5222c8db12874effa637bfbdf2fce5f5194
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed May 10 15:29:53 2023 +0200
+
+    [examples] added notebook for action designators
+
+commit a57c1fc3001c996a01c72cc37c8e197ea47f9f48
+Merge: c5b23dd 121e555
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed May 10 15:29:18 2023 +0200
+
+    Merge branch 'presentation' of github.com:Tigul/pycram-1 into docu-extension
+
+commit 121e5558e6c9ba72e5d17b1825ba31da8e53473f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue May 9 15:31:09 2023 +0200
+
+    [examples] added new bullet world example
+
+commit 18b9572eb46280d78ae93a8b43a91728fcab95ed
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue May 9 15:00:46 2023 +0200
+
+    [doc] added intro notebook to doc
+
+commit c5b23ddf6ab1a615d37091da37b950734864fa40
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 8 18:09:52 2023 +0200
+
+    [costmap] New doc
+
+commit 1339c94289fb50a4d19435444c6d0e4dc6278d52
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 8 18:09:25 2023 +0200
+
+    [doc] Added __init__ to autoAPI
+
+commit 193cd1e11076b4a6e3cf40aad63905ed796c75b1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 8 16:05:24 2023 +0200
+
+    [bullet-world-reasoning] New doc
+
+commit 81be6f315ae9917b119373cbaba56110a2201ec3
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 8 14:44:25 2023 +0200
+
+    [bullet-world] New doc
+
+commit ce4e1f0a77d92da6f1d26d53dd74c62562270ef9
+Merge: 99d513a 3b2f9bd
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 8 10:26:14 2023 +0200
+
+    Merge branch 'dev' of github.com:cram2/pycram into docu-extension
+
+commit 3b2f9bd0b1aa70196bb37210e27b79b5ee3bab1c
+Merge: 4ad064f 2e399c3
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 8 10:22:34 2023 +0200
+
+    Merge pull request #74 from Tigul/presentation
+    
+    Presentation
+
+commit 2e399c3e27e965ea113896f3a0b023f96612f954
+Merge: 51f8afe 4ad064f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 8 10:22:06 2023 +0200
+
+    Merge branch 'dev' of github.com:cram2/pycram into presentation
+
+commit 3c60daf124d2fdd0ab8c0ea68a1fc8701be42cbc
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Mon May 8 08:14:22 2023 +0200
+
+    [Fluents] removed fluent blocking from process module.
+
+commit 02df02c5e82558dc0b599bc939cdf933c1d09a2b
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu May 4 11:33:17 2023 +0200
+
+    [IK] Moved ikerror to plan_failures
+
+commit 4ad064f243e07dfe6876c58876afd3bd680b2a30
+Merge: 74ad20b bc75240
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue May 2 12:05:01 2023 +0200
+
+    Merge branch 'pycram_camera/dev' of github.com:LucaKro/pycram into dev
+
+commit 74ad20bab5a60fefa2b7428b6fd577d5ee3864c0
+Merge: 10cd259 2500668
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue May 2 10:00:42 2023 +0200
+
+    Merge pull request #73 from tomsch420/fix-examples
+    
+    Fixed examples to work with the refactored architecture.
+
+commit 2500668415a0ad5b61e1d9bf1adc811502e247d0
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri Apr 28 09:52:19 2023 +0200
+
+    [Examples] Fixed and refreshed outputs of both examples.
+
+commit 02380c72bdfe50daa7310e15c6f0cc3050962697
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Apr 27 18:03:25 2023 +0200
+
+    [Examples] Fixed minimal_task_tree.ipynb to work with new pycram version.
+
+commit 10cd2590c3792de0ba06ac9e899f7570c6c0a571
+Merge: fb12702 09694a1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 26 15:01:10 2023 +0200
+
+    Merge pull request #72 from tomsch420/fix-cyclic
+    
+    [Warnings] Fixed warnings on import.
+
+commit 09694a148c64a54f76e65278fc9cab6b7d53a9cb
+Merge: ff6b21d fb12702
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 26 14:53:17 2023 +0200
+
+    Merge remote-tracking branch 'pycram/dev' into fix-cyclic
+
+commit ff6b21dc5451b94f74e9edd4b9d388fba990fff0
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 26 14:51:44 2023 +0200
+
+    [Examples] Removed unnecessary file
+
+commit 51f8afeb5de575f3be658c0386c24ad76a21d746
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Apr 25 18:33:23 2023 +0200
+
+    last changes
+
+commit 514b50262d4f60cefcfc0c7b6ee8f791676ee395
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Apr 24 16:21:08 2023 +0200
+
+    [example] intro notebook for new designators and minor stuff
+
+commit bc75240df64976ee65d06c3114f783889dbddc12
+Author: Luca Krohm <luc_kro@uni-bremen.de>
+Date:   Mon Apr 24 03:49:05 2023 +0200
+
+    Luca Krohm, camera control commented + adjusted refreshrate
+
+commit cdb7c16766ec8658d5d9eee5744fa6a574a12355
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Sat Apr 22 08:50:13 2023 +0200
+
+    [UTILS] Fixed the errors that print when importing pycram. Added utils.py for such functionalities.
+
+commit 79b4077d0f1b4f2bb6a3d76bdf920b150a70dd14
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri Apr 21 17:20:47 2023 +0200
+
+    [Warning] Tracking down the warning when importing pycram.
+
+commit acdc25c2ac8826e61b3aea816fea8ca5c58d07a1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 21 16:37:04 2023 +0200
+
+    [examples] added intro notebook
+
+commit 881d1797cdd92f3bf6ed850729dd1b3954cef242
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri Apr 21 15:35:04 2023 +0200
+
+    [Designators] Included robot poses into designators and their ORM equivalents.
+
+commit fb12702291cd0180d385b52af770a1af504e6157
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 21 10:29:51 2023 +0200
+
+    [tests] removed old test and skipped tests for BulletWorld
+
+commit bd7ae4eb4986a4284d0bdd6383147191779921fa
+Merge: 734410a 8b2066e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 21 10:18:29 2023 +0200
+
+    Merge branch 'new-motion-desig' of github.com:Tigul/pycram-1 into dev
+
+commit 734410a8ec805727e47d253085b365b494a3570b
+Merge: 8416ca5 5dfcdf1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 21 10:16:22 2023 +0200
+
+    Merge pull request #68 from tomsch420/orm
+    
+    [ORM] ORM Functionality and Tests for Object and Action Designators.
+
+commit 8b2066ef63b2cc89010891e39dceeffc90957acd
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 21 09:58:37 2023 +0200
+
+    [process-module] improved typing
+
+commit aae71cc977dcb1ecb80e3a48db94755e5e012f1f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 21 09:30:37 2023 +0200
+
+    [task-tree-test] Skiped test that is currently not working
+
+commit bd09f0e0b4e16b9682f2186738a860ad0d5d5242
+Merge: d261ca1 fefdf32
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 21 09:28:20 2023 +0200
+
+    Merge branch 'fix-cyclic' of github.com:tomsch420/pycram into new-motion-desig
+
+commit d261ca19a036f2ab76becd4e38b34acc3cc0581a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 21 09:00:23 2023 +0200
+
+    [all-designators] more consistency between designators
+
+commit fefdf3284f5dfc56b3a530a03aa28493f6781986
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Apr 20 17:44:08 2023 +0200
+
+    [TaskTree] Fixed missing parent id in task tree insertion.
+
+commit 3eed57026e32fdfc5f7feb8152f6d2de9f69531a
+Merge: 5cbef6e ddcbe7e
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Apr 20 17:19:57 2023 +0200
+
+    Merge remote-tracking branch 'bass/complex_plans' into fix-cyclic
+
+commit ddcbe7ed86627ccdd112cd7da9f4e51fa632760a
+Author: AbdelrhmanBassiouny <abdelrhman_bassuny@hotmail.com>
+Date:   Thu Apr 20 17:19:42 2023 +0200
+
+    [CRAMPLan] CRAM PLAN script
+
+commit 5cbef6eb909d688b16f29a2ef1cd73ad524ebb27
+Merge: c941b51 166d869
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Apr 20 17:18:48 2023 +0200
+
+    Merge remote-tracking branch 'bass/complex_plans' into fix-cyclic
+
+commit 166d86931a646d1ec7f53c489606b83fba773836
+Merge: dc3f094 f52999a
+Author: AbdelrhmanBassiouny <abdelrhman_bassuny@hotmail.com>
+Date:   Thu Apr 20 17:18:12 2023 +0200
+
+    [CRAMPLan] CRAM PLAN script
+
+commit c941b51c136b9699482f32def91e9c1e233261cc
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Apr 20 15:48:50 2023 +0200
+
+    [DOC] Fixed some warning sphinx gave when building.
+
+commit 619235532dfd8e4eb8b2778c2b98f610cebc09ee
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Apr 20 15:27:54 2023 +0200
+
+    [DOC] Added section on how to set up PyCharm with PyCRAM.
+
+commit dc3f09419150137f26fa1d8b40dd22c0c1a88949
+Author: AbdelrhmanBassiouny <abdelrhman_bassuny@hotmail.com>
+Date:   Thu Apr 20 15:26:19 2023 +0200
+
+    [PoseGenerator] Make number of samples an argument
+
+commit f52999aad38145ab5315f0f34747de7641e8c66b
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 20 15:02:54 2023 +0200
+
+    [location-designator] Tests for location desig and location desig now takes obejct desigs
+
+commit f1a63ffbc7152610828fd2680b9fff757b4edd83
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 20 11:39:54 2023 +0200
+
+    [action-desig] Implemented plans for actions desigs for new architecture
+
+commit f517d7d37ee8ffd9e1f634137b7228c18ba418eb
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Apr 20 11:13:59 2023 +0200
+
+    [ORM] Integrated ORM with the new designators.
+
+commit 173ea52b06eb6095c19fc030c1e19ae8ca770b6b
+Merge: a2da445 fac2c62
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Apr 20 10:55:22 2023 +0200
+
+    Merge remote-tracking branch 'jonas/new-motion-desig' into fix-cyclic
+
+commit fac2c62c8b9e93745698225483476f2167b9272c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 20 10:53:51 2023 +0200
+
+    [location-designators] fixed import
+
+commit a2da44595dccad20f69bdac79ce461b9db897ffd
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Apr 20 10:52:53 2023 +0200
+
+    [TaskTree] Integrated the new designators with task trees.
+
+commit 240c4f6a57924613320b8253d51ae1a258bcf515
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 20 10:39:25 2023 +0200
+
+    [plan-failures] Added arguments for messages
+
+commit b74021301a5e36024cae55f9d064411c70a43937
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 19 16:55:10 2023 +0200
+
+    [action desigs] New perform methods for action desigs
+
+commit 6004e608fa97b24d90d148fcf1a3bf308898f0cc
+Merge: 08711d0 44a035e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 19 15:47:20 2023 +0200
+
+    Merge pull request #2 from tomsch420/fix-cyclic
+    
+    [ActionDesignator] Fixed the cyclic dependencies for action designators.
+
+commit 44a035e640108de1a2a17a50fd43c75749c8d125
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 19 15:43:01 2023 +0200
+
+    [Doc] Added Documentation of Designators.
+
+commit 08711d064651f51765c46aae921019771afb48d1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 19 15:42:53 2023 +0200
+
+    [location-designator] New Location Designator structure
+
+commit 5914930905f455d50b1954477943c83767f10d29
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 19 14:12:54 2023 +0200
+
+    [ActionDesignator] Wrote tests for integrating the new object designators in action designator grounding.
+
+commit 7bafd29c975308bfb2543cf3fcfd77a38b581445
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 19 14:02:47 2023 +0200
+
+    [ObjectDesignator] Finished rework on object designators and integrated it into actions.
+
+commit bb6b94891f12c32e9e774e10215739c08b1fd98e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 19 11:47:38 2023 +0200
+
+    [pr2-process-modules] New process modules for new motion desigs
+
+commit c2f32e98c2cb31c09f53feba8f4ecd212aa2c2c3
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 19 11:46:57 2023 +0200
+
+    [motion-desig] New Motion designators
+
+commit 898651930e0560a7754c8e0b5f5d50c9c01177f6
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Tue Apr 18 18:22:47 2023 +0200
+
+    [ActionDesignator] Reworked action designator core and wrote tests for it. Added enums as module.
+
+commit 4484a1f5f8205fee0799cd1db750fb72be2fb832
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Tue Apr 18 14:02:28 2023 +0200
+
+    Changes by jdech
+
+commit 49833b6c0763e173cf6ebf110ec0122dab997c03
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Tue Apr 18 14:02:15 2023 +0200
+
+    [ActionDesignator] Started to remove the cyclic dependencies for action designators.
+
+commit e7108946a202ea2f58c98bb474e87949355cc27c
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Mon Apr 17 15:11:12 2023 +0200
+
+    [Designator] Started to refactor the action designators and their descriptions.
+
+commit 5dfcdf1cbb96d62b4ea05a4771d66a4775cdecfc
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Mon Apr 17 10:48:15 2023 +0200
+
+    [Doc] Cleaned Cells for ORM Tutorial.
+
+commit b523edd8e5e78eee27d7ff764dc5014cdbd61b0b
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Sat Apr 15 12:29:28 2023 +0200
+
+    [Doc] Expanded the tutorial for ORM.
+
+commit 7d322e825fb9feea24a616c8190c19c0e76bd83f
+Merge: 56b196c 1f20b78
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Sat Apr 15 10:30:06 2023 +0200
+
+    Merge remote-tracking branch 'bass/complex_plans' into orm
+
+commit 1f20b781b7b008b4e224b0fce5befc25953ad670
+Author: AbdelrhmanBassiouny <abdelrhman_bassuny@hotmail.com>
+Date:   Fri Apr 14 18:40:28 2023 +0200
+
+    [Plans] Removed Unnecessary detach from kitchen in the pick_up method
+
+commit 8f7816c85f6ae35586ee52c7ee43dca4b48f20a7
+Author: AbdelrhmanBassiouny <abdelrhman_bassuny@hotmail.com>
+Date:   Fri Apr 14 18:39:27 2023 +0200
+
+    [ComplexPlans] A new jupyter notebook for executing more complex plans in the apartment environment.
+
+commit 56b196cd13ed03fb79499211c2cd92e8f5d00b35
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri Apr 14 16:18:48 2023 +0200
+
+    [ORM] Formatting of some files. Added move torso serialization.
+
+commit 1d7148cb61bdfd0856cace7c8ff14f752c0bd2ca
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri Apr 14 12:10:08 2023 +0200
+
+    [Designator] Added ObjectPart init method.
+
+commit 8368035cf31c1fc4213b0c41f09c6b1439b92661
+Merge: c78010f 8416ca5
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri Apr 14 11:51:55 2023 +0200
+
+    Merge remote-tracking branch 'pycram/dev' into orm
+    
+    # Conflicts:
+    #       examples/minimal_task_tree.ipynb
+    #       src/pycram/task.py
+
+commit c78010ff869609d2ab8931d4c484be5ebbee869f
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri Apr 14 11:44:59 2023 +0200
+
+    [ORM] Rerun notebook to not print error.
+
+commit 570a9ed43ab1292ee4ca0eed1aaf6c0303e19ff6
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Apr 13 19:21:19 2023 +0200
+
+    [ORM] Testcase including object designators and pick&place serialization.
+
+commit 74fc908a9c400ffb3e25406e506dfb4c9d688b8f
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Apr 13 17:38:02 2023 +0200
+
+    [ORM] to_sql() and insert() methods for object designators.
+
+commit b3674be2c08a3cbe225036aa281e6e89c61a44ad
+Merge: b645a3f c8f33bf
+Author: AbdelrhmanBassiouny <abdelrhman_bassuny@hotmail.com>
+Date:   Thu Apr 13 16:51:06 2023 +0200
+
+    Merge remote-tracking branch 'jonas/dev' into complex_plans
+
+commit 8416ca5fce8931c00b3be72d8da370886a364ed7
+Merge: 657e85e c8f33bf
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 13 16:49:37 2023 +0200
+
+    Merge pull request #66 from Tigul/dev
+    
+    [pose-valid] added contact checking to reachability valdator
+
+commit c8f33bf2133c8f15b3534f506dee93e18a4612b8
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 13 16:48:17 2023 +0200
+
+    [pose-valid] added contact checking to reachability valdator
+
+commit b645a3f8b25feb4d3a7576a710c8d8d23a6af6c9
+Author: AbdelrhmanBassiouny <abdelrhman_bassuny@hotmail.com>
+Date:   Thu Apr 13 14:05:17 2023 +0200
+
+    [BulletWorld] Added a feature to move the object base instead of origin, visualizing frames now keeps previous frames.
+
+commit 657e85e04e8fb1d60ad37049637863ae6ffa79f4
+Merge: b856233 af2dc06
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 13 12:06:13 2023 +0200
+
+    Merge pull request #65 from Tigul/dev
+    
+    Smaller fixes
+
+commit af2dc0684b13c600efe641f082dccc41ab57f987
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 13 12:04:27 2023 +0200
+
+    [examples] rerun taskTree notebook with new print
+
+commit 903480f101ce1c0588b765b5a13c6f7eef71f0b7
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 13 12:04:00 2023 +0200
+
+    [taskTree] removed prefix in __str__
+
+commit 599b38f73502bf1147f1ecfcb2cb3be2470a7d2f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 13 12:03:31 2023 +0200
+
+    [costmaps] fixed the remains of the rayTest bug with a while
+
+commit b8562334db2a289fc47ff3bb4d9dd85ed9f563bd
+Merge: 5cb6356 b2bf876
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 13 11:20:01 2023 +0200
+
+    Merge pull request #63 from AbdelrhmanBassiouny/exceptions
+    
+    Added plan failures from the cram_failures.owl ontology
+
+commit aa57149b0896dadcbf0a4e38112bce2d7802dd8b
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 12 17:07:02 2023 +0200
+
+    [ORM] Motion Designator orm classes added.
+
+commit 5cb63560bb25f6cec51ae7fb5b3e6f6e2e7e97a8
+Merge: 1277a52 eb50397
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 12 16:28:44 2023 +0200
+
+    Merge pull request #64 from Tigul/dev
+    
+    [bullet-world / reasoning] fixed visible for shadow and timing with t…
+
+commit eb503975616f26456855303a3bda7476b57d75d4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 12 16:26:07 2023 +0200
+
+    [bullet-world / reasoning] fixed visible for shadow and timing with the shadow world
+
+commit e95883d107bf4bcda706407794704154b6a60309
+Merge: b2bf876 2dd11cd
+Author: AbdelrhmanBassiouny <abdelrhman_bassuny@hotmail.com>
+Date:   Wed Apr 12 16:11:54 2023 +0200
+
+    Merge remote-tracking branch 'tom/orm' into complex_plans
+
+commit 2dd11cd35734003dfebce267bd8b01a299d6e15e
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 12 16:11:00 2023 +0200
+
+    [ORM] Fixed foreign key issue in ObjectPart.
+
+commit cac43b8b9d0bece4dfed867d7931caadb02b118e
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 12 16:06:40 2023 +0200
+
+    [ORM] Added Object designator ORM classes.
+
+commit b2bf87687891c71bac3cf2b51fd52bb4108f2c04
+Author: AbdelrhmanBassiouny <abdelrhman_bassuny@hotmail.com>
+Date:   Wed Apr 12 15:49:06 2023 +0200
+
+    Added plan failures from the cram_failures.owl ontology
+
+commit d497f2dc9272e96e18ffef5eec2c118aa1de4f2d
+Merge: f98f345 31c37c1
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 12 15:14:37 2023 +0200
+
+    Merge remote-tracking branch 'jonas/dev' into orm
+
+commit f98f345c272716b8caf27846144b534d9ed07901
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 12 15:13:09 2023 +0200
+
+    [ORM] Added Action designator ORM classes.
+
+commit 1277a522d66dcfb6bbd3221b9111edfc23ac6e81
+Merge: bfc1bba 31c37c1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 12 15:10:58 2023 +0200
+
+    Merge pull request #62 from Tigul/dev
+    
+    [action-desig/task] Fixed ORM imports
+
+commit 31c37c1c7761c03e83321becb4dfc5ccb08bd5e4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 12 15:09:39 2023 +0200
+
+    [action-desig/task] Fixed ORM imports
+
+commit 99d513ac50e0495b98f0f53a12d5e1f8e3434621
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 12 14:41:13 2023 +0200
+
+    [object-designator] Added documentation for Object Designator and description
+
+commit bfc1bba75d3b6db1bfddeb2d678931775d6543d9
+Merge: 0de8556 9001529
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 12 10:57:18 2023 +0200
+
+    Merge pull request #61 from Tigul/raytest-bug
+    
+    [costmaps] moved rayTesting to the shadow world
+
+commit 0de85567d4122a73bd4660200dd9b047ad25bbf1
+Merge: 68fd0ed c142cd9
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 12 10:57:07 2023 +0200
+
+    Merge pull request #60 from tomsch420/pr2-fix
+    
+    [Refactor] Refactored urdfs, orm classes and formatting to produce no…
+
+commit 9001529c2b9130cce802d3c9f473ea81e904819e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 12 10:42:05 2023 +0200
+
+    [costmaps] increased size of chunks to 16380
+
+commit 3535e237c8862eeb11940b85aee0088f9596f043
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 12 10:21:16 2023 +0200
+
+    [costmaps] moved rayTesting to the shadow world
+
+commit c142cd9b49144e94dbff9a0847229e030af92ffb
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 12 10:20:40 2023 +0200
+
+    [Refactor] Refactored urdfs, orm classes and formatting to produce no warnings anymore.
+
+commit 68fd0edb53a67079b669dca69e5e7b59d8caa164
+Merge: f1eae84 0c5f650
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 12 09:50:43 2023 +0200
+
+    Merge pull request #59 from tomsch420/serialization
+    
+    ORM package for pycram.
+
+commit 0c5f6507d2e787f591d7c3ed9954271952582f7c
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Tue Apr 11 11:21:31 2023 +0200
+
+    [ORM] Fixed issues from pull request.
+
+commit 32d18e6d41faa0053f46257f03852241419691ac
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Mon Apr 10 14:57:58 2023 +0200
+
+    [Documentation] Documentation, test and examples for orm in pycram.
+
+commit bd1b4b914eb175705322dde3aed8ddceac1e2e2a
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Mon Apr 10 13:56:38 2023 +0200
+
+    [ORM] Serialization of Code using action designator descriptions is fully functional. Inheritance in classes is correctly mapped in the SQL schema. Added sqlalchemy to the requirements.txt
+
+commit 89465b6be58178c492c70fb69bc18cbb8974c8ab
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Sun Apr 9 15:37:12 2023 +0200
+
+    [ORM] Further progress on the action designator serialization for a minimal plan.
+
+commit 7aac2f8a3ecb27e225db89bd8317ea05c4c6fa61
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Sun Apr 9 10:15:44 2023 +0200
+
+    [ORM] Started to work on action designator ORM classes. Requires rework of usage with @with_tree and the corresponding architecture.
+
+commit 8862417f48fd4b0bf010365d1a46b8a0fcfcd26a
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Sat Apr 8 14:44:08 2023 +0200
+
+    [ORM] TaskTreeNode insertion works with correct relations. Code works without kwargs.
+
+commit 01656cb43afc5e60dfe973d93ac458dc34a7dd18
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri Apr 7 18:21:04 2023 +0200
+
+    [ORM] Propositions are working, Relations not yet
+
+commit 1ab8ed244fb85875558921e79f85b39de84e35a7
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri Apr 7 14:08:11 2023 +0200
+
+    [ORM] Started to work on ORM functionality for PyCRAM plans.
+
+commit f1eae84a477b2685ba277a2c3235cc65cf16b360
+Merge: 08ec7ba 2ed972f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 6 10:53:09 2023 +0200
+
+    Merge pull request #58 from tomsch420/serialization
+    
+    JSON Serialization of Task Trees and Tutorials for Task Trees.
+
+commit 2ed972f735d639f878f9f18df67b491edff0e09b
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Apr 6 10:44:58 2023 +0200
+
+    [TaskTree] Added tutorial symlink.
+
+commit 185346941c2d48d18d7237f6b92f0734d6f67cb7
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Thu Apr 6 10:43:49 2023 +0200
+
+    [TaskTree] Added a tutorial for task trees. Updated infrastructure accordingly.
+
+commit f80eb2680aaa921034bd96019659808159850f6c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 5 17:22:44 2023 +0200
+
+    [bullet world] documentation
+
+commit 382574541a35b1a82d0b3bec7a7a2985798a75ba
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 5 16:39:44 2023 +0200
+
+    [TaskTree] Added explicit documentation and tutorials for task trees.
+
+commit 05d6553f5d0be47f784e332af07db34ebc19fabd
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 5 15:27:15 2023 +0200
+
+    [serialization] Serialization of code objects is now flexibly trying to serialize the keyword arguments.
+
+commit 882e3f806ca8ff09b47f6f5e073f6543437f6d25
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 5 13:44:34 2023 +0200
+
+    [serialization] KnowRob tests get ignored if there is NoRob.
+
+commit 5fd8ffc81b86c838b06399f9f443f8cab3ae3788
+Merge: 11b9d3a 08ec7ba
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 5 11:36:59 2023 +0200
+
+    Merge remote-tracking branch 'cram/dev' into serialization
+
+commit 11b9d3a57e7f11549450e5c5169c82b1ae47a4bd
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 5 11:35:33 2023 +0200
+
+    [serialization] Started to work on to_json methods for task tree objects.
+
+commit 08ec7ba1e397659450e56297e0b5c189e29f9d90
+Merge: c3c6f7a 0265a2a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 5 11:27:14 2023 +0200
+
+    Merge pull request #57 from Tigul/raytest-bug
+    
+    Raytest bug
+
+commit 0265a2a68d07dd4270a0631ba6c191e31efa111f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 5 11:23:19 2023 +0200
+
+    [costmaps] clean up
+
+commit 7ad7fdcdc99304e0c670533d70e30fcbdc0809b0
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 5 11:20:13 2023 +0200
+
+    [tests] added class for bullet world test and a test to check for the rayTest bug
+
+commit c3c6f7a0cd6bfb96e92217a9d47aee942ab20243
+Merge: 476791c e4acf3e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 5 10:51:58 2023 +0200
+
+    Merge pull request #56 from tomsch420/sphinx-documentation
+    
+    Added Sphinx documentation
+
+commit c5dbe1d46b53a2392fbe2147f1944d7df4d755c5
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 5 10:18:47 2023 +0200
+
+    [costmaps] somehow a fix for raytest bug
+
+commit e4acf3e378b8227b7f59c7df535acbadf218360b
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Wed Apr 5 10:16:43 2023 +0200
+
+    [sphinx] Updated Makefile and documentation architecture.
+
+commit d7ab76c9856c965204dd41ebe162acbc2e46d0be
+Merge: d2b3989 476791c
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Tue Apr 4 18:33:37 2023 +0200
+
+    Merge remote-tracking branch 'cram/dev' into sphinx-documentation
+
+commit d2b39892adc1ff36fcbaf6bdf9ffbb0c5fa3d626
+Merge: bb44dc0 6476f7d
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Tue Apr 4 18:25:46 2023 +0200
+
+    Merge remote-tracking branch 'jonas/action-desig-fix' into sphinx-documentation
+
+commit bb44dc0fdce59c5d11d5b680a39c9abcd1cd0c01
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Tue Apr 4 18:20:14 2023 +0200
+
+    [sphinx] Add src directory and modified conf.py
+
+commit 226ea38c947506fb70237af5851918227f9e4920
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Tue Apr 4 17:54:06 2023 +0200
+
+    [sphinx] Started to lay the foundation for sphinx as documentation engine.
+
+commit 476791c6b28a0858346a8dadddb1d08991180046
+Merge: f4137ea 9ea8ddf
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Apr 4 17:20:04 2023 +0200
+
+    Merge pull request #55 from Tigul/fast-fixes
+    
+    Fast fixes
+
+commit 9ea8ddf8fbd7e2dca557a7bd320c0fd8fdf0fa91
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Apr 4 17:19:33 2023 +0200
+
+    [costmaps] synthax error
+
+commit 1ccb7b2c74ff3b4309684497e5e0502f6b715517
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Apr 4 17:12:22 2023 +0200
+
+    [bullet-world, costmaps] raise more errors
+
+commit ab517dcfd0f29b30e0625a85d279db139b58e127
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Apr 4 17:04:49 2023 +0200
+
+    [btr-reasoning] blocking with new ik and shadow world
+
+commit d61521ab3f77fcffa7a53d29211c222fcb084ff5
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Apr 4 16:05:56 2023 +0200
+
+    [btr-reasoning] reachable with new ik and shadow world
+
+commit f4137ea2df34d5d67068da9bff595c4ee14092f8
+Merge: a97fca1 6476f7d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Apr 4 10:05:35 2023 +0200
+
+    Merge pull request #54 from Tigul/action-desig-fix
+    
+    General fixes for all designators and overall usability
+
+commit 6476f7dc83f667d7c5f5edcdd8b4c081661d2c9a
+Merge: 38da30f e8efe5e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Apr 4 09:51:28 2023 +0200
+
+    Merge branch 'action-desig-fix' of github.com:tomsch420/pycram-1 into action-desig-fix
+
+commit 38da30f6cf765bfd04c9b2a63b928c8d0ad65c48
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Apr 3 17:22:04 2023 +0200
+
+    [motion-desig] renaming of motion designator description
+
+commit cfc1dcf4e632963ee9878c77f1528f98dae2843a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Apr 3 16:57:41 2023 +0200
+
+    [object-desig] renaming of Object Designator descriptions
+
+commit 788aa900a98c21be3b08adcd636d086842d05702
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Apr 3 16:23:28 2023 +0200
+
+    [location-desig] rename of Costmap description and added minimal description
+
+commit fbc63cc2c947f4f0d1261f6089c50aa5d3199ba3
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Apr 3 16:06:43 2023 +0200
+
+    [location-designator] Rename of ObjectRelativeLocationDesignatorDescription
+
+commit e8efe5ec31813e2c43483e3e6aa2213da84fbbf4
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Mon Apr 3 15:10:34 2023 +0200
+
+    [Merge] Merged remote action-desig-fix into local.
+
+commit 7749120e6b22f004dbb3d0d6af852a6d0c72863e
+Merge: b0621c0 344c9cb
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Mon Apr 3 15:08:51 2023 +0200
+
+    Merge remote-tracking branch 'jonas/action-desig-fix' into action-desig-fix
+
+commit b0621c0059247dfb990b5d7cd370c53d3173e924
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Mon Apr 3 15:05:29 2023 +0200
+
+    [TaskTrees] Finished TaskTree refactoring and testing.
+
+commit 344c9cb8604af69ef37bd70b6a07d7913094f5e0
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Apr 3 14:55:05 2023 +0200
+
+    rename of action designator resolver
+
+commit e1766bdd13ba328427a212dc6023e027597b15d0
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Apr 3 14:53:37 2023 +0200
+
+    [pose-valid] fixed usage of wrong variable
+
+commit 600d928049fc27b67c7fa03bf709e9c790cda8bc
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Apr 3 11:37:47 2023 +0200
+
+    [bullet-world] added function to reset bullet world
+
+commit 053291d7cf37959cfeac0f68d52893b06df768d1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 31 16:22:49 2023 +0200
+
+    [location desig] New semantic costmap designator
+
+commit a07b9ec0e47342fce448055371b0f9e535bd5601
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 31 15:12:37 2023 +0200
+
+    [bullet-world] made link name in AABB optional
+
+commit 34a3bdd4cbc549fdc79515f9c8db0ae38dfe1812
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri Mar 31 14:56:36 2023 +0200
+
+    Started to refactor TaskTrees using the anytree implementation. Wrote a minimal unit test for TaskTrees.
+
+commit 2f45e018f5a6e21be5b730c1afb8bf8d5b1e58d3
+Author: Tom Schierenbeck <tom_sch@uni-bremen.de>
+Date:   Fri Mar 31 14:55:35 2023 +0200
+
+    Started to refactor TaskTrees using the anytree implementation. Wrote a minimal unit test for TaskTrees.
+
+commit b4eab5217a502b73c9fcb0f0a2f30167a0b34cdf
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 31 12:28:05 2023 +0200
+
+    [resolver] small fixes in motion resolver
+
+commit 13478cf0aeef095d0a190d4948086b259ed88eee
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 31 12:27:23 2023 +0200
+
+    [resolver] location resolver for arms
+
+commit 26361b79671930bb7d1e6ccd4200420c1d490ad9
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 31 12:24:56 2023 +0200
+
+    [pose-gen] returns valid arms for reachability
+
+commit b6fcfab5ef778a1202a284ab1fd719b632132558
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 31 12:24:19 2023 +0200
+
+    [resolver-plans] small changes for detecting
+
+commit 96ff1a3441e5ef7618486f028ecb6d40ef8a9e6c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 31 11:21:36 2023 +0200
+
+    [pr2-pms] looking at now with respect to robot rotation
+
+commit 74f332f87aa28164d3c012b75dc67f9246e2b848
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Mar 30 16:47:13 2023 +0200
+
+    [location desigs] better reachability
+
+commit 78ef23aa7445969db79381223ac9cf9c2d134f68
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Mar 30 14:56:22 2023 +0200
+
+    [pose-gen] fixed bug in pose generation from costmap
+
+commit 458d8704b4a98158dbf26b48c00b7ae459647025
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Mar 30 13:59:18 2023 +0200
+
+    [costmaps] fixed wrong origin from merge
+
+commit fb484f4d82dd6fb422b76a53e130bcdb077d802c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Mar 30 13:03:44 2023 +0200
+
+    [location-desig] fixes for reachable and visible pose generation
+
+commit d73fbf6ba2eb52eeb7e17e1761217585810887ee
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Mar 29 16:49:50 2023 +0200
+
+    removed wrongly commited files
+
+commit b4ce03efd6766f102bf27b25b9c6112cb06d7cd9
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Mar 29 16:48:13 2023 +0200
+
+    [action-desigs] Made more action desigs work
+
+commit 98aca1120ce98b8f9a7390f547bc22c5673deeb0
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Mar 29 15:07:35 2023 +0200
+
+    [pr2-pms] fixed looking process module
+
+commit 13840cb08ae941f13df4010998e7eca6db50c2f3
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Mar 28 16:10:21 2023 +0200
+
+    [process-module] fixed bug that prevented execution after fail
+
+commit ca908e10643cec9359029e04050682ee51be04bc
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Mar 27 18:28:35 2023 +0200
+
+    [action-desig] Renamed all descriptions
+
+commit 7a47247826da4d1e0e73bd3b7972dae046de99fd
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Mar 27 17:34:46 2023 +0200
+
+    [designator] added new MoveJoints designator
+
+commit e03dc9c0d95da96e46672f717de3723850ae671b
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Mar 27 14:39:00 2023 +0200
+
+    [bullet-world] added error if the file to load does not exist
+
+commit 6dcaf5bac487ed8b1b7d8fb86414bd3820076efa
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Mar 27 10:16:07 2023 +0200
+
+    [rosinstall] added pr2 arm kinematics
+
+commit 8505ccf3ef108bda612d75ec4ee70c84f11f1700
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 24 16:43:00 2023 +0100
+
+    new ik solver for pr2
+
+commit 94c47348c00d697678a4fa6bb20b62fcf926d3d9
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 3 16:28:29 2023 +0100
+
+    [object-resolver] removed print
+
+commit e310add20826e11ede21e19eb60e8a5937d6614a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 3 16:26:44 2023 +0100
+
+    [action-desig-plans] changed comparison because apparently this works all of sudden
+
+commit eac3763389bcabb3b0664a406f486925b74ac0a9
+Merge: 5cdf033 5edb4af
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 3 16:15:27 2023 +0100
+
+    Merge branch 'object-desig-description' of github.com:Tigul/pycram-1 into action-desig-fix
+
+commit 5cdf03369ffe72b7507d327d68e9daa123b0df89
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 3 16:14:25 2023 +0100
+
+    [action-desig] Removed print
+
+commit 5edb4afde8682c40dda31c77b7d3143e2c71789b
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 3 15:03:30 2023 +0100
+
+    [object-desig] improved grounding and fixed action plans
+
+commit de7401132d32946af5d558d1ed683a717423f5fb
+Author: Luca Krohm <luc_kro@uni-bremen.de>
+Date:   Thu Mar 2 17:26:05 2023 +0100
+
+    Luca Krohm, camera-controls
+
+commit 8f679af89c1f7e335f3a2ed57b2afff7de1f2574
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Mar 2 10:43:16 2023 +0100
+
+    [object desig] More Obj Desig Descriptions and resolver
+
+commit 888b705f9246462d9c50769d3870b2df584c5bd9
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Feb 23 14:20:43 2023 +0100
+
+    [action-desig] fixed some errors
+
+commit a97fca1863c325113355382665f2de14c397f43a
+Merge: 2d81b90 d834458
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Feb 14 16:26:13 2023 +0100
+
+    Merge branch 'costmaps-numpy' of github.com:Tigul/pycram-1 into dev
+
+commit d83445829613ffeec19081279ec9fef45486a737
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Feb 14 15:30:34 2023 +0100
+
+    [pose-generation] clean up and small fixes
+
+commit 5db24a0b1045587bf8b5cd2ae8e930e296fe55d0
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Feb 14 15:28:11 2023 +0100
+
+    [designator] fixed error message
+
+commit 176765af5ad43f4501fb60886787bde11067ba5c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Feb 14 12:16:03 2023 +0100
+
+    [costmaps] better fix for occupancy map size loss
+
+commit d11425d677efd588a62f827b323d128371682b91
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Feb 14 11:22:58 2023 +0100
+
+    [location-ground] added shadow world usage
+
+commit d04ff1b4fad0a9d94b0ff69ccec89143bb7e577b
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Feb 14 10:55:57 2023 +0100
+
+    [pose_gen_valid] added position and validation
+
+commit 6fff639ecba66fc5ad55ee3f29aaf94dda003fe5
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Feb 10 16:26:37 2023 +0100
+
+    [costmaps] fixed error that made occupancy map to small
+
+commit 7b0adcdb1ff2817da605ecd513105273ef2a7273
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jan 25 15:57:05 2023 +0100
+
+    [resources] fixed rotation of kitchen island
+
+commit 1383bdd4c8d5bbccdd53d328d2eec4a51aafbd90
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jan 25 15:10:38 2023 +0100
+
+    [pose gen and valid] added docu for new sampling
+
+commit f487b8997fa38a9d1773bc6b1075e73954d1db29
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jan 25 14:37:02 2023 +0100
+
+    [costmaps] hopefully fixed the rayTestBatch error
+
+commit 53764eb85ac4d4ca056f9e850c6e2942560d0637
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jan 25 11:59:33 2023 +0100
+
+    [costmaps] moved images for visibility to shadow world
+
+commit fed96764c4f08ee0ebee16dbd76dccdb07c15b6b
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jan 24 14:46:30 2023 +0100
+
+    [costmaps] formatting
+
+commit 88ad83b3228e6ff47683ba9553d2f6c30725c036
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jan 20 16:57:34 2023 +0100
+
+    [costmaps] added rotation to every costmap origin
+
+commit 1cb931c18fe532617b2b6665c2e80be9bde56d1f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jan 20 15:32:30 2023 +0100
+
+    [costmaps] added rotation to visualization
+
+commit 2d9c9d71e0692f1568357037ba18791ad7a1eff9
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jan 19 16:24:39 2023 +0100
+
+    [giskard] improved world sync for real robot
+
+commit d34f6710632a1e14ee523918a22a88e3819c3ef6
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jan 19 15:48:15 2023 +0100
+
+    [bullet world] fixed a set error
+
+commit 2d81b906501572c25b346ae156be960f3c7e7185
+Merge: 98e2df7 dce7cbc
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jan 17 10:53:52 2023 +0100
+
+    Merge branch 'typing' of github.com:Tigul/pycram-1 into dev
+
+commit e3af815568ec56ca4c9aea9b2d5e698d9f99648b
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Dec 15 16:04:49 2022 +0100
+
+    [bullet-world] fixed update from tf
+
+commit 98e2df7716e6536958bb07b035079f4581c84c84
+Merge: 6867416 5721eb2
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Dec 15 14:45:12 2022 +0100
+
+    Merge pull request #50 from Tigul/object-colors
+    
+    [bullet-world] added a function to change colors of links
+
+commit 5721eb27ad96f24fc92846d32ce39dfc1c93f8f7
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Dec 15 14:41:36 2022 +0100
+
+    [bullet-world] small fixes
+
+commit 71a10b2e62296d9e14f06934a8f125a9fbabcd74
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Dec 15 14:30:02 2022 +0100
+
+    [bullet-world] added method to update position from tf
+
+commit f1406f00ee632df79982d1994c87ea3999478e09
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Dec 15 11:39:47 2022 +0100
+
+    [bullet-world] added method to update joint states from ros topic
+
+commit 56eae5f8bccc64af0914036719abf6885b87e7fb
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Dec 15 10:48:11 2022 +0100
+
+    [bullet-world] added docu to get_color
+
+commit 8a5c1a7586a4502a8c7ef635dba9e8d6e7fc2d7a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Dec 15 10:36:15 2022 +0100
+
+    [resources] added apartment urdf
+
+commit 18f21051c872a45c67c9c3b0c81034eea38acd57
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Dec 15 10:35:30 2022 +0100
+
+    [bullet-world] added a method for getting the color of object
+
+commit dce7cbc6f16a40077b208e6bdcdaf741146dd3a3
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Dec 14 14:32:27 2022 +0100
+
+    [language] small fix
+
+commit 629816eafe1c337619c4eb681d7e70970895c20c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Dec 14 14:25:10 2022 +0100
+
+    [fluent] fixed _ast typing
+
+commit 69dc737ce6e9f1218ce07031200cd46c967622a5
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Dec 14 14:23:43 2022 +0100
+
+    [language] added typing
+
+commit b9dea7ce8fb443aa9e4e637ac6add299ef578261
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Dec 14 10:56:58 2022 +0100
+
+    [language] small fix
+
+commit 12babb0f5fd83ac998356ed7b6c02d3accca596f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Dec 14 10:52:02 2022 +0100
+
+    [Language] fixed indentiation
+
+commit 2d468cb0ad4a3e68514bf96029e6ce1388c68356
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Dec 13 15:46:12 2022 +0100
+
+    [task tree] Added typing
+
+commit 9dbf69dbd385d3583f2d9efc5799e98c708bcbaf
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Dec 13 14:49:39 2022 +0100
+
+    [robot-description] Added typing
+
+commit af48b97abc5cf3c2f8c5e16992f17b4fe24bb6e4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Dec 13 13:57:18 2022 +0100
+
+    [process-module] small fixes
+
+commit 0496d58e7e9c2b8cb364d49cf8c4c9ba308c9b83
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Dec 12 15:00:04 2022 +0100
+
+    [process-module] added typing
+
+commit a9b2f7250dab8b550af8f2a6d4a18e7add807ded
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Dec 12 14:51:15 2022 +0100
+
+    [process-module] fixed indentiation
+
+commit cfb1ee47356f19ca43e134c156c126d3deeebe90
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Dec 12 14:46:22 2022 +0100
+
+    [pose-gen-and-val] added typing
+
+commit ba8c0f29c98ef0d73f2ef21588899f24fe91dbb2
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Dec 12 14:36:14 2022 +0100
+
+    [designator] completed typing
+
+commit 5577bacd48db2f393a07b847be57dc94014c7689
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Dec 12 14:09:50 2022 +0100
+
+    [fluent] fixed indentioation to spaces
+
+commit ec55c18e454239d14f42fc75e2b3511757e5e134
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Dec 12 13:03:03 2022 +0100
+
+    [Designator] removed Self typing
+
+commit d8d0669f117e9ecb6ba5861b2444e02d644aea59
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Dec 12 13:02:44 2022 +0100
+
+    [fluent] added typing
+
+commit 35f9449b523cff8e36aa40c9dae57badbcec0d5f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Dec 2 16:04:06 2022 +0100
+
+    [local transformer] added typing
+
+commit bd5d79147348ea8165b805c02d96b0a75ee301e8
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Dec 2 15:08:35 2022 +0100
+
+    [helper] added typing
+
+commit 2a629037f44791a99ca756cd9f0efb48d48bc992
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Dec 2 14:30:00 2022 +0100
+
+    [event] added typing
+
+commit f3270d449ba6dea72dd78d182c7e48642a2a72a4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Dec 2 14:27:22 2022 +0100
+
+    [designator] temporary typing
+
+commit c58162f1bd00c599c37dc28841e01b9508388f51
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Dec 2 13:43:05 2022 +0100
+
+    [costmaps] added typing
+
+commit 0412be448c403427a4a1e680037970a95f468d99
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Dec 2 11:51:32 2022 +0100
+
+    [bullet-world-reasoning] added typing
+
+commit 391924ec9a6bcbf3fab1980542c701bb59f6396f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Dec 2 11:29:57 2022 +0100
+
+    [bullet-world] fixed typing and cconventions
+
+commit a676786130dfb21b377b9d27ba506c79627bbf8d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Nov 28 18:49:26 2022 +0100
+
+    [bullet-world] first version of typing
+
+commit dda4926b06d4b5533af517be89d9096e39cc5360
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Nov 25 15:00:53 2022 +0100
+
+    [giskard] moved interface into new external directory
+
+commit 557e3df5f53449666edf9d1c302115000d61a104
+Merge: 6491e49 6867416
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Nov 25 14:59:10 2022 +0100
+
+    Merge branch 'dev' of github.com:cram2/pycram into giskard-interface
+
+commit 6491e49b9dac10ed8cddd722ecf0156cf1e2b895
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Nov 25 14:52:18 2022 +0100
+
+    [giskard] more goals and Documentation
+
+commit 8de7ac06b767f21d7e49f0d218e791f85d9c17af
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Nov 25 14:51:48 2022 +0100
+
+    [resources] Added new kitchen URDF for use with giskard
+
+commit 8645c14b036ace132c8b8da1b93a3141a4dee403
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Nov 24 16:23:33 2022 +0100
+
+    [bullet-world] added a function to change colors of links
+
+commit 686741631acd32480347ce4167d53c7e7c2369ec
+Merge: 779d79f 377b532
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Nov 24 16:06:18 2022 +0100
+
+    Merge pull request #49 from sunava/dev
+    
+    [robot_description] added the missing robot description files :) note: pycharm has Unversioned Files which are new-files u've created so keep in mind to push them too
+
+commit 377b5328d0c8d54af0e9487876052b63b22584fc
+Merge: b5080e7 779d79f
+Author: Vanessa Hassouna <33067562+sunava@users.noreply.github.com>
+Date:   Thu Nov 24 16:04:57 2022 +0100
+
+    Merge branch 'cram2:dev' into dev
+
+commit b5080e76c3393ab163fadd6ff9742a0962a904f6
+Author: sunava <hassouna@uni-bremen.de>
+Date:   Thu Nov 24 16:06:04 2022 +0100
+
+    [robot_description] added the missing robot description files :) note: pycharm has Unversioned Files which are new-files u created so keep in mind to push them too
+
+commit 779d79fd16422b688c33589818749f3fb0c742e3
+Merge: 84bc74a 0d4e5bc
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Nov 24 16:04:13 2022 +0100
+
+    Merge pull request #48 from sunava/dev
+    
+    <python imports> cleaned up some imports
+
+commit 0d4e5bcca0817cbde0429356e9508f1fb48991ca
+Merge: 8cbe054 84bc74a
+Author: Vanessa Hassouna <33067562+sunava@users.noreply.github.com>
+Date:   Thu Nov 24 16:00:00 2022 +0100
+
+    Merge branch 'cram2:dev' into dev
+
+commit 8cbe05414880e0a83ebdd7becfa810c2b8e0643c
+Author: sunava <hassouna@uni-bremen.de>
+Date:   Thu Nov 24 16:01:08 2022 +0100
+
+    <python imports> cleaned up some imports
+
+commit 84bc74a59132577f151db95bdc0603b2930d3519
+Merge: f4a7549 7dac32c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Nov 24 15:56:49 2022 +0100
+
+    Merge pull request #47 from sunava/dev
+    
+    [robot_description] disassembled the specific robot description from the file and put them into new sub-categories. Added a robot_description_handler for the init and update functions. otherwise circular deps happens
+
+commit 7dac32cdd1cfd581b1db27e14f140b8f2cbeeb3e
+Author: sunava <hassouna@uni-bremen.de>
+Date:   Thu Nov 24 14:34:14 2022 +0100
+
+    [robot_description] deleted import from __init__
+
+commit d8d8aecf6047ad252c12493db81012f9a941d1ad
+Merge: 1797b18 f4a7549
+Author: Vanessa Hassouna <33067562+sunava@users.noreply.github.com>
+Date:   Thu Nov 24 12:50:33 2022 +0100
+
+    Merge branch 'cram2:dev' into dev
+
+commit 1797b18f7f313a05f2da0ed5e2a25b954e28486f
+Author: sunava <hassouna@uni-bremen.de>
+Date:   Thu Nov 24 12:51:26 2022 +0100
+
+    [robot_description] disassembled the specific robot description from the file and put them into new sub-categories. Added a robot_description_handler for the init and update functions. otherwise circular deps happens
+
+commit f4a7549ed7b96fe3ce0ca6f10cda50dbe37cf011
+Merge: bc63c4e 3a50805
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Nov 24 10:25:02 2022 +0000
+
+    Merge pull request #46 from sunava/dev
+    
+    [extrernal_interfaces] added external_interface subfolder and merged all knowrob files into one file
+
+commit 3a5080562a694b06ba3bfb1ce3b96cb474180c4e
+Author: sunava <hassouna@uni-bremen.de>
+Date:   Thu Nov 24 10:51:05 2022 +0100
+
+    [extrernal_interfaces] fixed one import
+
+commit 8b15e2f6b966b2f412086f73d26ad04c3fcc6f67
+Author: sunava <hassouna@uni-bremen.de>
+Date:   Thu Nov 24 10:49:33 2022 +0100
+
+    [extrernal_interfaces] added external_interface subfolder and merged all knowrob files into one file.
+
+commit bc63c4ee218a151aa5e74a4cd8aaeffcdee7a8e5
+Merge: ffcd190 3d446e4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Nov 24 09:25:41 2022 +0000
+
+    Merge pull request #45 from sunava/dev
+    
+    [designators] restructured designators
+
+commit 3d446e42e141cc04da095a6966f218d5969bf3ab
+Author: sunava <hassouna@uni-bremen.de>
+Date:   Thu Nov 24 10:11:58 2022 +0100
+
+    [task_tree_demo] cleaned_up, and added ignore/readme
+
+commit 5fd594d01a4e1a1f021bd80fab23f4b59140be09
+Merge: 321eaf9 ffcd190
+Author: Vanessa Hassouna <33067562+sunava@users.noreply.github.com>
+Date:   Wed Nov 23 15:55:03 2022 +0100
+
+    Merge branch 'cram2:dev' into dev
+
+commit 321eaf9b91020f8a732e1961aee494989700f2b6
+Author: sunava <hassouna@uni-bremen.de>
+Date:   Wed Nov 23 15:55:52 2022 +0100
+
+    [designator] new subfolder with all specific designators.
+
+commit 750676a6617b2d0069310df522a1c606ba35ffb7
+Author: sunava <hassouna@uni-bremen.de>
+Date:   Wed Nov 23 15:31:28 2022 +0100
+
+    [designator] deleted old LocationDesignator implementation
+
+commit ffcd19002e4566c5b54dcdc8e41fffa76223d427
+Merge: f994f58 79b5edf
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Nov 23 14:20:27 2022 +0000
+
+    Merge pull request #44 from sunava/dev
+    
+    [process_modules] restructured process_modules and cleaned up a bit
+
+commit 79b5edf90376086297157a6faa08fc890be14ea7
+Author: sunava <hassouna@uni-bremen.de>
+Date:   Wed Nov 23 15:18:36 2022 +0100
+
+    [process_modules] restructured process_modules and cleaned up a bit
+
+commit f994f58d22834ce7dac03585295db08d1832ce90
+Merge: af57803 abbf271
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Nov 23 08:40:14 2022 +0000
+
+    Merge pull request #43 from sunava/deleted-demos
+    
+    [pycram_demos] deleted old demos
+
+commit abbf2716eef935b322f3369be73cab7b0e745bd2
+Author: sunava <hassouna@uni-bremen.de>
+Date:   Wed Nov 23 09:40:55 2022 +0100
+
+    [pycram_demos] added ur5 back
+
+commit c3bb02f9fe153f0f59efbf98370459e71539731d
+Author: sunava <hassouna@uni-bremen.de>
+Date:   Wed Nov 23 09:35:00 2022 +0100
+
+    [pycram_demos] deleted old demos
+
+commit 7e8ab99315c9f28912ac1c84b2c3c0b9c3f0c35d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Nov 21 17:25:57 2022 +0100
+
+    [giskard] Added spawning of objects from the bullet world
+
+commit bf97e55fee6ec9764c8d4a9fd947924b9cf10fac
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Nov 21 16:18:08 2022 +0100
+
+    [giskard] first version of interface
+
+commit 7c914c3e6b558aeb0542d9e9907380a4f31732ed
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Nov 7 17:46:05 2022 +0100
+
+    [costmaps] integration of shadow world and better origin
+
+commit 6df4436563bf97b8cc8038ec534f76145a5f1452
+Merge: 91c3af3 d14a696
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Nov 7 16:30:21 2022 +0100
+
+    Merge branch 'shadow-world' of github.com:Tigul/pycram-1 into costmaps-numpy
+
+commit 91c3af38909c9b01928377adbedcde3d6c2659d7
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Nov 7 16:29:11 2022 +0100
+
+    [costmaps] added function for getting correct aabb
+
+commit af578031d3830b53753a98bc172d50d0d3b4623f
+Merge: 5951d3f d14a696
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Nov 7 13:54:07 2022 +0100
+
+    Merge branch 'shadow-world' of github.com:Tigul/pycram-1 into dev
+
+commit d14a696b75cd86205bec2773a17a6ee3ea248ab5
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Nov 7 13:52:39 2022 +0100
+
+    [bullet-world] made world sync available in shadow world and error handling
+
+commit 5951d3f10519c34aae955bf8cbf9b06160b9d159
+Merge: 6992d4d 99d42b8
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Nov 4 14:57:05 2022 +0000
+
+    Merge pull request #39 from Tigul/shadow-world
+    
+    Shadow world
+
+commit 6992d4d3fc139665a5743a022dffe19137a54136
+Merge: 120e172 1d9a103
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Nov 4 14:56:45 2022 +0000
+
+    Merge pull request #38 from Tigul/load_object_fix
+    
+    Load object fix
+
+commit 99d42b8f783458a60e32c996a6e9cd81ad4f8ae8
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Nov 4 15:34:59 2022 +0100
+
+    [bullet-world] fixed a bug where the exit method would block indefenitly
+
+commit 030e4f8781593c117e26ed30fb9b0d02afa6c18d
+Merge: 5e151a4 1d9a103
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Nov 4 14:58:16 2022 +0100
+
+    Merge branch 'load_object_fix' of github.com:Tigul/pycram-1 into shadow-world
+
+commit 1d9a103c7225e31dc9b91b91ab1068b3523cecdf
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Nov 4 14:55:35 2022 +0100
+
+    [bullet-world] added default settings for gravity and a floor
+
+commit 5e151a41953ab9e01d5e95932ca73846a50bf280
+Merge: 0306db1 624f4ec
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Nov 4 14:38:01 2022 +0100
+
+    Merge branch 'load_object_fix' of github.com:Tigul/pycram-1 into shadow-world
+
+commit 624f4ec99265cb4a05c8fedb552a845a61665d38
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Nov 4 14:36:41 2022 +0100
+
+    [bullet-world] caching now uses filename of .stl and .obj
+
+commit 0306db1897083a0f3e20c1545385bb7f980f8646
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Oct 26 11:15:54 2022 +0200
+
+    [bullet-world-reasoning] changed stable to use the shadow world
+
+commit 6d800bb3329b8a9dc0a9a71783fb2883ef2eb52e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Oct 25 16:08:06 2022 +0200
+
+    [bullet-world-reasoning] changed visible and occluding to use shadow world
+
+commit 3431b2b2b85d03276fa5f65acb9cebc34de5e958
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Oct 25 11:41:54 2022 +0200
+
+    [bullet-world] fixed bulletworld reference managment and improved removing from shadow world
+
+commit 51593f31c630aaf9b318f920086481caea4e88cd
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Oct 24 18:21:43 2022 +0200
+
+    [bullet-world] added docu for sync and added object mapping
+
+commit 120e172d8532594aa1c345bc8b20496fc4a8c690
+Merge: a8ab2b3 319673f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Oct 18 16:20:01 2022 +0200
+
+    Merge pull request #37 from Tigul/dev
+    
+    New Readme
+
+commit 319673fd3c0e57ec5a91e93dc2dd26f9bc908143
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Oct 18 16:14:51 2022 +0200
+
+    Update README.md
+
+commit 0676aebb31a891af1bea00d1a3592a419a435b09
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Oct 18 16:13:51 2022 +0200
+
+    new readme
+
+commit a04ba272c52852ad957221d102c66feb229e2fd8
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Sep 2 16:14:06 2022 +0200
+
+    [bullet-world] added Shadow worlds and sync module
+
+commit a8ab2b3a3247dc43c1fdb3272cbc4800b3571a74
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Sep 2 10:18:50 2022 +0200
+
+    uncommented import in object reasoner
+
+commit 377c6f30af653dfbcde5a9178eddf5fc1edaef82
+Merge: 196514d 9935246
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Sep 2 10:18:34 2022 +0200
+
+    Merge branch 'dev' of github.com:cram2/pycram into dev
+
+commit 196514de4cc9447cd95f77c31cb934426b8f74e2
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Sep 2 10:17:58 2022 +0200
+
+    Made knowrob import optional and logging managment
+
+commit 99352464f4f80dc6d7326a5ab14f9f207c695544
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 26 12:11:20 2022 +0200
+
+    [resolver] disabled object resolver because of import issues
+
+commit ca71dbb22fb4cd53ba01096729a5a9e6d92d6bc5
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 26 11:48:43 2022 +0200
+
+    Update requirements.txt
+
+commit e82eaa99743fd5a819cd99db410b8a8a32679fcc
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 26 11:17:53 2022 +0200
+
+    Update pycram.rosinstall
+    
+    Set PyCRAM branch to dev
+
+commit 77d64a55f8bf879538ed3ddb8fa7f21ba964dd72
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 26 11:15:37 2022 +0200
+
+    Update pycram.rosinstall
+    
+    Temporarily removed knowrob because of compatibility issues with knowrob rosinstall
+
+commit fac6376c757dc57758174840d0f8d8bf1557380f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 26 10:11:49 2022 +0200
+
+    Update pycram.rosinstall
+
+commit a2f7fb79cd07c3c2e7aa39e280f2ce50e1707fe2
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 27 18:46:16 2022 +0200
+
+    [costmaps] Added first draft of Semantic costmaps
+
+commit 77555e02ca1ad47c45cab5b12761c653ade2d420
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 27 11:43:42 2022 +0200
+
+    [costmaps] Cleanup of old and unused code
+
+commit 9a53e54d7d72f221a6e93dc854d1e5788662c925
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 27 11:20:48 2022 +0200
+
+    [costmaps] Numpy implementation of costmap merging
+
+commit e506637aad9651ed5955fde9e900dee552dc8327
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue May 24 17:25:55 2022 +0200
+
+    [costmaps] Fixed interger overflow error and documentation
+
+commit befb76d9572163f3a069a56a14c9f3b4c241ab30
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue May 24 13:03:39 2022 +0200
+
+    [costmaps] fixed error with switched columns and rows
+
+commit 7c4549cb1669ae6ab2f1ed62e64a305069f7eadb
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 20 18:28:07 2022 +0200
+
+    [costmaps] Finished new implementation of visibility costmaps
+
+commit c6ddbcefa49fc984fefd0dcf5f3cf024e42388e7
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 13 12:31:25 2022 +0200
+
+    [demo] Fixed issues regarding the Bullet Demo
+
+commit a9b98574a0ffee3bbbfe5dc26b4fb1573f22c74c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 13 12:31:25 2022 +0200
+
+    [demo] Fixed issues regarding the Bullet Demo
+
+commit fb139d4cb60ec140f3f26e6a12706c032d64cd56
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 9 19:10:23 2022 +0200
+
+    [costmaps] more implementation for visibility
+
+commit 139e6b09980203bee1b0c301ab0d088a542a34f1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Apr 25 12:25:48 2022 +0200
+
+    [costmaps] Small optimization and more numpy
+
+commit 2e3bc6571f632242875c783efb9936c3f03b8a30
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Apr 11 13:42:15 2022 +0200
+
+    [costmaps] Changed occupancy map calculation to numpy
+
+commit d796ff12316abcb5d52eae3b68a313c309ee2159
+Merge: a125917 b849d11
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 8 15:11:26 2022 +0200
+
+    Merge pull request #34 from Tigul/clear-urdf-from-cache
+    
+    Overall quality of life changes to the BulletWorld
+
+commit a125917112831a1bac971e4c419ab7e9f83a8739
+Merge: 9ab8bb9 b50624c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 8 15:09:19 2022 +0200
+
+    Merge branch 'location-generator' of github.com:Tigul/pycram-1 into dev
+
+commit 9ab8bb9411cff12faa9a92c2dda1e2ea13cc6d53
+Merge: af83b41 e3a23d5
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 8 15:04:40 2022 +0200
+
+    Merge pull request #33 from Tigul/costmaps
+    
+    Added Costmaps to PyCRAM
+
+commit af83b412f6f18df003c14a545bf14df590f4fe22
+Merge: c9be078 ca4a9eb
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 8 14:55:16 2022 +0200
+
+    Merge branch 'ft_sensor' of github.com:benjaminalt/pycram into dev
+
+commit c9be0782bd08c75c98e34d747b299a93ae8d95c9
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 8 13:08:26 2022 +0200
+
+    [init] re-added import for resolver
+
+commit 258482025e17de429efc7164cc819ad92b02351f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 8 13:04:24 2022 +0200
+
+    [submodules] changed neem-interface submodule
+
+commit fecc3e9cf286649aef1cd6efadd23dee91f1905c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 8 12:21:26 2022 +0200
+
+    [btr-reasoning] fixed wrong link position and import problem
+
+commit bfe025f2b6e740056b4584bcf13814c4b0a20d07
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Apr 4 11:40:33 2022 +0200
+
+    Merged dev-noetic branch into dev
+
+commit b849d11e6fbb16cf9b3875422c7bf7567a3dbf07
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Mar 31 09:24:56 2022 +0200
+
+    [bullet_world] Added automatic detection of robot object and fixed remove method
+
+commit e3a23d5ff9ec9d75481f33db4648e273a2752806
+Merge: 24ae163 69d167a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Mar 30 15:21:20 2022 +0200
+
+    Merge branch 'costmaps' of github.com:Tigul/pycram-1 into costmaps
+
+commit 24ae163b2d694efbc9e1419eac7d45e63f0b3471
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Mar 30 15:20:33 2022 +0200
+
+    [costmaps] Improvements for visibility with objects and clean up
+
+commit b50624c1cf38c2f98db107fae972a07d12596f41
+Merge: b2c5715 69d167a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Mar 17 13:06:42 2022 +0100
+
+    Merge branch 'costmaps' of github.com:Tigul/pycram-1 into location-generator
+
+commit 69d167a0e9411719f4d79e3f08cd25b4051eae47
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Mar 17 13:06:36 2022 +0100
+
+    [costmaps] Ensure distance to obstacle is at least one
+
+commit b2c5715314de3489c866e8106223f41611873373
+Merge: be6c08d b6ecc3d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Mar 17 13:04:04 2022 +0100
+
+    Merge branch 'costmaps' of github.com:Tigul/pycram-1 into location-generator
+
+commit b6ecc3dc4873552816a5ebbf205feb469517a7f0
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Mar 17 13:03:05 2022 +0100
+
+    [costmaps] Fixed bug in occupancy map and excluded robot from occupancy map
+
+commit be6c08d0a3f4bcee46e54840e3c5955c8a12c06e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Mar 17 10:38:37 2022 +0100
+
+    [pose-gen/loc-resolver] Documentation
+
+commit f77473343064e4700d25244987a90e99d4108717
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Mar 16 16:25:40 2022 +0100
+
+    [pose-generator] Fixed problem in the generation of poses
+
+commit fd4c90b94e3421bd28e1c7531b36084b33ccd420
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Mar 16 15:29:34 2022 +0100
+
+    [pose-validator] Fixed validation for BulletWorld objects
+
+commit 88501f00a174d42709502913d1fb1bdb856e1e31
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Mar 9 09:45:25 2022 +0100
+
+    Changed URLs to offical repos and resolved name confilct with CRAM install
+
+commit 8ecd67d021538b861be27e9a36a6defead89161c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Feb 15 10:01:22 2022 +0100
+
+    [location_designators] refactor and more efficient new results
+
+commit 238e34ba6203e2f26069d0570a5fad4809ae6d2c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Feb 4 11:06:33 2022 +0100
+
+    [costmaps] Added small offset to cover case where distance-to-obstacle is 0
+
+commit 9cad1227b70b8db749ba2b2a1f1725d119ecc820
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Feb 4 10:50:59 2022 +0100
+
+    [pose-generator] Added origin to pose generation for correct reachable poses
+
+commit b0a06d197521d761624a1053103a0aa82a390260
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Feb 3 17:27:34 2022 +0100
+
+    [bullet-world] added try for looking up ros packages
+
+commit f911a4031ab95c59f5a7a72a626cb79b3c09399e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Feb 3 17:09:16 2022 +0100
+
+    [bullet-world] added standard resource directory
+
+commit 0e4826e50fa8029147cbc76346540f454f461c34
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Feb 3 16:37:40 2022 +0100
+
+    [robot-description] fixed slight error in regular expression
+
+commit e751ef6bf94ae7b4a2c5c6886cf8a5d8450566a1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Feb 3 12:29:42 2022 +0100
+
+    [bullet-world] removed duplicate print
+
+commit b9386460bafe591010ef74c734596d7602ededdf
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Feb 3 12:28:15 2022 +0100
+
+    [bullet-world] Improved caching when laoding URDFs
+
+commit 1a0597760d339c6fff4a264b1fd0f1d274ee62e4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Feb 1 15:30:12 2022 +0100
+
+    [repo] added rosinstall file
+
+commit 99b267d0b392683df5d97dc02aca978eeb0b9d79
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Feb 1 13:04:19 2022 +0100
+
+    [resolver/location] reworked gen_from_costmap
+
+commit 0262b667da0c764caf314b9128739a685987a8ab
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Feb 1 13:03:25 2022 +0100
+
+    [pose-generator] more work for validators
+
+commit fde9784a566cff063a48fb0e4486911d68274c4e
+Merge: 04c0221 0aeb1a4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jan 28 16:04:39 2022 +0100
+
+    Merge branch 'costmaps' of github.com:Tigul/pycram-1 into location-generator
+
+commit 0aeb1a4b439b996763469181ee4f62e424683599
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jan 28 16:03:56 2022 +0100
+
+    [costmaps] Fixed error in OccupancyCostmap creation from bullet
+
+commit 04c0221b70fc1d7648844e5338ea89cafdbf004d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jan 28 15:27:26 2022 +0100
+
+    [pose-generator] location generator and designator integration
+
+commit 38ba1399bd4609c54279148c8aacc73e3c28fdf1
+Merge: 377e4b8 f616a5e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jan 25 15:21:49 2022 +0100
+
+    Merge branch 'collision-callbacks' of github.com:Tigul/pycram-1 into dev-noetic
+
+commit b3222d1ab61bddd4058e82ff4205d2a58827dacc
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jan 25 15:13:52 2022 +0100
+
+    [pose-generator] added inital generators and validators
+
+commit 813ef40d5710ab4536ecd47b65da7a3e2c88c10b
+Merge: 377e4b8 bc10c5b
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jan 25 15:10:01 2022 +0100
+
+    Merge branch 'costmaps' of github.com:Tigul/pycram-1 into location-generator
+
+commit 377e4b8fe97d1235be11a5dda8592b898f847fb7
+Merge: 4fbb32f 7c2b7fd
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jan 25 14:59:05 2022 +0100
+
+    Merge branch 'location-designator' of github.com:benjaminalt/pycram into dev-noetic
+
+commit bc10c5b85057728416d2c3d620afe2779a175dfe
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jan 25 13:21:00 2022 +0100
+
+    [costmaps] small fixes to visibility costmap constructor
+
+commit 900fc1e53ee43e22102f39cb7b6487a8cf0adfa1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jan 25 13:04:17 2022 +0100
+
+    [costmaps] clean up and docu
+
+commit 897fb91ffe62f96edfbadfefc5b7a2dfac04e297
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jan 24 12:58:57 2022 +0100
+
+    [costmaps] occupancy from bullet
+
+commit 7c2b7fd102ad95c9e3f3277a4d1024714637fc72
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Fri Jan 21 16:00:40 2022 +0100
+
+    Implementation of location designators
+    
+    Includes a unit test and a KnowRob-based resolver
+
+commit fcdbb6547bf930beacf2900ebd2026f88d3c86f5
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jan 20 16:11:03 2022 +0100
+
+    [costmap] generation of occupancy costmap from Bullet
+
+commit 4b180ec4746e48df4351bb3122456cf2179c1ac3
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jan 17 14:05:36 2022 +0100
+
+    [costmap] fixed error in depth image choosing and added gaussian costmaps
+
+commit 390badef2a00735d0013d6909a6da246224a21e3
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jan 13 12:01:26 2022 +0100
+
+    [costmap] improved visualization
+
+commit a4e5ab54cb7779b09d608a89ee5fc9035f45e4a7
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jan 7 21:34:13 2022 +0100
+
+    [costmap] fixed visibility costmap diagonal error
+
+commit 10f139b81efd9974fed12d41d3e3ccb2d588d71c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Dec 28 18:37:30 2021 +0100
+
+    [costmap] new visualisation and base class
+
+commit e4da54b9935edec081d4d68f97c95d79541a4d8a
+Merge: 8a42e41 d74aa5d
+Author: Vanessa Hassouna <33067562+sunava@users.noreply.github.com>
+Date:   Mon Oct 25 10:01:27 2021 +0200
+
+    Merge pull request #31 from benjaminalt/object-designators
+    
+    Object designators and also knowrob interface
+
+commit d74aa5dca9e96cc9cfd274fc90e544d5a26a9a42
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Tue Sep 28 13:21:34 2021 +0200
+
+    Small improvements for grounding designators via KnowRob
+
+commit c055e4ad39ebc088b1c107f36481836b9ffc62ee
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Tue Sep 28 13:05:48 2021 +0200
+
+    Simple object designator grounding via KnowRob
+
+commit d2a09cb068cf20791bea8ac78a8a583913e8f45f
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Wed Sep 22 14:20:07 2021 +0200
+
+    First implementation of ObjectDesignator
+
+commit a960d6a3a0800e6d0af2b4393166587edff5c39b
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Tue Sep 28 12:48:41 2021 +0200
+
+    Minimal KnowRob interface
+    
+    src/pycram/knowrob contains utilities to communicate with KnowRob.
+    Added a new submodule (neem-interface) to facilitate creating and loading NEEMs.
+
+commit 8a42e41b7e172ebdbd284ead954bfeb4be405ee1
+Merge: f26ca74 7d9adad
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sun Sep 26 12:50:46 2021 +0200
+
+    Merge branch 'dev' of github.com:cram2/pycram into dev
+
+commit f26ca74c5dc617b698bdc830d76194f5237a4dbf
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sun Sep 26 12:49:24 2021 +0200
+
+    readded macros in helper.py
+
+commit 4fbb32f9bd6189edf372348389c857022f75ce72
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sun Sep 26 12:48:30 2021 +0200
+
+    readded macros in helper
+
+commit 866a55cecd4d454ef202ec8149d72c641395bee1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sun Sep 26 12:27:55 2021 +0200
+
+    removed roslibpy imports
+
+commit 7d9adadec72c734c2a96ea518c0924cfa1deb238
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Sep 24 16:08:38 2021 +0200
+
+    adhjusted ur5 description
+
+commit 9c9fe1b5190607e245712ba7d025d884961b36f5
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Sep 24 16:07:04 2021 +0200
+
+    removed obsolete parameter ik_joints
+
+commit b33526989455eb4c8c5c9c1624f430018819588b
+Merge: d012966 2b980b1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Sep 22 15:01:24 2021 +0200
+
+    Merge pull request #29 from Tigul/knowrob-interface-clea
+    
+    Knowrob interface clea
+
+commit 2b980b1b0a2919bf385478237f5f31065467874c
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Sep 22 14:57:50 2021 +0200
+
+    removed knowrob_refills dependency
+
+commit b2f79e80fa5ac7e11baf2717920339fbe65dc157
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Sep 22 14:56:23 2021 +0200
+
+    removed merge atrifact
+
+commit b16aff7b5c6f7df5c34ae8b08af32535e16f7df2
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Sep 22 14:43:33 2021 +0200
+
+    made Prolog instance global and code clean up
+
+commit c8fede4494172416b3570d015f9175fcdad513ce
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sat May 29 16:17:49 2021 +0200
+
+    added rosprolog_client and refactored code
+
+commit 144aaaf8b95d826db6273de004ea6d8a6eac54d2
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 29 09:43:48 2021 +0200
+
+    added knowrob.py
+
+commit d0129663a69116d01ca8f60d2486d9d5d32f4452
+Merge: f8e25ba 7a70938
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Sep 22 14:48:18 2021 +0200
+
+    Merge pull request #27 from benjaminalt/singleton-fix
+    
+    ROSBridge singleton fix
+
+commit 7a7093855d757c888e6af5e66c739d963d489280
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Wed Sep 22 10:45:45 2021 +0200
+
+    Replace SingletonMeta by simple static module
+    
+    SingletonMeta had a very hard to fix deadlock: When a class inheriting from SingletonMeta tried to construct a different SingletonMeta in its constructor, the second SingletonMeta instance could never be constructed, because the check for the class happened only AFTER trying to acquire the lock, instead of before.
+    
+    It turns out that in the case of the ROSBridge, an explicit Singleton metaclass wasn't
+    even necessary. So I removed the metaclass and switched ROSBridge to a
+    simple static module, whose globals will only be instantiated once by
+    the Python import system.
+
+commit 88af52370270047f86b74ef46b7b181993b0731f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Sep 17 13:43:08 2021 +0200
+
+    optimizaton and flexibility
+
+commit 6583ab222ad9777a5abb24ef5c9394bd56fdbbb1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Sep 16 13:48:50 2021 +0200
+
+    first working version of visibility costmaps
+
+commit 5cb9f5ecc2b8c54b668925d64815414ac84b1a5a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Sep 16 13:36:31 2021 +0200
+
+    added parameter for size to get_images method and changed parameter for image taking
+
+commit 0532080bc62400ae23f0d3040be09ddec69416ee
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Sep 16 12:56:03 2021 +0200
+
+    updated remove method to remove object from world objects list
+
+commit 2199bf571c194ac112d8d3061a9e6316da96d316
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Sep 7 10:55:38 2021 +0200
+
+    function for selecting depth image
+
+commit a048bdc543e67803f684be0d3b8e1fcb1fbd8d3c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Sep 7 10:55:19 2021 +0200
+
+    rename of function
+
+commit 2be4e1875e0949a6bab8c60bfb3a0df318ae6dbc
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Aug 31 17:19:22 2021 +0200
+
+    begin visibility costmaps
+
+commit f8e25ba5d2f5c93433fd7ed14cecf9e207674101
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Aug 25 14:02:57 2021 +0200
+
+    removed last print statements
+
+commit 6fbaf00f6d4892b177edb59b51a166c84f1ff06a
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Wed Aug 25 11:51:29 2021 +0200
+
+    Fix roslibpy twisted issues and other minor fixes
+    
+    Fix a problem where calling roslibpy.Ros().run() twice causes roslibpy
+    to complain that the twisted reactor cannot be started more than once.
+    Fixed by starting the ROS client in the constructor of the ROSBridge
+    singleton, and always using the ROS client of that singleton.
+    
+    At some point during merging, remains of ROS Python packages made it
+    back into the codebase. Also, some dependencies were missing from
+    requirements.txt
+
+commit a93b1926b1be17cf083053a480c527eaef4bd5a0
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Aug 25 11:14:10 2021 +0200
+
+    print statements
+
+commit 3ead200c91642bcc45f759929fd9ee05ccbf8243
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 20 17:01:54 2021 +0200
+
+    optimizatoin and visualization
+
+commit 89eb277a0cb6f32c15a1039e79c713b237452af4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 13 14:50:48 2021 +0200
+
+    added occupancy map
+
+commit 0413cdc7344e6d43ab5182678d1021ca7c5d5579
+Merge: 099e8ba 6918be4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Aug 9 16:47:54 2021 +0200
+
+    Merge branch 'ros_integration' of github.com:benjaminalt/pycram into dev
+
+commit 099e8ba156d401e5e813f3ae3f4e0390691cf577
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 6 12:36:01 2021 +0200
+
+    fixed key error in merging
+
+commit 3c79d68c1a6e689dc70189bf01feac9b41206964
+Merge: dd84cbd 1577fed
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 6 12:03:35 2021 +0200
+
+    Merge pull request #21 from Tigul/grasping
+    
+    Grasping
+
+commit 1577fedeed7648df1633cc020d5a2b046dc2828c
+Merge: 4dadd6e dd84cbd
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 6 12:03:03 2021 +0200
+
+    Merge branch 'dev' of github.com:cram2/pycram into grasping
+
+commit dd84cbdb576b46777039c70276cfd2238239ff88
+Merge: 145c58d 421bf27
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 6 11:14:31 2021 +0200
+
+    Merge pull request #23 from Tigul/with-real-robot
+    
+    With real robot
+
+commit 421bf27155e00b0164945a8f200d3c33b13e7d38
+Merge: 20458d0 145c58d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 6 11:13:59 2021 +0200
+
+    Merge branch 'dev' of github.com:cram2/pycram into with-real-robot
+
+commit 145c58df41483e0cbfa294c383ab877060dad41b
+Merge: 157d555 b1fe77f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 6 10:19:55 2021 +0200
+
+    Merge pull request #22 from Tigul/new-desig-ref
+    
+    New Motion desiginator
+
+commit b1fe77fbad7d1a1852af41510c789daa06fe2317
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 6 10:08:18 2021 +0200
+
+    replaced 'is' with '=='
+
+commit 157d5553ec0de1022fecd05bc7ddebad33f8204c
+Merge: 372479a b004f5b
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 6 09:51:42 2021 +0200
+
+    Merge pull request #20 from Tigul/great-refactor
+    
+    refactored code
+
+commit c795fac7bac6d7392d48e822109e7cc9ea19c650
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sat Jul 31 16:33:54 2021 +0200
+
+    fixed wrong function call
+
+commit 7902a880afc23442e065cf4178aa28bc070b0d3a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jul 30 12:30:48 2021 +0200
+
+    added plugin resolver for action designator
+
+commit 475b4a869a1853b2c63e01bab7ca9e77e12b59f3
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jul 28 14:10:14 2021 +0200
+
+    made automatic import system for resolver methods
+
+commit ade4f4d3e750dc65ce341b7717c8903e26c04e6d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jul 28 13:06:59 2021 +0200
+
+    rework resolvers and decouple grounding from MotionDescription
+
+commit 85e118d2b68443ac28d41ba4ac5ae2191f92ca3e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 26 13:45:48 2021 +0200
+
+    clean up
+
+commit f616a5e9553e469253735a681dd0a7d5e4710a39
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jul 22 10:14:23 2021 +0200
+
+    no collsion callback optional
+
+commit 4dcaf2c62a33b50a76013a4f9ff12528b44fc2bb
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jul 22 10:06:44 2021 +0200
+
+    collision-callbacks doku
+
+commit ca4a9eb569e3f4e27a5a6bb40098077c4baf33fb
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Tue Jul 20 11:15:17 2021 +0200
+
+    Add simulated FTS to UR5 demo
+
+commit 8cc6e457e6e415b54499b385146c363bd589c59f
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Tue Jul 20 11:09:07 2021 +0200
+
+    ROSBridge: Use only one single ROS client
+    
+    Use the ROSBridge singleton to get a reference to one single ROS client. This significantly boosts performance, as creating a new ROS client is very slow
+
+commit f76a6b80a3640a97e6e19390857caab0d4db3d5e
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Fri Jul 9 11:28:07 2021 +0200
+
+    Force/torque sensor: Publish WrenchStamped
+    
+    Publish WrenchStamped instead of Wrench for additional time info
+
+commit ee6b422bf7f83a9c693ef8fe5155f6448e5e36f7
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Fri Jul 2 18:20:22 2021 +0200
+
+    Simulated force-torque sensor publishing to ROS
+    
+    Added ForceTorqueSensor class which allows the creation of one or more simulated force-torque sensors at the joints of the simulated robot, each publishing geometry_msgs/Wrench messages to a configurable topic.
+
+commit 6918be4e2d72eda4a1c2d4d03396238a0317d146
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Tue Jul 20 10:14:04 2021 +0200
+
+    UR5 demo
+
+commit f6562c8951e15a63e4165b4e9c6305b9ba173819
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Thu Jul 8 15:42:23 2021 +0200
+
+    RosBridge: Move SingletonMeta out of helper.py
+    
+    Avoids circular imports
+
+commit 4b58bfa7d6cc9f68cea3d8563187d060d44b0311
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Thu Jul 8 15:39:37 2021 +0200
+
+    Minor tf_broadcaster fixes
+
+commit 63eddaf011638b37c82d6b6bfe1e0dabf2405a6a
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Tue Jul 20 10:43:34 2021 +0200
+
+    Remove ROS dependencies
+    
+    Remove hard dependencies on ROS Python2 packages like rospy, geometry_msgs etc. In the future, use loose coupling with ROS (like roslibpy) instead, which does not require the import of Python2 packages.
+    
+    Replace all calls to the rospy logging system with Python's built-in logging module.
+    
+    Refactor all usages of geometry_msgs etc. in helper.py to helper_deprecated.py, which is only used in the pycram_bullet_world_demo and local_transformer.py. Both, as well as IK.py, will have to be refactored at a later date, but at least the rest of PyCRAM does not require Python2 anymore.
+
+commit 10cf3fec662b61212018a1b8a33fd1064e0aeacb
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Fri Jul 2 18:17:57 2021 +0200
+
+    Abstract ROSTopicPublisher
+    
+    Extracted common functionality for asynchronous (threaded) publishing to ROS topics into abstract ROSTopicPublisher class. Also implements a context manager to start and stop publishing.
+
+commit 3e14504f72ed42562d8de88b1283327f8e932932
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Mon Jul 19 18:02:10 2021 +0200
+
+    Python subpackage for ROS integration
+
+commit 608560549d24889ad65dc72816eb77db757caa9c
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Fri Jul 2 17:17:47 2021 +0200
+
+    JointStatePublisher
+    
+    Add optional publishing of robot joints to ROS topic /pycram/joint_state.
+    Implements a context manager, so it can intuitively wrap BulletWorld.simulate().
+
+commit 6313e81f4fac474317a16c761a4e506549343e1d
+Author: Benjamin Alt <benjamin_alt@outlook.com>
+Date:   Tue Jul 20 10:35:08 2021 +0200
+
+    TFBroadcaster: Add context manager
+
+commit 3e2055c28b0a59bf23a6593b7646d31251351d97
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 19 17:03:28 2021 +0200
+
+    added callback functionality for contacts in the bullet world
+
+commit a894c3440e6fdaa328fcaf9af377e6b07f7338b5
+Author: Benjamin Alt <benjamin.alt@artiminds.com>
+Date:   Fri Jul 2 11:50:29 2021 +0200
+
+    UR5 with Robotiq 2FG-85 gripper
+    
+    Added URDF, meshes and RobotDescription for an UR5 with a robotiq gripper.
+
+commit 21a26a210f29f2df438cf574970452ea9f5d8259
+Author: Benjamin Alt <benjamin.alt@artiminds.com>
+Date:   Fri Jul 2 11:46:11 2021 +0200
+
+    ROS TF broadcaster
+    
+    Add an optional broadcaster to publish transforms for the robot and all objects in the bullet world to ROS /tf
+    
+    To avoid ROS dependencies (and the resulting Python2/Python3 incompatibility issues), use roslibpy to publish to /tf.
+
+commit 20458d0fc1ea423bc7b8c50e458e08d1f6cb2093
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 4 11:10:21 2021 +0200
+
+    tested and fixed demo with decorator
+
+commit daeea8035be67a2c33c8824ee8901a377d28a28c
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 4 10:43:31 2021 +0200
+
+    added perform method to motion designator
+
+commit 95336c780682aab81f579ff43fb2dfe2531d0043
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 3 13:52:10 2021 +0200
+
+    doku and refactor
+
+commit 4c3e2e0342609df6079608d052a54fc4998a3963
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 3 13:26:53 2021 +0200
+
+    cleanup of old designator code
+
+commit 44e7ff1964dbd004835f012fd93a3d5b4c4522c6
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 3 12:49:46 2021 +0200
+
+    adjusted hsr pms and fixed wrong param name in donbot pm 'move arm joints'
+
+commit 364dfc129b3c5c485c8abe860baa9971580e4d1b
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 3 12:47:24 2021 +0200
+
+    adjusted donbot pms
+
+commit c90b2c0f4364582857e133315b13cfee9599a16a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 3 12:26:00 2021 +0200
+
+    adjusted boxy pms
+
+commit 6986c98c9a4a6e9ef96ce5452af79d14120186cb
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 3 12:19:19 2021 +0200
+
+    fixed pick up error
+
+commit 2d0ee430c7917783e20fdf7845eb36488ec1901b
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 3 11:35:52 2021 +0200
+
+    fixed grounding and desig parameter
+
+commit d4972bd0b5ecacd0cfe539a26f004244d85f0205
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 31 13:16:18 2021 +0200
+
+    clean up of pm regestration
+
+commit 1e2914701d0cd018151ca549deb2cd36999387b6
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon May 31 12:59:15 2021 +0200
+
+    new process modules registration
+
+commit 4056c416225f96370273abe7de70a4b4b7fe7167
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 28 15:01:10 2021 +0200
+
+    demo with new desigs and tweaks in grounding
+
+commit 211f4166628c2fe50a782bdb9608677e8d0acbf0
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu May 27 14:09:43 2021 +0200
+
+    adjusted designator implementation and fixed bugs in grounding
+
+commit 51452c2df5c57e9add8413537cb00623a8d33dc1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed May 26 18:36:26 2021 +0200
+
+    added choice to process module regestration
+
+commit 48b09bef16be665b47d58f51383cb171dfa74694
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed May 26 14:09:46 2021 +0200
+
+    added decorated and with statement
+
+commit e574f2f0a46a2217cfd79e90ab6d43e97098b148
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 21 16:58:15 2021 +0200
+
+    fixed indentaion and added type checking
+
+commit 2991e1bac8a17c35d6019c1851110a4029f41859
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu May 20 13:07:36 2021 +0200
+
+    added grounding functions and resolution error
+
+commit dc65459924924e62824cb51519c432302482d774
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 14 19:02:23 2021 +0200
+
+    added motion designator description
+
+commit 372479a9949bfcf7affcbefd7dbff2d5bd8e20e2
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri May 7 12:07:55 2021 +0200
+
+    Update README.md
+
+commit 4dadd6e4a5db85fa0886f075db797b20748d5ddd
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 30 14:53:58 2021 +0200
+
+    graspings for pr2 and boxy and implemented in pms
+
+commit 0149f2ba1fea1ec0b27117fb760ac43dfe87e3f0
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 29 14:47:21 2021 +0200
+
+    added grasp orientations and added grasping to pick-up designator
+
+commit 873bb377f93225979b6d671a15eb448de5f9040a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sun Apr 25 13:38:37 2021 +0200
+
+    added grasping description to robot description
+
+commit f81bbaa5a7de772cf7873edc63248e2a5635432e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 23 13:38:01 2021 +0200
+
+    added vis_axis method
+
+commit b004f5bb43aa9dc8e777d8ad9a95d7c9d0fe85c4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 22 12:03:37 2021 +0200
+
+    added parameter to launch file for selecting a robot
+
+commit a1686a06c06a1de087d8ecfd6918adf69e80713e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Apr 22 11:21:32 2021 +0200
+
+    removed more "is" and added logerr "
+
+commit c54b957c1a6bf3291cb3fb3a40bf59712c4676f5
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 21 10:49:11 2021 +0200
+
+    renamed pycram_pr2_bullet_world_demo
+
+commit a6ecf964f9cf48a3dceb8270b7b81bfe8256f111
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Apr 20 13:18:29 2021 +0200
+
+    added ignore cached Files parameter to object class
+
+commit 025943b37d5ab2628ea03bda941157d0cdacd867
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Apr 19 14:07:14 2021 +0200
+
+    removed is not from btr reasoning
+
+commit b1d72bafccda9b44d16277585c878bbc5c9ae9d1
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Fri Apr 16 14:16:45 2021 +0200
+
+    refactored code
+
+commit 56e8d67bec7a98c3de7e5d74e723090a78a4bf3d
+Merge: 0072d44 7ff161e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Apr 14 14:31:46 2021 +0200
+
+    Merge pull request #6 from Tigul/test-ik-with-limits
+    
+    Replaced od ik solver with KDL ik
+
+commit 7ff161e3a41dd02f0bffea87989bcfd37ab620d5
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Apr 14 14:30:11 2021 +0200
+
+    last changes to make everything work
+
+commit 0072d44be67349bc3571546a54834babb3857d78
+Merge: 45fdf9a c8e5b10
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Apr 12 09:02:43 2021 +0200
+
+    Merge pull request #19 from Tigul/saving-of-generated-files
+    
+    Saving of generated files
+
+commit 7d80cc1376d2bb02dfe1fc1cf7afdc163b1d5177
+Merge: ec9c44c c8e5b10
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Fri Apr 9 13:59:26 2021 +0200
+
+    Merge branch 'saving-of-generated-files' of github.com:Tigul/pycram-1 into test-ik-with-limits
+
+commit ec9c44c3e307e380e12f7681adbe9dc109124203
+Merge: cfb4094 45fdf9a
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Fri Apr 9 13:55:37 2021 +0200
+
+    Merge branch 'master' of github.com:cram2/pycram into test-ik-with-limits
+
+commit 45fdf9aaefa0d3e890db47e52b503cf75d386e04
+Merge: c1b9bc2 54553a8
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Apr 9 13:52:23 2021 +0200
+
+    Merge pull request #18 from Tigul/new-repo-structure
+    
+    New repo structure
+
+commit cfb409410f1bb636c458e40cce8d08976acd3518
+Merge: 11899ec c1b9bc2
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Fri Apr 9 13:48:15 2021 +0200
+
+    Merge branch 'master' of github.com:cram2/pycram into test-ik-with-limits
+
+commit 54553a853105ee2e9cb3847fae72c9072398cafa
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Fri Apr 9 12:04:55 2021 +0200
+
+    tasktree demo adjusted for new structure
+
+commit c8e5b10f9a379f8ce79f45e7f5f2dcdab446a8ab
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Fri Apr 9 11:44:59 2021 +0200
+
+    docu for the updated file saving
+
+commit e13e5d083cdf4420734a40d7e1c81923eb9c2e98
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Fri Apr 9 11:16:27 2021 +0200
+
+    new saving and caching mechanism
+
+commit d913ab7ccceed7738fc65a0d3315bd94256cfff0
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Apr 1 12:22:08 2021 +0200
+
+    adjusted demo to new structure
+
+commit 574676d8abaedd9aca6c04c14e40697a01671831
+Author: Jonas Dech <jonas@pop-os.localdomain>
+Date:   Fri Mar 19 12:32:48 2021 +0100
+
+    new structure
+
+commit c1b9bc21c3130f3c10a2eb39b11cfcb5c5f26256
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 19 11:44:55 2021 +0100
+
+    Update README.md
+
+commit 5190853f113b222b8bce2681cca1a3ff4b8c77e4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 12 13:08:05 2021 +0100
+
+    Update README.md
+
+commit 609d7893ea34ad6a4338d771960f77234342ff25
+Merge: 051545c e126a5d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 12 11:51:17 2021 +0100
+
+    Merge pull request #14 from Tigul/ros-package-script
+    
+    Ros package resulution
+
+commit 051545cb697e6352541a34b1a17df4a8baa4f6a4
+Merge: 4dc9c92 098a63f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 12 10:01:40 2021 +0100
+
+    Merge pull request #17 from Tigul/new-detecting
+    
+    New detecting
+
+commit 4dc9c92c22fcf6c190413fc29228b9ebf56cd493
+Merge: f8dc736 0db01ab
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Mar 12 10:01:20 2021 +0100
+
+    Merge pull request #16 from tlipps/robot-description
+    
+    Local Transformer
+
+commit 0db01ab9c87a1901c6a9d86c02f40c792c106715
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Mar 11 17:22:21 2021 +0100
+
+    [local_tf] minor improvements
+
+commit 098a63f6c50e123725f9b815f5b7f895b37aa71e
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Mar 4 14:15:03 2021 +0100
+
+    new detection and occluding using another world
+
+commit 8ddcd19257e373ecae0ec056df5ada27bc941879
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Mar 4 13:35:49 2021 +0100
+
+    added remove function to Object
+
+commit f8dc73671e11d9bf02fb3120ddda34bc5d6197c3
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Fri Feb 26 09:44:12 2021 +0100
+
+    Added files which were forgotten in the merge
+
+commit 4144957853978a11ad754617c20bd87e00f55817
+Merge: e09e24a a1f1788
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Fri Feb 26 09:38:46 2021 +0100
+
+    Merge branch 'thesis' of github.com:cpollok/pycram
+
+commit 8e6750fd049cc2bb2ca8f3c49551f65b25b92385
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Feb 18 10:35:24 2021 +0100
+
+    [local_tf] deactivated frequently publishing tf poses from pybullet
+
+commit 3abb1cc0c4f02a4bfcac507beea9f58a9d4052d0
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Feb 18 10:32:14 2021 +0100
+
+    [pr2-urdf] removed transmission tags, since ros urdf parser cannot parse them in given style
+
+commit 2c6bef7e69f78511ca53b1b95cc7f39624fdc96d
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Feb 18 10:31:35 2021 +0100
+
+    [local_tf] catches KeyError
+
+commit ac8592df365311e6345293e2d44debba880fa26d
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Feb 18 10:31:02 2021 +0100
+
+    [sim-demo]cleaning
+
+commit 79c5301cc92856b68b58fa3718a15ae570cc2193
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Feb 18 10:30:11 2021 +0100
+
+    [pr2/donbot_pms] updated with local_tf
+
+commit 3a83ddcf02bdf2c96ccdfec98e7954348f5b677b
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Feb 18 10:22:13 2021 +0100
+
+    [boxy_pms] rmv print
+
+commit 2153af471a8549fa7df354613063cda775f65e5c
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Feb 18 10:21:48 2021 +0100
+
+    [boxy_pms] added local_tf and new looking params
+
+commit cec86880cbdcdb4f02395404a3b2f64af281c053
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Feb 18 10:21:14 2021 +0100
+
+    [local_tf] removing redundant code
+
+commit 0f3df1ebecc3e4629d8610cba97d7efe3101c28a
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Feb 18 10:20:37 2021 +0100
+
+    [local_tf_tests] name changing
+
+commit 5920cd278959990cb04ca40b0f39d4bef333ffd4
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Feb 18 09:38:37 2021 +0100
+
+    [bullet-world] return frame poses of objects
+
+commit d5dfb19e659c29ef6caa8efa5d53a7a4b1e95afe
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Feb 11 14:25:52 2021 +0100
+
+    [local_transformer] cleaning and doc
+
+commit e126a5d5ce69eff2032a8f336a3f2e7b09e2f045
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Feb 4 12:38:36 2021 +0100
+
+    integrated script in bullet world
+
+commit 2c9813f341adbf7ceed69110270c76c0fb973bf5
+Merge: 74e91f2 e09e24a
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Feb 4 10:35:35 2021 +0100
+
+    Merge branch 'master' of github.com:cram2/pycram into ros-package-script
+
+commit 74e91f2b5f49143dd592faf9110507e5685f9a07
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Fri Jan 29 13:31:38 2021 +0100
+
+    added a script to resolve ros packages in urdfs
+
+commit f7aca692c7ee76489ac3556229526274e0bc3ae0
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Jan 28 14:31:34 2021 +0100
+
+    [local_transformer] (frequentlly) publishing of robots state and objects into local tflistener allowing to use tfs lookup
+
+commit ffd560935848485b6132609e5cb34743bc2cbfce
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Jan 28 14:30:20 2021 +0100
+
+    [old-listener/old-publisher] removed
+
+commit 2903b5d6dfab67b60f92e47b42a3925f9247a3a6
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Jan 28 14:30:01 2021 +0100
+
+    [old-listener/old-publisher] commiting old listener and publisher, just to be sure
+
+commit 083cb4b275900cd00252ed8a56255f8821efdf00
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Jan 28 14:28:54 2021 +0100
+
+    [helper] added more helper function for conversions between list and ros message types
+
+commit c5be4f708205be99362bc3b9227cd021e51b2e3c
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Jan 28 14:28:04 2021 +0100
+
+    [pms] integrated local transformer for looking for robots pr2, donbot and boxy
+
+commit 11899ecc8baf46d1e92bb45193976f1feef4a7ac
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Jan 28 14:27:41 2021 +0100
+
+    fixed boxy process modules and demo
+
+commit d49287775813f9bebc4aa14371adc9482d4af8a0
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Jan 28 14:27:08 2021 +0100
+
+    [btr-demo] changed Motion Desigs and added starting and ending tf threads
+
+commit f2235b7d5cc1f4e5999461f34fb877324244a030
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Fri Jan 22 13:29:41 2021 +0100
+
+    fixed demo for boxy
+
+commit 82d7c1725363d8d40ab9c259e59a9f09cf686fd6
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Fri Jan 22 10:26:43 2021 +0100
+
+    fixed demo for pr2
+
+commit cea98c710f7d3517c9d5c1eb6cb8ec33f1b018a8
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Fri Jan 15 12:48:15 2021 +0100
+
+    more merge
+
+commit a88dedc3909ad0d4c003ee33d91c257cc57e32fa
+Merge: 4641f30 e09e24a
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Fri Jan 15 12:46:23 2021 +0100
+
+    Merge branch 'master' of github.com:cram2/pycram into test-ik-with-limits
+
+commit e09e24afbc4adc6892a059109bf752e0045d36e0
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jan 7 13:03:02 2021 +0100
+
+    Removed macropy from setup.py for compatability with ros
+
+commit 19c7724d1ae28f8a609fa452fbbd0973a0e9bd92
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Jan 7 13:01:05 2021 +0100
+
+    [listener] integrating of time and timeout
+
+commit 58a7160cdbca290770df43bb19934cab63379abc
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Jan 7 13:00:38 2021 +0100
+
+    [helper] small fixes
+
+commit 7079ad1a486816908d09ef90e4e29120a8e55cf1
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Jan 7 12:08:37 2021 +0100
+
+    [helper] fix ensure_pose
+
+commit 4db6825c65b7fd91131c71d08737be82540c8161
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Jan 7 11:48:57 2021 +0100
+
+    [robot_description] added hardcoded looking directions for boxys neck
+
+commit bf5d13c97ef4d5d88547c5386b7f2cf71bb6ef24
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Jan 7 11:48:26 2021 +0100
+
+    [helper] functions for transforming between list and tf, list and pose/point, and ensuring_poses
+
+commit d3eb3efbf8460b21bd9a75736f06bf339e4009af
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Jan 7 11:44:50 2021 +0100
+
+    [bullet-world] check if robot has odom link with physical mass
+
+commit 3e734809ebe3e495e7278c9e4eef886fba0dc0b8
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Jan 7 11:16:03 2021 +0100
+
+    [publisher n listener] possible to (frequently) publish object and robot poses, transform poses or tfs
+
+commit a1f178808faecef1dd25adad150a400dcdac47ee
+Author: Christopher Pollok <cpollok@uni-bremen.de>
+Date:   Mon Dec 28 23:05:24 2020 +0100
+
+    [TaskTree Bullet Demo] Clean up render calls.
+
+commit 5819d90bc59f02da363a055e44768f57e54dd610
+Author: Christopher Pollok <cpollok@uni-bremen.de>
+Date:   Mon Dec 28 16:44:19 2020 +0100
+
+    [task.py] Add verbose option to dot generation.
+
+commit bdb5071e45dafdec3c029bee78be534a1566b225
+Author: Christopher Pollok <cpollok@uni-bremen.de>
+Date:   Sat Dec 26 15:41:29 2020 +0100
+
+    Initial commit on thesis branch.
+
+commit 0a6dad063424aa077c73e007a0937401e16470b4
+Merge: e503653 955a11e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Dec 3 11:37:15 2020 +0100
+
+    Merge pull request #13 from tlipps/robot-description
+    
+    Robot Description and Implementation of PR2-, Donbot-, Boxy- and HSRDescription and PMs
+
+commit 955a11e1a9c4306f5b346067689713fc51c91404
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 27 12:29:44 2020 +0100
+
+    [demo-sim] look at target and load urdf with robot descriptions name
+
+commit 8a1713692b518a28e6c610b6980ae76ba194a04d
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 27 12:21:13 2020 +0100
+
+    [available_pms] choosing robot specific pms based on the robot name
+
+commit ab831fb45062ce5364b2d5fbc1d7e7667b2ad34c
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 27 11:49:46 2020 +0100
+
+    [robot-description] odom frames and joints now optional for RobotDescription
+
+commit 74ce38b34e9bbc7e948fb861c60ce8bb2beeeaed
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 27 11:48:56 2020 +0100
+
+    [donbot/boxy-pm] setting odom joints during navigating to 0
+
+commit 5977f0cc06313789d96898480ddc0382e72e080e
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 27 11:47:49 2020 +0100
+
+    [pms] General ProcessModules Class for binding motion types to pms
+
+commit b592119ce4d668916b953c7b8bef3130d16a6bfa
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 27 10:35:44 2020 +0100
+
+    [sim-demo] added proper looking targets, opening/closing of gripper and better moving goals for different robots
+
+commit 0a5eb91054320b82ad0f83e16b7c94a3f5300192
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 27 10:34:09 2020 +0100
+
+    [pms] boxy, donbot, pr2 cleaning
+
+commit 2be56ffa6eaeab3692f41e1f5cc5d8f067741f18
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 27 10:32:01 2020 +0100
+
+    [hsr] pms
+
+commit e2172befbbb682e24d9e7156744704ba3aaef218
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 27 10:30:35 2020 +0100
+
+    (robot-description) doc and cleaning
+
+commit 475d53efe68a3a2ddc58679b813e8b70ff8ba7b9
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 20 16:07:02 2020 +0100
+
+    [resources] urdf with obj meshes of hsr
+
+commit 78cd5ec205772abb63c0027c73d99196f7b30475
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 20 16:06:07 2020 +0100
+
+    [robot_description] small bug fix and added description of hsr
+
+commit f158ae47b0c4a0590e56fd059043e2d515444221
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 20 16:05:11 2020 +0100
+
+    [demo-sim] Added pick and place for hsr
+
+commit ed6c894bbd09914d05149e44b73d7593f82948f4
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Nov 19 15:45:23 2020 +0100
+
+    [PMs] Renamed file with pr2 PMs from to pr2_process_modules
+
+commit 6210a7ce9c4ea641d28195a347b42584b13e77ea
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Nov 19 15:43:59 2020 +0100
+
+    [robot_desc] update method for reloding robot description if robot changed by either using rosparam or given attribute
+
+commit 0f42d3555046fd467f73701a182bcabd31f6aa8f
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Nov 19 15:41:27 2020 +0100
+
+    [PMs] removed code duplication by using ProcessModules class
+
+commit 83b31423654f92a93a761fb3e3a70c7182c35018
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Nov 19 09:53:30 2020 +0100
+
+    [resources] temp urdf from donbot and boxy
+
+commit 9c20ea3078f227503f5585cebfc25bc29c2134e5
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Nov 19 09:52:33 2020 +0100
+
+    [robot-desc] more robots: donbot, boxy
+
+commit 492b40b284d48a1333d8e7289b85fa17a2b40668
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Nov 19 09:51:59 2020 +0100
+
+    [demo-sim] demo for more robots
+
+commit 4f71911e6b63e79b6b8c03a5d0b8916828db5fbc
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Thu Nov 19 09:50:59 2020 +0100
+
+    [PM] donbot and boxy
+
+commit f68eb72b7419f4f68984ee379082496ddcc654cb
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 6 16:01:53 2020 +0100
+
+    [demos/process_modules] rmv joint values for parking and gripper values for opening/closing by using static defined joint chains from the PR2Description
+
+commit 30d645bd9fe5d72802d3783a346d39813fa34204
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 6 16:00:55 2020 +0100
+
+    [demo/motion_desig] implemented using tool and camera frame from the PR2RobotDescription
+
+commit c3f2fe04ac6604c9a9b43780b19a98ae5901f7e0
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 6 15:59:45 2020 +0100
+
+    [btr] camera todo for later
+
+commit a90b9d4abe75e27af8ae78dd24b2cec75949e35e
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Nov 6 15:59:02 2020 +0100
+
+    added PR2Description, GripperDescription is now subclass from ChainDescription too, added methods to add static joint values and to get them from the RobotDescription
+
+commit e503653cc6a98779be63e9ebac1b5783e8586529
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Nov 6 11:49:15 2020 +0100
+
+    Update README.md
+
+commit edca113f0f6c92d1e2c0abee44ace1fde74cc019
+Author: Thomas Lipps <lipps.thomas@web.de>
+Date:   Fri Oct 30 14:18:52 2020 +0100
+
+    [robot_descr] basic structure for robot descr.
+
+commit 42df5856b81913d330f5609920f56deca7adb1c8
+Merge: 93f32a4 a46ce54
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Sep 9 12:34:44 2020 +0200
+
+    Merge pull request #12 from Tigul/submodules
+    
+    Submodules
+
+commit a46ce54e929f8c0abe3489373535cb76c108b08f
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Sep 9 12:14:07 2020 +0200
+
+    updated macropy submodule
+
+commit eeb26655b4d992a1c9d2ca5c6fb5bb2d9b2b90f8
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Sep 9 12:05:28 2020 +0200
+
+    updated readme
+
+commit c5ba04a3dbab08d1086f38a810d6868fe9fc00d8
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Sep 9 10:42:27 2020 +0200
+
+    updated macropy submodule
+
+commit 022d7a1aa763fe61fafd76655db1bdc4067f5b79
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Sep 9 10:29:51 2020 +0200
+
+    replaced macropy with submodule
+
+commit 4641f303cff98922dd54066bb9fe272780667e2f
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Tue Jul 28 12:26:30 2020 +0200
+
+    adjusted demo
+
+commit 93f32a4ce20555dfd568410a805d75dec0e36d2e
+Merge: 9e05245 f2b7e31
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sat Jul 4 13:36:15 2020 +0200
+
+    Merge pull request #8 from Tigul/attached-bug
+    
+    Update bullet_world.py
+
+commit f2b7e312ce49267fa48c45340f7964d5bfdfe759
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sat Jul 4 13:34:50 2020 +0200
+
+    Update bullet_world.py
+
+commit 3a982b5500982b3b71dbdf2bd49dee8850c21eac
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Jun 11 12:31:43 2020 +0200
+
+    doku
+
+commit 3a0135bee11be49086f71dfc3c39bd4b21f98cb3
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Jun 4 14:39:30 2020 +0200
+
+    fixed minor error and added launch file
+
+commit 53e54d98e428d88d280aa369a55ab85b58e7f175
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Jun 4 14:23:01 2020 +0200
+
+    added file
+
+commit 1d5a6995d6cb336f315e8b4af18781e4216696ca
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Jun 4 14:22:21 2020 +0200
+
+    added file for node to request kdl
+
+commit 9e05245051083cf048b99afc0db63bac128ef140
+Merge: 0f79e20 daf1b39
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu May 14 09:07:46 2020 +0200
+
+    Merge pull request #5 from Tigul/Multiverse
+    
+    Multiverse
+
+commit daf1b393727059032ed4b35a51ab813bb8579d97
+Merge: add2cc5 0f79e20
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu May 14 09:07:35 2020 +0200
+
+    Merge branch 'master' into Multiverse
+
+commit 0f79e20f43e37dcaa85f62368a0c363668f85b11
+Merge: e31244d b0d3027
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu May 7 11:17:09 2020 +0200
+
+    Merge pull request #4 from Tigul/clean-up-pms
+    
+    Clean up pms
+
+commit e31244d0ef04b131a9ed3b2a0eb80935774ad8d4
+Merge: 555db8e 1b14b8a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu May 7 11:16:06 2020 +0200
+
+    Merge pull request #2 from Tigul/attachments2.0
+    
+    Attachments2.0
+
+commit b0d30276a0784b69167a25f680f0ee3064f7e89a
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Tue Apr 21 12:55:14 2020 +0200
+
+    made demo non system specific and corrected spelling
+
+commit 9af649d892796b1d11dbfbff918d2d96a919dc16
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Tue Apr 21 11:22:27 2020 +0200
+
+    adjusted detecting to new visible from PR #3
+
+commit 555db8eed53c09cba1bfde6918afc89c731d843b
+Merge: 4cd158c 00f8e52
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Apr 21 11:11:04 2020 +0200
+
+    Merge pull request #3 from Tigul/calculate-FOV
+    
+    Calculate fov correctly for the robot
+
+commit 4cd158c466ee935277763cfe29085caacd041b1d
+Merge: fb058d4 f0b6e3d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Apr 21 10:40:46 2020 +0200
+
+    Merge pull request #1 from Tigul/master
+    
+    BulletWorld and Reasoning
+
+commit add2cc5fd44434132fed510659efeeffe09a3433
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Apr 16 11:21:34 2020 +0200
+
+    removed print statements
+
+commit 1b14b8a428f95f094f3ce7c7117d208382b48559
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Apr 16 10:07:43 2020 +0200
+
+    fix to prevent recurion error
+
+commit 738332d4611d2e87cbd04f5e5103cb296f124632
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Tue Apr 14 12:18:23 2020 +0200
+
+    added multiple worlds to reasoning and objects
+
+commit 0f6b68e809e73da4eefa1a0fb67e3c0f2fd22bef
+Merge: bf1c33b e520008
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Tue Apr 14 10:13:52 2020 +0200
+
+    Merge branch 'attachments2.0' of github.com:Tigul/pycram-1 into Multiverse
+
+commit bf1c33b76ce162d5a65cd873d1ecf905858a62f7
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Apr 9 14:18:27 2020 +0200
+
+    added multiple worlds to reasoning
+
+commit fbefb3694055922b23e627d34ceea676e0a3f9b3
+Merge: 5f2f08c 00f8e52
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Apr 8 14:26:27 2020 +0200
+
+    Merge branch 'calculate-FOV' of github.com:Tigul/pycram-1 into Multiverse
+
+commit 5f2f08c7f043ac2ff4c84e4df3a19b2fba2f813d
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Apr 8 14:26:03 2020 +0200
+
+    added copy function for bullet World
+
+commit 5205ddde26160fb27f033d5885b31e0460e33010
+Merge: f0b6e3d e7dd544
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Apr 8 13:10:55 2020 +0200
+
+    Merge branch 'clean-up-pms' of github.com:Tigul/pycram-1 into Multiverse
+
+commit 00f8e52a0498ebeacc6c13d673c8800bfcb06a7b
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Mar 19 09:33:28 2020 +0100
+
+    fixed upvector for FOV calculation
+
+commit ed02694360aede76ad8a470fd9ab2453317f2207
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Mar 12 14:49:49 2020 +0100
+
+    added missing comma
+
+commit 43f65fad8bf0729184d03d390cc1062f2ed4f94a
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Mar 12 14:37:40 2020 +0100
+
+    updated documentation
+
+commit 615a9617e55f3f67a40ee929f13d4a56eda8bcb5
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Mar 12 14:28:08 2020 +0100
+
+    new calculation for FOV
+
+commit e7dd544548d3e39bfae396d56012e51cb3ef6706
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Mar 11 13:45:28 2020 +0100
+
+    fixed some errors and adjusted the demo to the new PMs
+
+commit 6b0d5b9c752f7dfdc7869cc46d1e829623c785be
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Mar 11 12:58:53 2020 +0100
+
+    refactor of all process modules
+
+commit e5200088c08553373613d040ee029c99d3913e87
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Mon Mar 9 14:59:08 2020 +0100
+
+    added loose attachments
+
+commit 8a58ab73b87928f22ce94658bc76273995648c2b
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Mar 5 13:40:29 2020 +0100
+
+    attachments of attached objects will be updated
+
+commit f0b6e3d2509db8ddbae7baf3b9bc43a939bed375
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Feb 27 13:45:24 2020 +0100
+
+    added event.py
+
+commit 162662221acb52fb62fe9f638e5a62405e87c088
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Feb 27 12:58:00 2020 +0100
+
+    attachment resolved for joint states
+
+commit 1a75382209c69d29c370977790fbbebed3cdeb54
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Thu Feb 27 11:43:24 2020 +0100
+
+    new attachments
+
+commit 6e1b90c03b4ce337516ef058584793f89ec228e0
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Feb 26 14:05:02 2020 +0100
+
+    clean up of detecting, pick-up, moving
+
+commit 42ef4fbddf0c6898a5a5b150f2ef904ea6ec8ed1
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Feb 26 13:17:14 2020 +0100
+
+    removed __pycache__
+
+commit 4c781674eb9027d730baa82724c998e613249077
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Feb 26 13:15:13 2020 +0100
+
+    fixed structure after merge
+
+commit 17396076486aae5498276f15aae31c1ebad83075
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Dec 3 17:08:12 2019 +0100
+
+    final commit
+
+commit 8807f999a101b6e0a9d197ed0dc797288e85b536
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Dec 3 15:54:47 2019 +0100
+
+    documentation
+
+commit 8700efe4363e067ce66d2408009905f54ba3f8aa
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Nov 28 13:39:34 2019 +0100
+
+    Update README.md
+
+commit aacba01f7cb6054d6f2654cd4e7b05ec5960f594
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Nov 28 13:39:12 2019 +0100
+
+    Update README.md
+
+commit 044ba0fc1175bd586cec9739c397e1c8ec8a669d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Nov 28 13:38:28 2019 +0100
+
+    Update README.md
+
+commit e66305c6bc6428e4b781541ddc5d745bb54b3ff4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Nov 29 12:36:27 2019 +0100
+
+    fixed exit method of BulletWorld
+
+commit 5f5fa18e61373e0bd62d050b01407177df2f9ae5
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Nov 27 15:38:47 2019 +0100
+
+    last changes in demo
+
+commit 912166548ff93f5abe0ba0e04ff08e5e4da9d788
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Nov 5 12:48:34 2019 +0100
+
+    demo finished
+
+commit 7b6fdb81d93df0146f84c1fdeeba2468ccd8ebe2
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Oct 28 14:39:43 2019 +0100
+
+    a littöe bit of everything
+
+commit a40ebf42108e77b5624cb7d499149c4d4dc9299a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sun Oct 27 18:42:18 2019 +0100
+
+    more designators
+
+commit 5de19bf04285c96c22eddd0771ad673b1e946767
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sat Oct 26 17:54:48 2019 +0200
+
+    more designator
+
+commit ff3cfb5b92643d7970a0f19bda154f7928c59d43
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Oct 21 10:11:09 2019 +0200
+
+    new process modules
+
+commit 20aefffe31f34d2bfa24faa8686cfa6f1414aaa4
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Sep 10 20:38:44 2019 +0200
+
+    a few more getters and setters
+
+commit e791d9495ee26e92f60edfe49db9bb996713aadb
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Aug 19 16:03:42 2019 +0200
+
+    finished process modules and designators
+
+commit bc270f2b7236bfa8350a50f48eb4e3cd9f735c15
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Aug 15 16:15:57 2019 +0200
+
+    first motion_designators
+
+commit 2eecda9187ea1610a85d092857b7673211cb4344
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Aug 14 22:22:57 2019 +0200
+
+    first process Modules
+
+commit bf4925aadd605e52ef9d458c3d440f0453da68d6
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Aug 7 14:12:11 2019 +0200
+
+    minor changes and struct demo
+
+commit a52b0edef9d0f573779e41392dde7ff9fabf7149
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sat Aug 3 17:09:45 2019 +0200
+
+    Documentation bullet_world and refactor
+
+commit b5d097670cb7ef1c740e84f6db7f17d3fef77c6e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 2 19:21:58 2019 +0200
+
+    documentation predicates
+
+commit 101a6142cd08923b1ad6075ed075f0cc5fb99c59
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 2 15:28:56 2019 +0200
+
+    fixed optional world parameter
+
+commit 41405d124b3d19a1c5a6ee39d9c2f6c7e26255e9
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 2 13:47:47 2019 +0200
+
+    made world parameter in predicates optional
+
+commit 0a9bf3554878f0abf45773a6a788333512f06a73
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 2 13:45:29 2019 +0200
+
+    implemented blocking predicate and minor fixes
+
+commit 24a16a182aece5245301be92e91ff6b08b335ec7
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Aug 2 11:36:26 2019 +0200
+
+    changed attachments to save cid in both objects
+
+commit cfe481787f0dc6ea5bf63b6d9105ac654474a20d
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Aug 1 15:25:06 2019 +0200
+
+    fixed reachable predicate
+
+commit fb5d34c1439585767ec9093eb6c0d2b766ac1de0
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jul 17 10:27:26 2019 +0200
+
+    implemented Events for attachments
+
+commit b9391e9f47177712864e8fc918b5edc12a432c4e
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 15 14:10:06 2019 +0200
+
+    added support for colors when spawning .obj
+
+commit b4bb479fb0f5b026369cd6ba7bd18419661d1be1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 15 13:41:38 2019 +0200
+
+    finally fixed attachments
+
+commit b480c85beeb9acd77bd58d6f1c2a94f386b03182
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jul 11 12:16:26 2019 +0200
+
+    added support for .stl files
+
+commit 75c6506c85341530b16caa6d2bf0297cbbd906b9
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jul 11 11:45:44 2019 +0200
+
+    object loading for .urdf
+
+commit 8d23d76e88b15936c4f113dd1626ad96a29e70d8
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 8 16:28:02 2019 +0200
+
+    added supporting predicate
+
+commit d18de9855b522113f93e2f8f3847df80ff8ea512
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Mon Jul 8 16:17:05 2019 +0200
+
+    refactor, moved reasoning into own file
+
+commit f36b50ff0b7febe9bf651dce41eeefe0155f6530
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jul 2 18:43:22 2019 +0200
+
+    fixed attachments
+
+commit 8739bdc6f3a173377fb8a7ea703123e1b92a32db
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jul 2 08:01:14 2019 +0200
+
+    implemented attachment for base
+
+commit 2951d746003d4c4e69b0fe30bd1d79d2df2ffa93
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sun Jun 30 21:01:28 2019 +0200
+
+    reworked attachments
+
+commit e84609a967315f9555fffd85f1c88a678aa5553f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sun Jun 30 18:36:46 2019 +0200
+
+    object attachments
+
+commit 3cf7f6a7c078bc45ed0dde13efaa9256d9acc51f
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 27 14:00:13 2019 +0200
+
+    implemented reachable predicate
+
+commit 90dbaaca7c0fea7a7f2bc31b736063dcebb9416a
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 27 13:29:56 2019 +0200
+
+    implemented view and projection matrix
+
+commit 464ef7f000fe5b69b69ab0fa7dbd9efb045541ae
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 27 11:02:48 2019 +0200
+
+    added link methods to object calss
+
+commit 864c8bf0e059e9417a0e648856a8cc75f075a99b
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Thu Jun 27 08:41:33 2019 +0200
+
+    added current_bullet_world and made world in predicates mandatory
+
+commit 2a0cd6f6f9783f1db65a043fa01daaa89f66ca32
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sun Jun 23 14:58:19 2019 +0200
+
+    some helper functions and refactor
+
+commit d193ceedcdd976900a74bb73b3f8538977949869
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sat Jun 22 19:11:57 2019 +0200
+
+    completed occluding predicate
+
+commit 6479a376b0b07e5338a380d604857cc315a420e6
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sat Jun 22 16:27:24 2019 +0200
+
+    visible predicate finished
+
+commit 27f2d93f07bad093257ec041f30db4ad55971353
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sat Jun 22 15:41:53 2019 +0200
+
+    remoced urdfs
+
+commit f086866e5505fbb4d17c867cbf708a571f5b75a5
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sat Jun 22 15:41:04 2019 +0200
+
+    fixed fault with BulletWorld attributes
+
+commit e499ed31b9c33576aad1e60d2027b0169d7bf8a1
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 21 17:23:36 2019 +0200
+
+    finished support for multiple BulletWorlds
+
+commit 8413aca4eaf2616669f3150adf9a0d6156b766ba
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 21 17:13:27 2019 +0200
+
+    removed demo file
+
+commit 348adad25d0341f80b583f815a5718a540fa896b
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 21 17:11:24 2019 +0200
+
+    fixed bug
+    contact is false when objects are in contact
+
+commit 8254695c3097ad135049f243a56d8fd481590acc
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 21 17:09:42 2019 +0200
+
+    completed contact prdicate
+
+commit 5eda412d9e7aba70a0c87070914901fc5664df38
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 21 16:47:13 2019 +0200
+
+    removed test urdf
+
+commit 07dc0edc592a640e6343eaadc5fb8bfc816ab114
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Fri Jun 21 16:32:04 2019 +0200
+
+    improved thread handling
+
+commit 18bb06e3bde877669316aa7864528ac0c0100eae
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Tue Jun 18 08:25:21 2019 +0200
+
+    completed stable predicate
+
+commit 6e047d99a25ef47eb0eeff6fc01d41507da5b3b0
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sun Jun 16 23:29:59 2019 +0200
+
+    clean up
+
+commit 9c628b079d42484675423be67e59cfc61867d0c6
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sun Jun 16 22:31:39 2019 +0200
+
+    adapting new architecture
+
+commit bf716779538aa0007fbb49050573d839e5aea223
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Sun Jun 16 15:34:17 2019 +0200
+
+    introduced bullet_world class
+
+commit 72b9ed3c76b1a63a470ac95dc74bb69034030bc2
+Author: Jonas Dech <j.dech@gmx.net>
+Date:   Wed Jun 12 20:04:31 2019 +0200
+
+    moved gui in own thread
+
+commit 32859d16ac1a4b886a334f2a427802bfbcc4d0c1
+Author: Jonas Dech <jdech@uni-bremen.de>
+Date:   Wed Jun 12 09:07:01 2019 +0200
+
+    initial commit
+
+commit fb058d4b420fc1bb3d0d9c77019a5e108f6164ba
+Author: Gayane Kazhoyan <kazhoyan@cs.uni-bremen.de>
+Date:   Thu Mar 21 13:19:47 2019 +0100
+
+    renamed demo into its ros package name
+
+commit 599bff39b5be60ee093f009f5713a76e41be7304
+Author: Gayane Kazhoyan <kazhoyan@cs.uni-bremen.de>
+Date:   Thu Mar 21 13:17:47 2019 +0100
+
+    added demo code
+
+commit a89adc898729947f6cfdfd923a23e54a98dc0402
+Author: Dustin Augsten <augsten@uni-bremen.de>
+Date:   Mon Feb 11 18:49:20 2019 +0100
+
+    Initial release

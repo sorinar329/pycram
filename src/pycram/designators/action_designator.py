@@ -828,3 +828,60 @@ class PourAction(ActionDesignatorDescription):
                            self.pouring_location,
                            self.revert_location,
                            self.wait_duration)
+# class CutAction(ActionDesignatorDescription):
+#     """
+#     Designator to let the robot perform a cutting action on an object.
+#     """
+#
+#     @dataclasses.dataclass
+#     class Action(ActionDesignatorDescription.Action):
+#
+#         object_designator: ObjectDesignatorDescription.Object
+#         """
+#         Object designator describing the object that should be cut
+#         """
+#         slice_amount: int
+#         """
+#         how many slices
+#         """
+#
+#         @with_tree
+#         def perform(self) -> None:
+#             MoveTCPMotion(target=self.cutting_location, arm=self.arm).resolve(). \
+#                 perform()
+#             # Perform cutting action for the specified duration
+#             time.sleep(self.cutting_duration)  # Sleep for cutting_duration seconds
+#             MoveTCPMotion(target=self.revert_location, arm=self.arm).resolve(). \
+#                 perform()
+#
+#     def __init__(self, object_designator_description: ObjectDesignatorDescription,
+#                  cutting_location: Pose,
+#                  revert_location: Pose,
+#                  arm: str, cutting_duration, resolver=None):
+#         """
+#         Create an Action Description to perform a cutting action on an object
+#
+#         :param object_designator_description: Description of object to perform cutting action on.
+#         :param cutting_location: Pose in the world where the cutting action should be performed
+#         :param revert_location: Pose in the world where the object should be reverted after cutting
+#         :param arm: Arm to perform the cutting action
+#         :param cutting_duration: Duration of the cutting action in seconds
+#         :param resolver: Grounding method to resolve this designator
+#         """
+#         super(CutAction, self).__init__(resolver)
+#         self.object_designator_description: ObjectDesignatorDescription = object_designator_description
+#         self.cutting_location: Pose = cutting_location
+#         self.revert_location: Pose = revert_location
+#         self.arm: str = arm
+#         self.cutting_duration = cutting_duration
+#
+#     def ground(self) -> Action:
+#         """
+#         Default resolver that returns a performable designator.
+#
+#         :return: A performable designator
+#         """
+#         return self.Action(self.object_designator_description.ground(), self.arm,
+#                            self.cutting_location,
+#                            self.revert_location,
+#                            self.cutting_duration)
