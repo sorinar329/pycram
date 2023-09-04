@@ -94,6 +94,7 @@ class BulletWorld:
         self.set_gravity([0, 0, -9.8])
         if not is_shadow_world:
             plane = Object("floor", "environment", "plane.urdf", world=self)
+            plane.set_color([0, 0, 0, 1])
         # atexit.register(self.exit)
 
     def get_objects_by_name(self, name: str) -> List[Object]:
@@ -405,6 +406,8 @@ class Use_shadow_world():
         if not self.prev_world == None:
             BulletWorld.current_bullet_world = self.prev_world
             BulletWorld.current_bullet_world.world_sync.pause_sync = False
+
+
 
 
 class WorldSync(threading.Thread):
@@ -1588,3 +1591,6 @@ def _world_and_id(world: BulletWorld) -> Tuple[BulletWorld, int]:
     world = world if world is not None else BulletWorld.current_bullet_world
     id = world.client_id if world is not None else BulletWorld.current_bullet_world.client_id
     return world, id
+
+
+

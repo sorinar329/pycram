@@ -81,7 +81,6 @@ class Pose(PoseStamped):
         :param value: List or geometry_msgs/Pose message for the position
         """
         if not type(value) == list and not type(value) == tuple and not type(value) == GeoPose:
-            print(type(value))
             rospy.logwarn("Position can only be a list or geometry_msgs/Pose")
             return
         if type(value) == list or type(value) == tuple and len(value) == 3:
@@ -106,15 +105,17 @@ class Pose(PoseStamped):
 
         :param value: New orientation, either a list or geometry_msgs/Quaternion
         """
+
+
         if not type(value) == list and not type(value) == tuple and not type(value) == GeoQuaternion:
-            print(type(value))
-            print(value)
+
             rospy.logwarn("Orientation can only be a list or geometry_msgs/Quaternion")
             return
 
         if type(value) == list or type(value) == tuple and len(value) == 4:
             mag = np.linalg.norm(value)
             normed_orientation = [elem / mag for elem in value]
+
         else:
             orientation = [value.x, value.y, value.z, value.w]
             mag = np.linalg.norm(orientation)
