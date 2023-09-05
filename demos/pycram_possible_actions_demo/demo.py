@@ -21,10 +21,9 @@ from pycram.designators.object_designator import *
 
 # spawn kitchen
 kitchen = Object("kitchen", "environment", "kitchen.urdf")
-kitchen.set_color([0.2, 0, 0.4, 0.6])
 kitchen_desig = ObjectDesignatorDescription(names=["kitchen"])
 # spawn Milkbox
-milk = Object("milk", "milk", "milk.stl", Pose([1.6, 1, 0.90]))
+milk = Object("milk", "milk", "milk.stl", Pose([1.3, 1, 0.95]))
 milk_desig = ObjectDesignatorDescription(names=["milk"])
 
 # spawn bowl
@@ -46,30 +45,31 @@ with simulated_robot:
 
     NavigateAction(target_locations=[pickup_pose.pose]).resolve().perform()
 
+
     PickUpAction(object_designator_description=milk_desig, arms=[pickup_arm], grasps=["front"]).resolve().perform()
 
     ParkArmsAction([Arms.BOTH]).resolve().perform()
 
-    # do pouring by tilting, and accept time interval and speed as well
-    quaternion = tf.transformations.quaternion_from_euler(90, 0, 0, axes="sxyz")
-
-    print('quaternion', quaternion)
-    tilting_pose = SemanticCostmapLocation.Location(Pose([1.6, 1.05, 1], [0.8509035, 0, 0, 0.525322]))
-
-    revert_tilting_pose = SemanticCostmapLocation.Location(Pose([1.6, 1.05, 1], [0.0, 0, 0, 1]))
-    PourAction(milk_desig, pouring_location=tilting_pose.pose, revert_location=revert_tilting_pose.pose,
-               arms=[pickup_arm], wait_duration=5).resolve().perform()
-
-    ParkArmsAction([Arms.BOTH]).resolve().perform()
-
-    # think about where to place the milk karton
-    place_island = SemanticCostmapLocation("kitchen_island_surface", kitchen_desig.resolve(),
-                                           milk_desig.resolve()).resolve()
-
-    place_stand = CostmapLocation(place_island.pose, reachable_for=robot_desig, reachable_arm=pickup_arm).resolve()
-
-    NavigateAction(target_locations=[place_stand.pose]).resolve().perform()
-
-    PlaceAction(milk_desig, target_locations=[place_island.pose], arms=[pickup_arm]).resolve().perform()
-
-    ParkArmsAction([Arms.BOTH]).resolve().perform()
+    # # do pouring by tilting, and accept time interval and speed as well
+    # quaternion = tf.transformations.quaternion_from_euler(90, 0, 0, axes="sxyz")
+    #
+    # print('quaternion', quaternion)
+    # tilting_pose = SemanticCostmapLocation.Location(Pose([1.6, 1.05, 1], [0.8509035, 0, 0, 0.525322]))
+    #
+    # revert_tilting_pose = SemanticCostmapLocation.Location(Pose([1.6, 1.05, 1], [0.0, 0, 0, 1]))
+    # PourAction(milk_desig, pouring_location=tilting_pose.pose, revert_location=revert_tilting_pose.pose,
+    #            arms=[pickup_arm], wait_duration=5).resolve().perform()
+    #
+    # ParkArmsAction([Arms.BOTH]).resolve().perform()
+    #
+    # # think about where to place the milk karton
+    # place_island = SemanticCostmapLocation("kitchen_island_surface", kitchen_desig.resolve(),
+    #                                        milk_desig.resolve()).resolve()
+    #
+    # place_stand = CostmapLocation(place_island.pose, reachable_for=robot_desig, reachable_arm=pickup_arm).resolve()
+    #
+    # NavigateAction(target_locations=[place_stand.pose]).resolve().perform()
+    #
+    # PlaceAction(milk_desig, target_locations=[place_island.pose], arms=[pickup_arm]).resolve().perform()
+    #
+    # ParkArmsAction([Arms.BOTH]).resolve().perform()

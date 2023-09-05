@@ -44,28 +44,28 @@ class Pr2Navigation(ProcessModule):
         robot.set_pose(desig.target)
 
 
-class Pr2PickUp(ProcessModule):
-    """
-    This process module is for picking up a given object.
-    The object has to be reachable for this process module to succeed.
-    """
-
-    def _execute(self, desig: PickUpMotion.Motion):
-        object = desig.object_desig.bullet_world_object
-        robot = BulletWorld.robot
-        grasp = robot_description.grasps.get_orientation_for_grasp(desig.grasp)
-        target = object.get_pose()
-        target.orientation.x = grasp[0]
-        target.orientation.y = grasp[1]
-        target.orientation.z = grasp[2]
-        target.orientation.w = grasp[3]
-
-        arm = desig.arm
-        arm_short = "r" if arm == "right" else "l"
-
-        _move_arm_tcp(target, robot, arm)
-        tool_frame = robot_description.get_tool_frame(arm)
-        robot.attach(object, tool_frame)
+# class Pr2PickUp(ProcessModule):
+#     """
+#     This process module is for picking up a given object.
+#     The object has to be reachable for this process module to succeed.
+#     """
+#
+#     def _execute(self, desig: PickUpMotion.Motion):
+#         object = desig.object_desig.bullet_world_object
+#         robot = BulletWorld.robot
+#         grasp = robot_description.grasps.get_orientation_for_grasp(desig.grasp)
+#         target = object.get_pose()
+#         target.orientation.x = grasp[0]
+#         target.orientation.y = grasp[1]
+#         target.orientation.z = grasp[2]
+#         target.orientation.w = grasp[3]
+#
+#         arm = desig.arm
+#         arm_short = "r" if arm == "right" else "l"
+#
+#         _move_arm_tcp(target, robot, arm)
+#         tool_frame = robot_description.get_tool_frame(arm)
+#         robot.attach(object, tool_frame)
 
 
 class Pr2Place(ProcessModule):

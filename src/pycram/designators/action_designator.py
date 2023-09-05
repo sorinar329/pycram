@@ -295,7 +295,42 @@ class PickUpAction(ActionDesignatorDescription):
         @with_tree
         def perform(self) -> None:
             self.object_at_execution = self.object_designator.data_copy()
-            PickUpMotion(object_desig=self.object_designator, arm=self.arm, grasp=self.grasp).resolve().perform()
+
+            object = self.object_designator.bullet_world_object
+            robot = BulletWorld.robot
+
+            # Get the grasp orientation from the description
+            grasp = robot_description.grasps.get_orientation_for_grasp(self.grasp)
+            target = object.get_pose()
+            target.orientation.x = grasp[0]
+            target.orientation.y = grasp[1]
+            target.orientation.z = grasp[2]
+            target.orientation.w = grasp[3]
+            # 1. Prepose - move slightly to the object
+            prepose_target = target.copy()  # Assuming get_pose() returns a copy, otherwise, you might need to implement the copy logic
+            prepose_target.pose.position.x -= 0.1  # Move 10cm further from target, adjust as needed
+            MoveTCPMotion(prepose_target, self.arm).resolve().perform()
+
+            # 2. Opening the gripper
+            MoveGripperMotion(motion="open", gripper="left").resolve().perform()
+
+            # 3. Grasppose - move to the actual grasp orientation
+
+            MoveTCPMotion(target, self.arm).resolve().perform()
+
+            # 4. Close the gripper to grasp the object
+            MoveGripperMotion(motion="close", gripper="left").resolve().perform()
+            # Attach the object to the robot's tool frame for simulation purposes
+            tool_frame = robot_description.get_tool_frame(self.arm)
+            robot.attach(object, tool_frame)
+
+            # 5. Lift/Retract - move slightly up after grasping
+            lift_target = target.copy()
+            lift_target.pose.position.z += 0.05  # Lift by 5cm, adjust as needed
+            MoveTCPMotion(lift_target, self.arm).resolve().perform()
+
+
+
 
         def to_sql(self) -> ORMPickUpAction:
             return ORMPickUpAction(self.arm, self.grasp)
