@@ -19,7 +19,9 @@ from ..task import with_tree
 from ..enums import Arms
 from ..designator import ActionDesignatorDescription
 from ..bullet_world import BulletWorld
-from ..pose import Pose
+from ..pose import Pose, Transform
+from ..local_transformer import LocalTransformer
+
 
 
 class MoveTorsoAction(ActionDesignatorDescription):
@@ -299,38 +301,48 @@ class PickUpAction(ActionDesignatorDescription):
             object = self.object_designator.bullet_world_object
             robot = BulletWorld.robot
 
-            # Get the grasp orientation from the description
             grasp = robot_description.grasps.get_orientation_for_grasp(self.grasp)
             target = object.get_pose()
+            # Adjust target pose using special knowledge for the grasp front
+            print(target)
+            special_pose = self.object_designator.special_knowledge_adjustment_pose("front")
+            print(special_pose)
+            #target = SpecialObjectKnowledge.Object.adjust_pose_for_grasp_front(object)
             target.orientation.x = grasp[0]
             target.orientation.y = grasp[1]
             target.orientation.z = grasp[2]
             target.orientation.w = grasp[3]
-            # 1. Prepose - move slightly to the object
-            prepose_target = target.copy()  # Assuming get_pose() returns a copy, otherwise, you might need to implement the copy logic
+            prepose_target = target.copy()
             prepose_target.pose.position.x -= 0.1  # Move 10cm further from target, adjust as needed
+            # l = LocalTransformer()
+            # l.setTransform(Transform(prepose_target.pose.position, prepose_target.pose.orientation, "map", "l_gripper_tool_frame"))
+            #
+            # p = Pose()
+            # transformed_pose = l.transform_pose(p, "l_gripper_tool_frame")
+            #
+            # transformed_pose.pose.position.x -= 0.1  # Move 10cm further from target, adjust as needed
+            # l.clear()
+            #
+            # l.setTransform(Transform(transformed_pose.pose.position, transformed_pose.pose.orientation, "l_gripper_tool_frame","map"))
+            # pt = Pose()
+            # pre_pose = l.transform_pose(pt, "map")
+
+            BulletWorld.current_bullet_world.add_vis_axis(prepose_target)
+
             MoveTCPMotion(prepose_target, self.arm).resolve().perform()
 
-            # 2. Opening the gripper
             MoveGripperMotion(motion="open", gripper="left").resolve().perform()
 
-            # 3. Grasppose - move to the actual grasp orientation
-
+            BulletWorld.current_bullet_world.add_vis_axis(target, length=0.07)
             MoveTCPMotion(target, self.arm).resolve().perform()
 
-            # 4. Close the gripper to grasp the object
             MoveGripperMotion(motion="close", gripper="left").resolve().perform()
-            # Attach the object to the robot's tool frame for simulation purposes
             tool_frame = robot_description.get_tool_frame(self.arm)
             robot.attach(object, tool_frame)
 
-            # 5. Lift/Retract - move slightly up after grasping
             lift_target = target.copy()
             lift_target.pose.position.z += 0.05  # Lift by 5cm, adjust as needed
             MoveTCPMotion(lift_target, self.arm).resolve().perform()
-
-
-
 
         def to_sql(self) -> ORMPickUpAction:
             return ORMPickUpAction(self.arm, self.grasp)
@@ -474,7 +486,6 @@ class NavigateAction(ActionDesignatorDescription):
             return ORMNavigateAction()
 
         def insert(self, session, *args, **kwargs) -> ORMNavigateAction:
-
             # initialize position and orientation
             position = Position(*self.target_location.position_as_list())
             orientation = Quaternion(*self.target_location.orientation_as_list())
@@ -686,7 +697,6 @@ class OpenAction(ActionDesignatorDescription):
 
     @dataclasses.dataclass
     class Action(ActionDesignatorDescription.Action):
-
         object_designator: ObjectPart.Object
         """
         Object designator describing the object that should be opened
@@ -738,7 +748,6 @@ class CloseAction(ActionDesignatorDescription):
 
     @dataclasses.dataclass
     class Action(ActionDesignatorDescription.Action):
-
         object_designator: ObjectPart.Object
         """
         Object designator describing the object that should be closed
@@ -780,6 +789,7 @@ class CloseAction(ActionDesignatorDescription):
         """
         return self.Action(self.object_designator_description.resolve(), self.arms[0])
 
+
 class PourAction(ActionDesignatorDescription):
     """
     Designator to let the robot pour onto an object.
@@ -787,7 +797,6 @@ class PourAction(ActionDesignatorDescription):
 
     @dataclasses.dataclass
     class Action(ActionDesignatorDescription.Action):
-
         object_designator: ObjectDesignatorDescription.Object
         """
         Object designator describing the object that should be tilted
@@ -814,7 +823,7 @@ class PourAction(ActionDesignatorDescription):
             MoveTCPMotion(target=self.pouring_location, arm=self.arm).resolve(). \
                 perform()
             # sleep for some seconds
-            time.sleep(self.wait_duration) # Sleep for wait_duration seconds
+            time.sleep(self.wait_duration)  # Sleep for wait_duration seconds
             MoveTCPMotion(target=self.revert_location, arm=self.arm).resolve(). \
                 perform()
         #

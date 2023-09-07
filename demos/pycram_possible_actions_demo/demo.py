@@ -23,7 +23,7 @@ from pycram.designators.object_designator import *
 kitchen = Object("kitchen", "environment", "kitchen.urdf")
 kitchen_desig = ObjectDesignatorDescription(names=["kitchen"])
 # spawn Milkbox
-milk = Object("milk", "milk", "milk.stl", Pose([1.3, 1, 0.95]))
+milk = Object("milk", "milk", "milk.stl", Pose([0.9, 1, 0.95]))
 milk_desig = ObjectDesignatorDescription(names=["milk"])
 
 # spawn bowl
@@ -46,7 +46,7 @@ with simulated_robot:
     NavigateAction(target_locations=[pickup_pose.pose]).resolve().perform()
 
 
-    PickUpAction(object_designator_description=milk_desig, arms=[pickup_arm], grasps=["front"]).resolve().perform()
+    PickUpAction(object_designator_description=milk_desig, arms=[pickup_arm], grasps=["right"]).resolve().perform()
 
     ParkArmsAction([Arms.BOTH]).resolve().perform()
 
