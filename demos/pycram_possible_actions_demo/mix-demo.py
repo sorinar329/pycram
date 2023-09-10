@@ -44,35 +44,29 @@ kitchen_desig = ObjectDesignatorDescription(names=["kitchen"])
 # %%
 spawning_poses = {
     # 'bigknife': Pose([-0.95, 1.2, 1.3], [1, -1, 1, -1]),
-    'bigknife': Pose([0.9, 0.6, 0.8], [0, 0, 0, -1]),
+    'whisk': Pose([0.9, 0.6, 0.8], [0, 0, 0, -1]),
     # 'bread': Pose([-0.85, 0.9, 0.90], [0, 0, -1, 1])
-    'bread': Pose([-0.85, 0.9, 0.90], [0, 0, -1, -1])
+    'big-bowl': Pose([-0.85, 0.9, 1], [0, 0, -1, -1])
 }
-bigknife = Object("bigknife", "bigknife", "big-knife.stl", spawning_poses["bigknife"])
-bread = Object("bread", "bread", "bread.stl", spawning_poses["bread"])
-bigknife_BO = BelieveObject(names=["bigknife"])
-bread_BO = BelieveObject(names=["bread"])
-SPECIAL_KNOWLEDGE_CUTTING = {
-    'bread' : "rectangleLength",
-    'apple' : "circleRadius"
-}
-
-
+whisk = Object("whisk", "whisk", "whisk.stl", spawning_poses["whisk"])
+big_bowl = Object("big-bowl", "big-bowl", "big-bowl.stl", spawning_poses["big-bowl"])
+whisk_BO = BelieveObject(names=["whisk"])
+big_bowl_BO = BelieveObject(names=["big-bowl"])
 
 
 with simulated_robot:
     ParkArmsAction([Arms.BOTH]).resolve().perform()
-
+    MoveTorsoAction([0.33]).resolve().perform()
     MoveTorsoAction([0.33]).resolve().perform()
     grasp = robot_description.grasps.get_orientation_for_grasp("top")
     arm = "left"
     #
-    pickup_pose_knife = CostmapLocation(target=bigknife_BO.resolve(), reachable_for=robot_desig).resolve()
+    pickup_pose_knife = CostmapLocation(target=whisk_BO.resolve(), reachable_for=robot_desig).resolve()
     pickup_arm = pickup_pose_knife.reachable_arms[0]
 
     NavigateAction(target_locations=[pickup_pose_knife.pose]).resolve().perform()
 
-    PickUpAction(object_designator_description=bigknife_BO,
+    PickUpAction(object_designator_description=whisk_BO,
                  arms=["left"],
                  grasps=["top"]).resolve().perform()
 
@@ -83,20 +77,16 @@ with simulated_robot:
     rotation_axis = (0, 0, 1)
 
     rotation_quaternion = helper.axis_angle_to_quaternion(rotation_axis, 180)
-    resulting_quaternion = multiply_quaternions(original_quaternion, rotation_quaternion)
+    resulting_quaternion = helper.multiply_quaternions(original_quaternion, rotation_quaternion)
 
     nav_pose = Pose([-0.3, 0.9, 0.0], resulting_quaternion)
 
     # NavigateAction(target_locations=[pickup_pose_knife.pose]).resolve().perform()
     NavigateAction(target_locations=[nav_pose]).resolve().perform()
-    LookAtAction(targets=[bread_BO.resolve().pose]).resolve().perform()
+    LookAtAction(targets=[big_bowl_BO.resolve().pose]).resolve().perform()
 
-    detected_bread_desig = DetectAction(bread_BO).resolve().perform()
-
-    CuttingAction(object_designator_description=bread_BO,
+    #detected_bread_desig = DetectAction(big_bowl_BO).resolve().perform()
+    MixingAction(object_designator_description=big_bowl_BO,
+                 object_tool_designator_description=big_bowl_BO,
                  arms=["left"],
                  grasps=["top"]).resolve().perform()
-
-
-
-

@@ -574,9 +574,21 @@ class LocationDesignatorDescription(DesignatorDescription):
         raise NotImplementedError(f"{type(self)}.ground() is not implemented.")
 
 SPECIAL_KNOWLEDGE = {
-    'bigknife': [("front", [1.0, 2.0, 3.0]), ("key2", [4.0, 5.0, 6.0])],
-    # ... other types and their associated special knowledge
+    'bigknife':
+        [("top", [-0.08, 0, 0])],
+    'whisk':
+        [("top", [-0.08, 0, 0])],
+    'bowl':
+        [("front", [1.0, 2.0, 3.0]),
+         ("key2", [4.0, 5.0, 6.0])]
 }
+
+# SPECIAL_KNOWLEDGE_CUTTING = {
+#     'bread' : "rectangleLength",
+#     'apple' : "circleRadius"
+# }
+
+
 class ObjectDesignatorDescription(DesignatorDescription):
     """
     Class for object designator descriptions.
@@ -683,23 +695,43 @@ class ObjectDesignatorDescription(DesignatorDescription):
                 [f"{f.name}={self.__getattribute__(f.name)}" for f in dataclasses.fields(self)] + [
                     f"pose={self.pose}"]) + ')'
 
-        def special_knowledge_adjustment_pose(self, grasp):
+        def special_knowledge_adjustment_pose(self, grasp, pose):
             """
             Returns the adjusted target pose based on special knowledge for "grasp front".
             """
 
             special_knowledge = []  # Initialize as an empty list
-
             if self.type in SPECIAL_KNOWLEDGE:
                 special_knowledge = SPECIAL_KNOWLEDGE[self.type]
 
             for key, value in special_knowledge:
                 if key == grasp:
                     # Adjust target pose based on special knowledge
-                    self.pose.position.x += value[0]
-                    self.pose.position.y += value[1]
-                    self.pose.position.z += value[2]
-            return self.pose
+                    pose.pose.position.x += value[0]
+                    pose.pose.position.y += value[1]
+                    pose.pose.position.z += value[2]
+                    print("Adjusted target pose based on special knowledge for grasp: ", grasp)
+                    return pose
+            return pose
+
+        def special_knowledge(self, grasp, pose):
+            """
+            Returns t special knowledge for "grasp front".
+            """
+
+            special_knowledge = []  # Initialize as an empty list
+            if self.type in SPECIAL_KNOWLEDGE:
+                special_knowledge = SPECIAL_KNOWLEDGE[self.type]
+
+            for key, value in special_knowledge:
+                if key == grasp:
+                    # Adjust target pose based on special knowledge
+                    pose.pose.position.x += value[0]
+                    pose.pose.position.y += value[1]
+                    pose.pose.position.z += value[2]
+                    print("Adjusted target pose based on special knowledge for grasp: ", grasp)
+                    return pose
+            return pose
 
     def __init__(self, names: Optional[List[str]] = None, types: Optional[List[str]] = None,
                  resolver: Optional[Callable] = None):

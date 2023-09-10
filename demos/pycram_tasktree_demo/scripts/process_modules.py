@@ -228,7 +228,7 @@ class Pr2MoveGripper(ProcessModule):
                                         0 if motion == "close" else 0.548)
             robot.set_joint_state("r_gripper_r_finger_joint" if gripper == 'right' else "l_gripper_r_finger_joint",
                                         0 if motion == "close" else 0.548)
-            time.sleep(0.5)
+            # time.sleep(0.5)
 
 
 class Pr2Detecting(ProcessModule):
@@ -262,7 +262,7 @@ class Pr2MoveTCP(ProcessModule):
             robot = BulletWorld.robot
             inv = p.calculateInverseKinematics(robot.id, robot.get_link_id(gripper), target)
             _apply_ik(robot, inv)
-            time.sleep(0.5)
+            # time.sleep(0.5)
 
 
 class Pr2MoveJoints(ProcessModule):
@@ -288,7 +288,7 @@ class Pr2MoveJoints(ProcessModule):
             elif type(left_arm_poses) == str and left_arm_poses == "park":
                 _park_arms("left")
 
-            time.sleep(0.5)
+            # time.sleep(0.5)
 
 
 class Pr2WorldStateDetecting(ProcessModule):

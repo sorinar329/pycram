@@ -40,15 +40,35 @@ with simulated_robot:
 
     MoveTorsoAction([0.3]).resolve().perform()
 
-    pickup_pose = CostmapLocation(target=milk_desig.resolve(), reachable_for=robot_desig).resolve()
-    pickup_arm = pickup_pose.reachable_arms[0]
+    l = LocalTransformer()
+    test_pose = Pose([1, 1, 1], [0, 0, 0, 1], "map")
+    p = Pose()
+    #transformed_pose = l.transform_pose(p, "milk")
+    transformed_pose = l.transform_to_object_frame(p, milk)
 
-    NavigateAction(target_locations=[pickup_pose.pose]).resolve().perform()
 
 
-    PickUpAction(object_designator_description=milk_desig, arms=[pickup_arm], grasps=["right"]).resolve().perform()
 
-    ParkArmsAction([Arms.BOTH]).resolve().perform()
+    print(transformed_pose)
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~")
+    new_pose = l.transform_pose(transformed_pose, "map")
+    print(new_pose)
+    # print(transformed_pose.pose.position)
+    #$l.setTransform(Transform(transformed_pose.pose.position, transformed_pose.pose.orientation, "milk", "bowl"))
+    # p = Pose()
+    # transformed_pose = l.transform_pose(p, "bowl")
+    #
+    # print(transformed_pose)
+
+    # pickup_pose = CostmapLocation(target=milk_desig.resolve(), reachable_for=robot_desig).resolve()
+    # pickup_arm = pickup_pose.reachable_arms[0]
+    #
+    # NavigateAction(target_locations=[pickup_pose.pose]).resolve().perform()
+    #
+    #
+    # PickUpAction(object_designator_description=milk_desig, arms=[pickup_arm], grasps=["right"]).resolve().perform()
+    #
+    # ParkArmsAction([Arms.BOTH]).resolve().perform()
 
     # # do pouring by tilting, and accept time interval and speed as well
     # quaternion = tf.transformations.quaternion_from_euler(90, 0, 0, axes="sxyz")

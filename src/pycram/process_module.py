@@ -24,7 +24,7 @@ class ProcessModule:
     """
     Implementation of process modules. Process modules are the part that communicate with the outer world to execute designators.
     """
-    execution_delay = True
+    execution_delay = False
     """
     Adds a delay of 0.5 seconds after executing a process module, to make the execution in simulation more realistic
     """
