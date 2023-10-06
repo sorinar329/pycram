@@ -27,6 +27,12 @@ from pycram.designators.object_designator import BelieveObject
 import pycram.helper as helper
 from pycram.plan_failures import IKError
 import math
+import time
+from datetime import timedelta
+
+
+
+from pycram.resolver.action.cutting import CuttingActionSPARQL
 
 world = BulletWorld()
 world.set_gravity([0, 0, -9.8])
@@ -83,7 +89,7 @@ with simulated_robot:
     rotation_axis = (0, 0, 1)
 
     rotation_quaternion = helper.axis_angle_to_quaternion(rotation_axis, 180)
-    resulting_quaternion = multiply_quaternions(original_quaternion, rotation_quaternion)
+    resulting_quaternion = helper.multiply_quaternions(original_quaternion, rotation_quaternion)
 
     nav_pose = Pose([-0.3, 0.9, 0.0], resulting_quaternion)
 
@@ -92,11 +98,14 @@ with simulated_robot:
     LookAtAction(targets=[bread_BO.resolve().pose]).resolve().perform()
 
     detected_bread_desig = DetectAction(bread_BO).resolve().perform()
-
-    CuttingAction(object_designator_description=bread_BO,
+    CuttingActionSPARQL(object_designator_description=bread_BO,
                  arms=["left"],
                  grasps=["top"]).resolve().perform()
 
+
+    CuttingAction(object_designator_description=bread_BO,
+                        arms=["left"],
+                        grasps=["top"]).resolve().perform()
 
 
 

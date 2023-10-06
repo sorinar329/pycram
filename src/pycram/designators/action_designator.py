@@ -1068,6 +1068,7 @@ class CuttingAction(ActionDesignatorDescription):
             obj_height = dim[2]
             num_slices = int(obj_length // slice_thickness)
 
+
             # Calculate the starting Y-coordinate offset (half the width minus half a slice thickness)
             start_offset = -obj_length / 2 + slice_thickness / 2
 
@@ -1285,3 +1286,5 @@ class MixingAction(ActionDesignatorDescription):
         """
         return self.Action(self.object_designator_description.ground(),  self.object_designator_description.ground(),
                            self.arms[0], self.grasps[0])
+
+
