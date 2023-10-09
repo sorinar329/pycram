@@ -952,7 +952,7 @@ class PourAction(ActionDesignatorDescription):
                 # prepose depending on the gripper
                 gripper_frame = "pr2_1/l_gripper_tool_frame" if self.arm == "left" else "pr2_1/r_gripper_tool_frame"
 
-                # First rotate the gripper, so the further calculations maakes sense
+                # First rotate the gripper, so the further calculations makes sense
                 tmp_for_rotate_pose = object.local_transformer.transform_pose(adjusted_oTm, gripper_frame)
                 tmp_for_rotate_pose.pose.position.x = 0
                 tmp_for_rotate_pose.pose.position.y = 0
@@ -1023,7 +1023,7 @@ class CuttingAction(ActionDesignatorDescription):
 
         object_designator: ObjectDesignatorDescription.Object
         """
-        Object designator describing the object that should be picked up
+        Object designator describing the object that should be cut
         """
 
         arm: str
@@ -1036,17 +1036,33 @@ class CuttingAction(ActionDesignatorDescription):
         The grasp that should be used. For example, 'left' or 'right'
         """
 
-        object_at_execution: Optional[ObjectDesignatorDescription.Object] = dataclasses.field(init=False)
+        slice_thickness: float
+        """
+        The upper bound thickness of the slices
+        """
+
+        tool: str
+        """
+        The tool to cut with
+        """
+
+        technique: str
+        """
+        Technique used to cut the object.
+        """
+
+        object_at_execution: Optional[ObjectDesignatorDescription.Object] = dataclasses.field(init=False, repr=False)
         """
         The object at the time this Action got created. It is used to be a static, information holding entity. It is
         not updated when the BulletWorld object is changed.
         """
 
+
         @with_tree
         def perform(self) -> None:
             # Store the object's data copy at execution
             self.object_at_execution = self.object_designator.data_copy()
-            robot = BulletWorld.robot
+
             # Retrieve object and robot from designators
             object = self.object_designator.bullet_world_object
             # Get grasp orientation and target pose
@@ -1061,16 +1077,23 @@ class CuttingAction(ActionDesignatorDescription):
             # from bread_dim calculate def a calculation that gets me the highest number from the first 2 entries
 
             # Given slice thickness is 3 cm or 0.03 meters
-            slice_thickness = 0.05
+            slice_thickness = self.slice_thickness
             # Calculate slices and transform them to the map frame with orientation
             obj_length = dim[0]
             obj_width = dim[1]
             obj_height = dim[2]
-            num_slices = int(obj_length // slice_thickness)
+
 
 
             # Calculate the starting Y-coordinate offset (half the width minus half a slice thickness)
-            start_offset = -obj_length / 2 + slice_thickness / 2
+            if self.technique == 'halving':
+                start_offset = 0
+                num_slices = 1
+            else:
+                num_slices = 1
+                    #int(obj_length // slice_thickness))
+                start_offset = 0
+                        #-obj_length / 2 + slice_thickness / 2)
 
             # Calculate slice coordinates
             slice_coordinates = [start_offset + i * slice_thickness for i in range(num_slices)]
@@ -1079,7 +1102,7 @@ class CuttingAction(ActionDesignatorDescription):
             slice_poses = []
             for x in slice_coordinates:
                 tmp_pose = object_pose.copy()
-                tmp_pose.pose.position.y -= obj_width
+                tmp_pose.pose.position.y -= 3 * obj_width
                 tmp_pose.pose.position.x = x
                 sTm = object.local_transformer.transform_pose(tmp_pose, "map")
                 slice_poses.append(sTm)
@@ -1104,7 +1127,7 @@ class CuttingAction(ActionDesignatorDescription):
 
                 # Adjust the position of the object pose by grasp in MAP
                 lift_pose = adjusted_slice_pose.copy()
-                lift_pose.pose.position.z += obj_height
+                lift_pose.pose.position.z += 2 * obj_height
                 # Perform the motion for lifting the tool
                 BulletWorld.current_bullet_world.add_vis_axis(lift_pose)
                 MoveTCPMotion(lift_pose, self.arm).resolve().perform()
@@ -1114,8 +1137,6 @@ class CuttingAction(ActionDesignatorDescription):
                 # Perform the motion for lifting the tool
                 BulletWorld.current_bullet_world.add_vis_axis(lift_pose)
                 MoveTCPMotion(lift_pose, self.arm).resolve().perform()
-
-
 
     def __init__(self, object_designator_description: ObjectDesignatorDescription, arms: List[str],
                  grasps: List[str], resolver=None):
@@ -1133,13 +1154,21 @@ class CuttingAction(ActionDesignatorDescription):
         self.arms: List[str] = arms
         self.grasps: List[str] = grasps
 
+    def __iter__(self):
+        for object_, grasp, arm in itertools.product(iter(self.object_designator_description),
+                                                                            self.grasps, self.arms):
+            yield self.Action(object_, arm, grasp,
+                              slice_thickness=0.05, tool="big_knife", technique="slicing")
+
     def ground(self) -> Action:
         """
         Default resolver, returns a performable designator with the first entries from the lists of possible parameter.
 
         :return: A performable designator
         """
-        return self.Action(self.object_designator_description.ground(), self.arms[0], self.grasps[0])
+        return next(iter(self))
+
+
 
 class MixingAction(ActionDesignatorDescription):
     """
