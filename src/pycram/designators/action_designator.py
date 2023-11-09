@@ -11,7 +11,8 @@ from .motion_designator import *
 from .object_designator import ObjectDesignatorDescription, BelieveObject, ObjectPart
 from ..orm.action_designator import (ParkArmsAction as ORMParkArmsAction, NavigateAction as ORMNavigateAction,
                                      PickUpAction as ORMPickUpAction, PlaceAction as ORMPlaceAction,
-                                     MoveTorsoAction as ORMMoveTorsoAction, SetGripperAction as ORMSetGripperAction,
+                                     MixingAction as ORMMixingAction, MoveTorsoAction as ORMMoveTorsoAction,
+                                     SetGripperAction as ORMSetGripperAction, CuttingAction as ORMCuttingAction,
                                      Action as ORMAction)
 from ..orm.base import Quaternion, Position, Base, RobotState, MetaData
 from ..plan_failures import ObjectUnfetchable, ReachabilityFailure
@@ -265,6 +266,7 @@ class ParkArmsAction(ActionDesignatorDescription):
         """
         return self.Action(self.arms[0])
 
+
 class PickUpAction(ActionDesignatorDescription):
     """
     Designator to let the robot pick up an object.
@@ -314,8 +316,8 @@ class PickUpAction(ActionDesignatorDescription):
             adjusted_oTm = object.local_transformer.transform_pose(adjusted_pose, "map")
             # multiplying the orientation therefore "rotating" it, to get the correct orientation of the gripper
             ori = helper.multiply_quaternions([adjusted_oTm.orientation.x, adjusted_oTm.orientation.y,
-                                        adjusted_oTm.orientation.z, adjusted_oTm.orientation.w],
-                                       grasp)
+                                               adjusted_oTm.orientation.z, adjusted_oTm.orientation.w],
+                                              grasp)
 
             # Set the orientation of the object pose by grasp in MAP
             adjusted_oTm.orientation.x = ori[0]
@@ -333,12 +335,12 @@ class PickUpAction(ActionDesignatorDescription):
             tmp_for_rotate_pose.pose.position.z = -0.1
             gripper_rotate_pose = object.local_transformer.transform_pose(tmp_for_rotate_pose, "map")
 
-            #Perform Gripper Rotate
+            # Perform Gripper Rotate
             BulletWorld.current_bullet_world.add_vis_axis(gripper_rotate_pose)
             MoveTCPMotion(gripper_rotate_pose, self.arm).resolve().perform()
 
             oTg = object.local_transformer.transform_pose(adjusted_oTm, gripper_frame)
-            oTg.pose.position.x -= 0.1 # in x since this is how the gripper is oriented
+            oTg.pose.position.x -= 0.1  # in x since this is how the gripper is oriented
             prepose = object.local_transformer.transform_pose(oTg, "map")
 
             # Perform the motion with the prepose and open gripper
@@ -360,7 +362,6 @@ class PickUpAction(ActionDesignatorDescription):
 
             # Remove the vis axis from the world
             BulletWorld.current_bullet_world.remove_vis_axis()
-
 
         def to_sql(self) -> ORMPickUpAction:
             return ORMPickUpAction(self.arm, self.grasp)
@@ -808,242 +809,40 @@ class CloseAction(ActionDesignatorDescription):
         return self.Action(self.object_designator_description.resolve(), self.arms[0])
 
 
-class PourAction(ActionDesignatorDescription):
-    """
-    Designator to let the robot pour onto an object.
-    """
-
-    @dataclasses.dataclass
-    class Action(ActionDesignatorDescription.Action):
-        object_designator: ObjectDesignatorDescription.Object
-        """
-        Object designator describing the object that should be tilted
-        """
-        arm: str
-        """
-        Arm that is currently holding the object
-        """
-        pouring_location: Pose
-        """
-        Pose in the world at which the object should be tilted
-        """
-        revert_location: Pose
-        """
-        Pose in the world at which the object should be re-tilted
-        """
-        wait_duration: int
-        """
-        Wait duration in seconds for which the object should be tilted
-        """
-
-        @with_tree
-        def perform(self) -> None:
-            MoveTCPMotion(target=self.pouring_location, arm=self.arm).resolve(). \
-                perform()
-            # sleep for some seconds
-            time.sleep(self.wait_duration)  # Sleep for wait_duration seconds
-            MoveTCPMotion(target=self.revert_location, arm=self.arm).resolve(). \
-                perform()
-        #
-        # def to_sql(self) -> ORMPlaceAction:
-        #     return ORMPlaceAction(self.arm)
-        #
-        # def insert(self, session, *args, **kwargs) -> ORMPlaceAction:
-        #     action = super().insert(session)
-        #
-        #     if self.object_designator:
-        #         od = self.object_designator.insert(session, )
-        #         action.object = od.id
-        #     else:
-        #         action.object = None
-        #
-        #     session.add(action)
-        #     session.commit()
-        #     return action
-
-    def __init__(self, object_designator_description: ObjectDesignatorDescription,
-                 pouring_location: Pose,
-                 revert_location: Pose,
-                 arms: List[str], wait_duration, resolver=None):
-        """
-        Create an Action Description to place an object
-
-        :param object_designator_description: Description of object to place.
-        :param target_locations: List of possible positions/orientations to place the object
-        :param arms: List of possible arms to use
-        :param resolver: Grounding method to resolve this designator
-        """
-        super(PourAction, self).__init__(resolver)
-        self.object_designator_description: ObjectDesignatorDescription = object_designator_description
-        self.pouring_location: Pose = pouring_location
-        self.revert_location: Pose = revert_location
-        self.arms: List[str] = arms
-        self.wait_duration = wait_duration
-
-    def ground(self) -> Action:
-        """
-        Default resolver that returns a performable designator with the first entries from the list of possible entries.
-
-        :return: A performable designator
-        """
-        return self.Action(self.object_designator_description.ground(), self.arms[0],
-                           self.pouring_location,
-                           self.revert_location,
-                           self.wait_duration)
-
-    class HoldAction(ActionDesignatorDescription):
-        """
-        Designator to let the robot pick up an object.
-        """
-
-        @dataclasses.dataclass
-        class Action(ActionDesignatorDescription.Action):
-
-            object_designator: ObjectDesignatorDescription.Object
-            """
-            Object designator describing the object that should be picked up
-            """
-
-            arm: str
-            """
-            The arm that should be used for pick up
-            """
-
-            grasp: str
-            """
-            The grasp that should be used. For example, 'left' or 'right'
-            """
-
-            object_at_execution: Optional[ObjectDesignatorDescription.Object] = dataclasses.field(init=False)
-            """
-            The object at the time this Action got created. It is used to be a static, information holding entity. It is
-            not updated when the BulletWorld object is changed.
-            """
-
-            @with_tree
-            def perform(self) -> None:
-                # Store the object's data copy at execution
-                self.object_at_execution = self.object_designator.data_copy()
-                robot = BulletWorld.robot
-                # Retrieve object and robot from designators
-                object = self.object_designator.bullet_world_object
-                # Get grasp orientation and target pose
-                grasp = robot_description.grasps.get_orientation_for_grasp(self.grasp)
-
-                # oTm = Object Pose in Frame map
-                oTm = object.get_pose()
-                # Transform the object pose to the map frame
-                mTo = object.local_transformer.transform_to_object_frame(oTm, object)
-                # Adjust the pose according to the special knowledge of the object designator
-                adjusted_pose = self.object_designator.special_knowledge_adjustment_pose(self.grasp, mTo)
-                # Transform the adjusted pose to the map frame
-                adjusted_oTm = object.local_transformer.transform_pose(adjusted_pose, "map")
-                # multiplying the orientation therefore "rotating" it, to get the correct orientation of the gripper
-                ori = helper.multiply_quaternions([adjusted_oTm.orientation.x, adjusted_oTm.orientation.y,
-                                            adjusted_oTm.orientation.z, adjusted_oTm.orientation.w],
-                                           grasp)
-
-                # Set the orientation of the object pose by grasp in MAP
-                adjusted_oTm.orientation.x = ori[0]
-                adjusted_oTm.orientation.y = ori[1]
-                adjusted_oTm.orientation.z = ori[2]
-                adjusted_oTm.orientation.w = ori[3]
-
-                # prepose depending on the gripper
-                gripper_frame = "pr2_1/l_gripper_tool_frame" if self.arm == "left" else "pr2_1/r_gripper_tool_frame"
-
-                # First rotate the gripper, so the further calculations makes sense
-                tmp_for_rotate_pose = object.local_transformer.transform_pose(adjusted_oTm, gripper_frame)
-                tmp_for_rotate_pose.pose.position.x = 0
-                tmp_for_rotate_pose.pose.position.y = 0
-                tmp_for_rotate_pose.pose.position.z = -0.1
-                gripper_rotate_pose = object.local_transformer.transform_pose(tmp_for_rotate_pose, "map")
-
-                # Perform Gripper Rotate
-                BulletWorld.current_bullet_world.add_vis_axis(gripper_rotate_pose)
-                MoveTCPMotion(gripper_rotate_pose, self.arm).resolve().perform()
-
-                oTg = object.local_transformer.transform_pose(adjusted_oTm, gripper_frame)
-                oTg.pose.position.x -= 0.1  # in x since this is how the gripper is oriented
-                prepose = object.local_transformer.transform_pose(oTg, "map")
-
-                # Perform the motion with the prepose and open gripper
-                BulletWorld.current_bullet_world.add_vis_axis(prepose)
-                MoveTCPMotion(prepose, self.arm).resolve().perform()
-                MoveGripperMotion(motion="open", gripper=self.arm).resolve().perform()
-
-                # Perform the motion with the adjusted pose -> actual grasp and close gripper
-                BulletWorld.current_bullet_world.add_vis_axis(adjusted_oTm)
-                MoveTCPMotion(adjusted_oTm, self.arm).resolve().perform()
-                adjusted_oTm.pose.position.z += 0.03
-                MoveGripperMotion(motion="close", gripper=self.arm).resolve().perform()
-
-
-            def to_sql(self) -> ORMPickUpAction:
-                return ORMPickUpAction(self.arm, self.grasp)
-
-            def insert(self, session: sqlalchemy.orm.session.Session, **kwargs):
-                action = super().insert(session)
-                # try to create the object designator
-                if self.object_at_execution:
-                    od = self.object_at_execution.insert(session, )
-                    action.object = od.id
-                else:
-                    action.object = None
-
-                session.add(action)
-                session.commit()
-
-                return action
-
-        def __init__(self, object_designator_description: ObjectDesignatorDescription, arms: List[str],
-                     grasps: List[str], resolver=None):
-            """
-            Lets the robot pick up an object. The description needs an object designator describing the object that should be
-            picked up, an arm that should be used as well as the grasp from which side the object should be picked up.
-
-            :param object_designator_description: List of possible object designator
-            :param arms: List of possible arms that could be used
-            :param grasps: List of possible grasps for the object
-            :param resolver: An optional resolver that returns a performable designator with elements from the lists of possible paramter
-            """
-            super(PickUpAction, self).__init__(resolver)
-            self.object_designator_description: ObjectDesignatorDescription = object_designator_description
-            self.arms: List[str] = arms
-            self.grasps: List[str] = grasps
-
-
 class CuttingAction(ActionDesignatorDescription):
     """
-    Designator to let the robot pick up an object.
+    Designator to let the robot perform a cutting action.
     """
 
     @dataclasses.dataclass
     class Action(ActionDesignatorDescription.Action):
+        """
+        Action class for the Cutting action.
+        """
 
         object_designator: ObjectDesignatorDescription.Object
         """
-        Object designator describing the object that should be cut
+        Object designator describing the object that should be cut.
         """
 
         arm: str
         """
-        The arm that should be used for pick up
+        The arm that should be used for cutting.
         """
 
         grasp: str
         """
-        The grasp that should be used. For example, 'left' or 'right'
+        The grasp that should be used for cutting. For example, 'left' or 'right'.
         """
 
         slice_thickness: float
         """
-        The upper bound thickness of the slices
+        The upper bound thickness of the slices.
         """
 
         tool: str
         """
-        The tool to cut with
+        The tool to cut with.
         """
 
         technique: str
@@ -1057,9 +856,11 @@ class CuttingAction(ActionDesignatorDescription):
         not updated when the BulletWorld object is changed.
         """
 
-
         @with_tree
         def perform(self) -> None:
+            """
+            Perform the cutting action using the specified object, arm, grasp, slice thickness, tool, and technique.
+            """
             # Store the object's data copy at execution
             self.object_at_execution = self.object_designator.data_copy()
 
@@ -1075,7 +876,6 @@ class CuttingAction(ActionDesignatorDescription):
             object_pose = object.local_transformer.transform_to_object_frame(oTm, object)
 
             # from bread_dim calculate def a calculation that gets me the highest number from the first 2 entries
-
             # Given slice thickness is 3 cm or 0.03 meters
             slice_thickness = self.slice_thickness
             # Calculate slices and transform them to the map frame with orientation
@@ -1083,17 +883,15 @@ class CuttingAction(ActionDesignatorDescription):
             obj_width = dim[1]
             obj_height = dim[2]
 
-
-
             # Calculate the starting Y-coordinate offset (half the width minus half a slice thickness)
             if self.technique == 'halving':
                 start_offset = 0
                 num_slices = 1
             else:
                 num_slices = 1
-                    #int(obj_length // slice_thickness))
+                # int(obj_length // slice_thickness))
                 start_offset = 0
-                        #-obj_length / 2 + slice_thickness / 2)
+                # -obj_length / 2 + slice_thickness / 2)
 
             # Calculate slice coordinates
             slice_coordinates = [start_offset + i * slice_thickness for i in range(num_slices)]
@@ -1138,16 +936,32 @@ class CuttingAction(ActionDesignatorDescription):
                 BulletWorld.current_bullet_world.add_vis_axis(lift_pose)
                 MoveTCPMotion(lift_pose, self.arm).resolve().perform()
 
+        def to_sql(self) -> ORMCuttingAction:
+            """
+            Convert the action to a corresponding SQL representation for storage.
+            """
+            return ORMCuttingAction(self.arm, self.grasp)
+
+        def insert(self, session: sqlalchemy.orm.session.Session, **kwargs):
+            """
+            Insert the cutting action into the database session.
+            """
+            action = super().insert(session)
+            # Additional logic for inserting cutting action data goes here
+            session.add(action)
+            session.commit()
+
+            return action
+
     def __init__(self, object_designator_description: ObjectDesignatorDescription, arms: List[str],
                  grasps: List[str], resolver=None):
         """
-        Lets the robot pick up an object. The description needs an object designator describing the object that should be
-        picked up, an arm that should be used as well as the grasp from which side the object should be picked up.
+        Initialize the CuttingAction with object designators, arms, and grasps.
 
-        :param object_designator_description: List of possible object designator
-        :param arms: List of possible arms that could be used
-        :param grasps: List of possible grasps for the object
-        :param resolver: An optional resolver that returns a performable designator with elements from the lists of possible paramter
+        :param object_designator_description: Object designator for the object to be cut.
+        :param arms: List of possible arms that could be used.
+        :param grasps: List of possible grasps for the cutting action.
+        :param resolver: An optional resolver for dynamic parameter selection.
         """
         super(CuttingAction, self).__init__(resolver)
         self.object_designator_description: ObjectDesignatorDescription = object_designator_description
@@ -1156,7 +970,7 @@ class CuttingAction(ActionDesignatorDescription):
 
     def __iter__(self):
         for object_, grasp, arm in itertools.product(iter(self.object_designator_description),
-                                                                            self.grasps, self.arms):
+                                                     self.grasps, self.arms):
             yield self.Action(object_, arm, grasp,
                               slice_thickness=0.05, tool="big_knife", technique="slicing")
 
@@ -1169,33 +983,35 @@ class CuttingAction(ActionDesignatorDescription):
         return next(iter(self))
 
 
-
 class MixingAction(ActionDesignatorDescription):
     """
-    Designator to let the robot pick up an object.
+    Designator to let the robot perform a mixing action.
     """
 
     @dataclasses.dataclass
     class Action(ActionDesignatorDescription.Action):
+        """
+        Action class for the Mixing action.
+        """
 
         object_designator: ObjectDesignatorDescription.Object
         """
-        Object designator describing the object that should be picked up
+        Object designator describing the object that should be mixed.
         """
 
         object_tool_designator: ObjectDesignatorDescription.Object
         """
-        Object designator describing the object that should be picked up
+        Object designator describing the mixing tool.
         """
 
         arm: str
         """
-        The arm that should be used for pick up
+        The arm that should be used for mixing.
         """
 
         grasp: str
         """
-        The grasp that should be used. For example, 'left' or 'right'
+        The grasp that should be used for mixing. For example, 'left' or 'right'.
         """
 
         object_at_execution: Optional[ObjectDesignatorDescription.Object] = dataclasses.field(init=False)
@@ -1206,13 +1022,13 @@ class MixingAction(ActionDesignatorDescription):
 
         @with_tree
         def perform(self) -> None:
+            """
+            Perform the mixing action using the specified object, tool, arm, and grasp.
+            """
             # Store the object's data copy at execution
             self.object_at_execution = self.object_designator.data_copy()
-            robot = BulletWorld.robot
             # Retrieve object and robot from designators
             object = self.object_designator.bullet_world_object
-            # Get grasp orientation and target pose
-            grasp = robot_description.grasps.get_orientation_for_grasp(self.grasp)
 
             obj_dim = object.get_Object_Dimensions()
 
@@ -1225,7 +1041,7 @@ class MixingAction(ActionDesignatorDescription):
                 x_start, y_start, z_start = pose.pose.position.x, pose.pose.position.y, pose.pose.position.z
                 spiral_poses = []
 
-                for t in range(2*steps):
+                for t in range(2 * steps):
                     tmp_pose = pose.copy()
 
                     r = radial_increment * t
@@ -1246,31 +1062,16 @@ class MixingAction(ActionDesignatorDescription):
 
                 return spiral_poses
 
-            # Transform slice coordinates to map frame with orientation
-
-            #this is a very good one but takes ages
+            # this is a very good one but takes ages
             # spiral_poses = generate_spiral(object_pose, 0.0004, 0.0008, math.radians(10), 100)
             spiral_poses = generate_spiral(object_pose, 0.001, 0.0035, math.radians(30), 10)
-            #
-            #
 
             BulletWorld.current_bullet_world.remove_vis_axis()
             for spiral_pose in spiral_poses:
-                # rotate the slice_pose by grasp
-                # ori = helper.multiply_quaternions([slice_pose.orientation.x, slice_pose.orientation.y,
-                #                                    slice_pose.orientation.z, slice_pose.orientation.w],
-                #                                   [0,0,0,1])
-                #                                   # helper.axis_angle_to_quaternion([0, 0, 1], 180))
-                #
                 oriR = helper.axis_angle_to_quaternion([1, 0, 0], 180)
                 ori = helper.multiply_quaternions([spiral_pose.orientation.x, spiral_pose.orientation.y,
-                                                   spiral_pose.orientation.z, spiral_pose.orientation.w],
-                                                  oriR)
-                # oriM = helper.multiply_quaternions([oriR[0], oriR[1], oriR[2], oriR[3]],
-                #                                    [ori[0], ori[1], ori[2], ori[3]])
-                #
+                                                   spiral_pose.orientation.z, spiral_pose.orientation.w], oriR)
                 adjusted_slice_pose = spiral_pose.copy()
-                #
                 # # Set the orientation of the object pose by grasp in MAP
                 adjusted_slice_pose.orientation.x = ori[0]
                 adjusted_slice_pose.orientation.y = ori[1]
@@ -1281,29 +1082,41 @@ class MixingAction(ActionDesignatorDescription):
                 lift_pose = adjusted_slice_pose.copy()
                 lift_pose.pose.position.z += (obj_height + 0.08)
                 # Perform the motion for lifting the tool
-                #BulletWorld.current_bullet_world.add_vis_axis(lift_pose)
+                # BulletWorld.current_bullet_world.add_vis_axis(lift_pose)
                 MoveTCPMotion(lift_pose, self.arm).resolve().perform()
 
+        def to_sql(self) -> ORMMixingAction:
+            """
+            Convert the action to a corresponding SQL representation for storage.
+            """
+            return ORMMixingAction(self.arm, self.grasp)
 
+        def insert(self, session: sqlalchemy.orm.session.Session, **kwargs):
+            """
+            Insert the mixing action into the database session.
+            """
+            action = super().insert(session)
+            # Additional logic for inserting mixing action data goes here
+            session.add(action)
+            session.commit()
 
-
-
+            return action
 
     def __init__(self, object_designator_description: ObjectDesignatorDescription,
-                     object_tool_designator_description: ObjectDesignatorDescription, arms: List[str],
+                 object_tool_designator_description: ObjectDesignatorDescription, arms: List[str],
                  grasps: List[str], resolver=None):
         """
-        Lets the robot pick up an object. The description needs an object designator describing the object that should be
-        picked up, an arm that should be used as well as the grasp from which side the object should be picked up.
+        Initialize the MixingAction with object and tool designators, arms, and grasps.
 
-        :param object_designator_description: List of possible object designator
-        :param arms: List of possible arms that could be used
-        :param grasps: List of possible grasps for the object
-        :param resolver: An optional resolver that returns a performable designator with elements from the lists of possible paramter
+        :param object_designator_description: Object designator for the object to be mixed.
+        :param object_tool_designator_description: Object designator for the mixing tool.
+        :param arms: List of possible arms that could be used.
+        :param grasps: List of possible grasps for the mixing action.
+        :param resolver: An optional resolver for dynamic parameter selection.
         """
         super(MixingAction, self).__init__(resolver)
         self.object_designator_description: ObjectDesignatorDescription = object_designator_description
-        self.object_tool_designator_description: ObjectDesignatorDescription = object_designator_description
+        self.object_tool_designator_description: ObjectDesignatorDescription = object_tool_designator_description
         self.arms: List[str] = arms
         self.grasps: List[str] = grasps
 
@@ -1313,7 +1126,6 @@ class MixingAction(ActionDesignatorDescription):
 
         :return: A performable designator
         """
-        return self.Action(self.object_designator_description.ground(),  self.object_designator_description.ground(),
+        return self.Action(self.object_designator_description.ground(),
+                           self.object_tool_designator_description.ground(),
                            self.arms[0], self.grasps[0])
-
-

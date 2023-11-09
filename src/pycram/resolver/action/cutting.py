@@ -18,7 +18,7 @@ class CuttingActionSPARQL(CuttingAction):
     def __init__(self, object_designator_description: ObjectDesignatorDescription, arms: List[str], grasps: List[str]):
         super().__init__(object_designator_description, arms, grasps, [0])
         self.query_folder: str = os.path.join(os.path.expanduser("~", ), "pycram_ws", "src", "pycram", "demos",
-                                              "pycram_possible_actions_demo", "FoodCutting", "queries")
+                                              "pycram_possible_actions_demo", "queries")
         task = "cut:Quartering"
         tobject = "obo:FOODON_03301710"
 
@@ -80,7 +80,6 @@ class CuttingActionSPARQL(CuttingAction):
     def __iter__(self):
         for action in iter(CuttingAction.__iter__(self)):
             action.technique = 'slicing'
-                #str(self.technique))
             action.slice_thickness = float(self.repetitions)
 
             yield action
