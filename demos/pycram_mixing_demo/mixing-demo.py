@@ -53,7 +53,7 @@ with simulated_robot:
     NavigateAction(target_locations=[nav_pose]).resolve().perform()
     LookAtAction(targets=[big_bowl_BO.resolve().pose]).resolve().perform()
 
-    MixingAction(object_designator_description=big_bowl_BO,
-                 object_tool_designator_description=big_bowl_BO,
+    MixingWhirlstormAction(object_designator_description=big_bowl_BO,
+                 object_tool_designator_description=whisk_BO,
                  arms=["left"],
                  grasps=["top"]).resolve().perform()
