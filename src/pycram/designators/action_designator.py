@@ -1290,12 +1290,11 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
 
             obj_height = dim[2]
             radius_upper_bound = ((dim[0] * self.radius_bounds[0]) - max(dim2[0], dim2[1]))
-            #radius_upper_bound = ((dim[0] * 0.7) - max(dim2[0], dim2[1]))
-            # Circular
-            radius_lower_bound = ((dim[0] * self.radius_bounds[1]) - max(dim2[0], dim2[1]))
-            #radius_lower_bound = ((dim[0] * 0) - max(dim2[0], dim2[1]))
+
+            radius_lower_bound = max(((dim[0] * self.radius_bounds[1]) - max(dim2[0], dim2[1])), 0)
+
             # Whirlstorm
-            # radius_lower_bound = 0
+            radius_lower_bound = 0
 
             oTm = object.get_pose()
             object_pose = object.local_transformer.transform_to_object_frame(oTm, object)
