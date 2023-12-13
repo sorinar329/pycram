@@ -1229,6 +1229,9 @@ class MixingAction(ActionDesignatorDescription):
                            self.arms[0], self.grasps[0])
 
 
+import numpy as np
+
+
 class MixingWhirlstormAction(ActionDesignatorDescription):
     """
     Designator to let the robot perform a mixing action.
@@ -1260,6 +1263,8 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
         The grasp that should be used for mixing. For example, 'left' or 'right'.
         """
 
+        radius_bounds: [float]
+
         object_at_execution: Optional[ObjectDesignatorDescription.Object] = dataclasses.field(init=False)
         """
         The object at the time this Action got created. It is used to be a static, information holding entity. It is
@@ -1284,13 +1289,13 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
             print(dim2[0], dim2[1])
 
             obj_height = dim[2]
-            radius_upper_bound = ((dim[0] * 0.7) - max(dim2[0], dim2[1]))
+            radius_upper_bound = ((dim[0] * self.radius_bounds[0]) - max(dim2[0], dim2[1]))
+            #radius_upper_bound = ((dim[0] * 0.7) - max(dim2[0], dim2[1]))
             # Circular
-            radius_lower_bound = ((dim[0] * 0.7) - max(dim2[0], dim2[1]))
+            radius_lower_bound = ((dim[0] * self.radius_bounds[1]) - max(dim2[0], dim2[1]))
+            #radius_lower_bound = ((dim[0] * 0) - max(dim2[0], dim2[1]))
             # Whirlstorm
-            #radius_lower_bound = 0
-
-            import numpy as np
+            # radius_lower_bound = 0
 
             oTm = object.get_pose()
             object_pose = object.local_transformer.transform_to_object_frame(oTm, object)
