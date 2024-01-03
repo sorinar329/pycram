@@ -54,8 +54,9 @@ with simulated_robot:
     LookAtAction(targets=[big_bowl_BO.resolve().pose]).resolve().perform()
     mixing_resolver = MixingActionSWRL(object_designator_description=big_bowl_BO,
                  object_tool_designator_description=whisk_BO,
+                 ingredients=["water", "sugar", "flour"],
                  arms=["left"],
-                 grasps=["top"]).parameters_from_owl()
+                 grasps=["top"]).parameters_from_owl().perform()
     # MixingWhirlstormAction(object_designator_description=big_bowl_BO,
     #              object_tool_designator_description=whisk_BO,
     #              arms=["left"],
