@@ -1263,7 +1263,9 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
         The grasp that should be used for mixing. For example, 'left' or 'right'.
         """
 
-        radius_bounds: [float]
+        motion: str
+
+        motion_parameters: dict
 
         object_at_execution: Optional[ObjectDesignatorDescription.Object] = dataclasses.field(init=False)
         """
@@ -1288,16 +1290,115 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
             dim2 = [max(tool_dim[0], tool_dim[1]), min(tool_dim[0], tool_dim[1]), tool_dim[2]]
 
             obj_height = dim[2]
-            radius_upper_bound = ((dim[0] * self.radius_bounds[0]) - max(dim2[0], dim2[1]))
-            # radius_upper_bound = ((dim[0] * 0.7) - max(dim2[0], dim2[1]))
-            # Circular
-            radius_lower_bound = max(0, ((dim[0] * self.radius_bounds[1]) - max(dim2[0], dim2[1])))
-            # radius_lower_bound = ((dim[0] * 0) - max(dim2[0], dim2[1]))
-            # Whirlstorm
-            # radius_lower_bound = 0
+            radius_bounds = self.motion_parameters.get("radius_bounds")
+            radius_upper_bound = ((dim[0] * radius_bounds[0]) - max(dim2[0], dim2[1]))
+            radius_lower_bound = max(0, ((dim[0] * radius_bounds[1]) - max(dim2[0], dim2[1])))
 
             oTm = object.get_pose()
             object_pose = object.local_transformer.transform_to_object_frame(oTm, object)
+
+            def generate_circular_motion(pose, num_circles):
+                x_start, y_start, z_start = pose.pose.position.x, pose.pose.position.y, pose.pose.position.z
+                radius = np.linspace(radius_upper_bound, radius_lower_bound, num=8)
+                angle = np.radians(np.linspace(0, 360, num=8))
+                x_vector = x_start + radius * np.cos(angle)
+                y_vector = y_start + radius * np.sin(angle)
+
+                spiral_poses = []
+                for i in range(num_circles):
+                    for x, y in zip(x_vector, y_vector):
+                        tmp_pose = pose.copy()
+
+                        tmp_pose.pose.position.x = x
+                        tmp_pose.pose.position.y = y
+
+                        spiralTm = object.local_transformer.transform_pose(tmp_pose, "map")
+                        spiral_poses.append(spiralTm)
+                        BulletWorld.current_bullet_world.add_vis_axis(spiralTm)
+                return spiral_poses
+
+            def generate_folding_motion(pose, num_motions):
+                x_start, y_start, z_start = pose.pose.position.x, pose.pose.position.y, pose.pose.position.z
+                line_start = x_start + radius_upper_bound
+                line = np.linspace([x_start, line_start], [x_start, y_start], num=4)
+                # folding_motion = np.concatenate([line, np.flip(line, axis=0)])
+                radian_shift1 = np.radians(self.motion_parameters.get("angle_shift1"))
+                radian_shift2 = np.radians(self.motion_parameters.get("angle_shift2"))
+
+                rotation_matrix = np.array([[np.cos(radian_shift1), -np.sin(radian_shift1)],
+                                            [np.sin(radian_shift1), np.cos(radian_shift1)]])
+
+                rotation_matrix2 = np.array([[np.cos(radian_shift2), -np.sin(radian_shift2)],
+                                             [np.sin(radian_shift2), np.cos(radian_shift2)]])
+
+                spiral_poses = []
+                for i in range(num_motions):
+                    # for j in range(3):
+                    #     line = line @ rotation_matrix2
+                    #     folding_motion = np.concatenate([folding_motion, line])
+                    #     folding_motion = np.concatenate([folding_motion, np.flip(line, axis=0)])
+                    for j in range(4):
+                        for x, y in line:
+                            tmp_pose = pose.copy()
+
+                            tmp_pose.pose.position.x = x
+                            tmp_pose.pose.position.y = y
+
+                            spiralTm = object.local_transformer.transform_pose(tmp_pose, "map")
+                            spiral_poses.append(spiralTm)
+                            BulletWorld.current_bullet_world.add_vis_axis(spiralTm)
+
+                        for x, y in np.flip(line, axis=0):
+                            tmp_pose = pose.copy()
+
+                            tmp_pose.pose.position.x = x
+                            tmp_pose.pose.position.y = y
+
+                            spiralTm = object.local_transformer.transform_pose(tmp_pose, "map")
+                            spiral_poses.append(spiralTm)
+                            BulletWorld.current_bullet_world.add_vis_axis(spiralTm)
+                        line = line @ rotation_matrix2
+                    line = line @ rotation_matrix
+                return spiral_poses
+
+            def generate_vertical_circular_motion(pose, num_circles):
+                x_start, y_start, z_start = pose.pose.position.x, pose.pose.position.y, pose.pose.position.z
+                radians = np.radians(np.linspace(0, 360, num=8))
+                semi_major_x = np.linspace(radius_upper_bound, radius_upper_bound / 4,
+                                                  num=12)
+                semi_major_y = 0.01
+
+                spiral_poses = []
+                y = y_start + semi_major_y * np.sin(radians)
+                y -= radius_upper_bound
+                increment_y = True
+
+                for i in range(num_circles):
+                    for width in semi_major_x:
+                        x = x_start + width * np.cos(radians)
+                        coordinates = np.column_stack([x, y])
+                        inside_circle = np.linalg.norm(coordinates - np.array(x_start, y_start),
+                                                       axis=1) < radius_upper_bound
+                        if np.all(inside_circle):
+                            for x_coordinate, y_coordinate in coordinates:
+                                tmp_pose = pose.copy()
+
+                                tmp_pose.pose.position.x = x_coordinate
+                                tmp_pose.pose.position.y = y_coordinate
+
+                                spiralTm = object.local_transformer.transform_pose(tmp_pose, "map")
+                                spiral_poses.append(spiralTm)
+                                BulletWorld.current_bullet_world.add_vis_axis(spiralTm)
+                            break
+                    if increment_y:
+                        y += 0.02
+                        if np.all(np.linalg.norm([y - y_start], axis=0) > radius_upper_bound):
+                            increment_y = False
+                    else:
+                        y -= 0.02
+                        if np.all(np.linalg.norm([y - y_start], axis=0) > radius_upper_bound):
+                            increment_y = True
+                return spiral_poses
 
             def generate_whirlstorm_motion(pose, num_circles):
                 x_start, y_start, z_start = pose.pose.position.x, pose.pose.position.y, pose.pose.position.z
@@ -1316,18 +1417,18 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
                 spiral_poses = []
                 for i in range(num_circles):
                     size_coordinates = int(x_vector.shape[0])
-                    if radius_upper_bound != radius_lower_bound:
-                        if i % 4 == 0:
-                            m[:, 0] = x_vector
-                            m[:, 1] = y_vector
-                        elif i % 4 == 1:
-                            m = np.flipud(m[:, ::-1])
-                        elif i % 4 == 2:
-                            m[:, 0] = x_vector2
-                            m[:, 1] = y_vector2
-                            m = m[:, ::-1]
-                        else:
-                            m = np.flipud(m[:, ::-1])
+
+                    if i % 4 == 0:
+                        m[:, 0] = x_vector
+                        m[:, 1] = y_vector
+                    elif i % 4 == 1:
+                        m = np.flipud(m[:, ::-1])
+                    elif i % 4 == 2:
+                        m[:, 0] = x_vector2
+                        m[:, 1] = y_vector2
+                        m = m[:, ::-1]
+                    else:
+                        m = np.flipud(m[:, ::-1])
 
                     for j in range(size_coordinates):
                         tmp_pose = pose.copy()
@@ -1340,7 +1441,16 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
                         BulletWorld.current_bullet_world.add_vis_axis(spiralTm)
                 return spiral_poses
 
-            spiral_poses = generate_whirlstorm_motion(object_pose, 8)
+            if self.motion == "circular":
+                spiral_poses = generate_circular_motion(object_pose, 4)
+            elif self.motion == "whirlstorm":
+                spiral_poses = generate_whirlstorm_motion(object_pose, 8)
+            elif self.motion == "folding":
+                spiral_poses = generate_folding_motion(object_pose, 3)
+            elif self.motion == "vertical_circular":
+                spiral_poses = generate_vertical_circular_motion(object_pose, 15)
+            else:
+                spiral_poses = None
 
             BulletWorld.current_bullet_world.remove_vis_axis()
             for spiral_pose in spiral_poses:

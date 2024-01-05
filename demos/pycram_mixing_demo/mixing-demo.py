@@ -24,7 +24,6 @@ big_bowl = Object("big-bowl", "big-bowl", "big-bowl.stl", spawning_poses["big-bo
 whisk_BO = BelieveObject(names=["whisk"])
 big_bowl_BO = BelieveObject(names=["big-bowl"])
 
-
 with simulated_robot:
     ParkArmsAction([Arms.BOTH]).resolve().perform()
     MoveTorsoAction([0.33]).resolve().perform()
@@ -41,8 +40,8 @@ with simulated_robot:
                  grasps=["top"]).resolve().perform()
 
     ParkArmsAction([Arms.BOTH]).resolve().perform()
-    original_quaternion = (0, 0, 0, 1)
-    rotation_axis = (0, 0, 1)
+    original_quaternion = [0, 0, 0, 1]
+    rotation_axis = [0, 0, 1]
 
     rotation_quaternion = helper.axis_angle_to_quaternion(rotation_axis, 180)
     resulting_quaternion = helper.multiply_quaternions(original_quaternion, rotation_quaternion)
@@ -53,10 +52,10 @@ with simulated_robot:
     NavigateAction(target_locations=[nav_pose]).resolve().perform()
     LookAtAction(targets=[big_bowl_BO.resolve().pose]).resolve().perform()
     mixing_resolver = MixingActionSWRL(object_designator_description=big_bowl_BO,
-                 object_tool_designator_description=whisk_BO,
-                 ingredients=["water", "sugar", "flour"],
-                 arms=["left"],
-                 grasps=["top"]).parameters_from_owl().perform()
+                                       object_tool_designator_description=whisk_BO,
+                                       ingredients=["water", "sugar", "flour"],
+                                       arms=["left"],
+                                       grasps=["top"]).parameters_from_owl().perform()
     # MixingWhirlstormAction(object_designator_description=big_bowl_BO,
     #              object_tool_designator_description=whisk_BO,
     #              arms=["left"],
