@@ -71,6 +71,7 @@ class MixingActionSWRL(MixingWhirlstormAction):
 
     def parameters_from_owl(self):
         # self.name2owl()
+        # "Supported motions are: circular, folding, whirlstorm and vertical_circular"
         motion = "vertical_circular"
         motion_parameters = {"radius_bounds": [0.7, 0.0], "angle_shift1": 22.5, "angle_shift2": 90}
         return self.Action(self.object_designator_description.ground(),
