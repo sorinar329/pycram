@@ -48,12 +48,13 @@ with simulated_robot:
 
     nav_pose = Pose([-0.3, 0.9, 0.0], resulting_quaternion)
 
-    # NavigateAction(target_locations=[pickup_pose_knife.pose]).resolve().perform()
+    #NavigateAction(target_locations=[pickup_pose_knife.pose]).resolve().perform()
     NavigateAction(target_locations=[nav_pose]).resolve().perform()
     LookAtAction(targets=[big_bowl_BO.resolve().pose]).resolve().perform()
     mixing_resolver = MixingActionSWRL(object_designator_description=big_bowl_BO,
                                        object_tool_designator_description=whisk_BO,
                                        ingredients=["water", "sugar", "flour"],
+                                       task="stirring task",
                                        arms=["left"],
                                        grasps=["top"]).parameters_from_owl().perform()
     # MixingWhirlstormAction(object_designator_description=big_bowl_BO,
