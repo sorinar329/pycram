@@ -64,7 +64,6 @@ class Designator(ABC):
     :ivar timestamp: The timestamp of creation of reference or None if still not referencing an object.
     """
 
-
     resolvers = {}
     """
     List of all designator resolvers. Designator resolvers are functions which take a designator as
@@ -575,12 +574,14 @@ class LocationDesignatorDescription(DesignatorDescription):
         raise NotImplementedError(f"{type(self)}.ground() is not implemented.")
 
 
-#this knowledge should be somewhere else i guess
+# this knowledge should be somewhere else i guess
 SPECIAL_KNOWLEDGE = {
     'bigknife':
         [("top", [-0.08, 0, 0])],
     'whisk':
         [("top", [-0.08, 0, 0])],
+    'woodenspoon':
+        [("top", [-0.14, 0, 0])],
     'bowl':
         [("front", [1.0, 2.0, 3.0]),
          ("key2", [4.0, 5.0, 6.0])]

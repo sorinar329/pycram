@@ -16,27 +16,29 @@ robot.set_joint_state(robot_description.torso_joint, 0.24)
 kitchen_desig = ObjectDesignatorDescription(names=["kitchen"])
 
 spawning_poses = {
-    'whisk': Pose([0.9, 0.6, 0.8], [0, 0, 0, -1]),
+    'whisk': Pose([0.9, 0.6, 0.8], [0, 0, 0, 1]),
+    'woodenspoon': Pose([0.7, 0.6, 0.8], [0, 0, 0, 1]),
     'big-bowl': Pose([-0.85, 0.9, 1], [0, 0, -1, -1])
 }
+
 whisk = Object("whisk", "whisk", "whisk.stl", spawning_poses["whisk"])
+wooden_spoon = Object("woodenspoon", "woodenspoon", "woodenspoon.stl", spawning_poses["woodenspoon"])
 big_bowl = Object("big-bowl", "big-bowl", "big-bowl.stl", spawning_poses["big-bowl"])
 whisk_BO = BelieveObject(names=["whisk"])
 big_bowl_BO = BelieveObject(names=["big-bowl"])
+wooden_spoon_BO = BelieveObject(names=["woodenspoon"])
 
 with simulated_robot:
     ParkArmsAction([Arms.BOTH]).resolve().perform()
     MoveTorsoAction([0.33]).resolve().perform()
-    grasp = robot_description.grasps.get_orientation_for_grasp("top")
     arm = "left"
-    #
-    pickup_pose_knife = CostmapLocation(target=whisk_BO.resolve(), reachable_for=robot_desig).resolve()
-    pickup_arm = pickup_pose_knife.reachable_arms[0]
+
+    pickup_pose_knife = CostmapLocation(target=wooden_spoon_BO.resolve(), reachable_for=robot_desig).resolve()
 
     NavigateAction(target_locations=[pickup_pose_knife.pose]).resolve().perform()
 
-    PickUpAction(object_designator_description=whisk_BO,
-                 arms=["left"],
+    PickUpAction(object_designator_description=wooden_spoon_BO,
+                 arms=pickup_pose_knife.reachable_arms,
                  grasps=["top"]).resolve().perform()
 
     ParkArmsAction([Arms.BOTH]).resolve().perform()
@@ -48,16 +50,11 @@ with simulated_robot:
 
     nav_pose = Pose([-0.3, 0.9, 0.0], resulting_quaternion)
 
-    #NavigateAction(target_locations=[pickup_pose_knife.pose]).resolve().perform()
     NavigateAction(target_locations=[nav_pose]).resolve().perform()
     LookAtAction(targets=[big_bowl_BO.resolve().pose]).resolve().perform()
     mixing_resolver = MixingActionSWRL(object_designator_description=big_bowl_BO,
-                                       object_tool_designator_description=whisk_BO,
+                                       object_tool_designator_description=wooden_spoon_BO,
                                        ingredients=["water", "sugar", "flour"],
                                        task="stirring task",
                                        arms=["left"],
                                        grasps=["top"]).parameters_from_owl().perform()
-    # MixingWhirlstormAction(object_designator_description=big_bowl_BO,
-    #              object_tool_designator_description=whisk_BO,
-    #              arms=["left"],
-    #              grasps=["top"]).resolve().perform()

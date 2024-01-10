@@ -1366,11 +1366,11 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
                             vertical_circular_poses.extend(build_poses(pose, coordinates))
                             break
                     if increment_y:
-                        y += 0.02
+                        y += 0.01
                         if np.all(np.linalg.norm([y - y_start], axis=0) > radius_upper_bound):
                             increment_y = False
                     else:
-                        y -= 0.02
+                        y -= 0.01
                         if np.all(np.linalg.norm([y - y_start], axis=0) > radius_upper_bound):
                             increment_y = True
                 return vertical_circular_poses

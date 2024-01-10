@@ -8,17 +8,23 @@ from ...designators.motion_designator import *
 
 from owlready2 import *
 
+from ontology.task import *
+from ontology.container import *
+from ontology.ingredient import *
+from ontology.motion import *
+from ontology.rules import onto
+
 SOMA = get_ontology("http://www.ease-crc.org/ont/SOMA.owl")
+MIXING = onto
 
 
 class MixingActionSWRL(MixingWhirlstormAction):
 
-    def __init__(self, object_container_designator_description: ObjectDesignatorDescription,
+    def __init__(self, object_designator_description: ObjectDesignatorDescription,
                  object_tool_designator_description: ObjectDesignatorDescription,
                  ingredients: List[str], task: str, arms: List[str], grasps: List[str]):
-        super().__init__(object_container_designator_description, object_tool_designator_description, arms, grasps)
-
-        self.knowledge_graph = get_ontology("/home/naser/workspace/cram/src/PouringLiquids/src/mixing.owl").load()
+        super().__init__(object_designator_description, object_tool_designator_description, arms, grasps)
+        # self.knowledge_graph = get_ontology("/home/mkuempel/workspace/cram/src/PouringLiquids/src/mixing").load()
         self.ingredients = ingredients
         self.task = task
         self.motion = ""
