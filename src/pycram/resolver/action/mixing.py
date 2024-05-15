@@ -24,7 +24,7 @@ class MixingActionSWRL(MixingWhirlstormAction):
                  object_tool_designator_description: ObjectDesignatorDescription,
                  ingredients: List[str], task: str, arms: List[str], grasps: List[str]):
         super().__init__(object_designator_description, object_tool_designator_description, arms, grasps)
-        # self.knowledge_graph = get_ontology("/home/mkuempel/workspace/cram/src/PouringLiquids/src/mixing").load()
+        #self.knowledge_graph = get_ontology("/home/mkuempel/workspace/cram/src/PouringLiquids/src/mixing").load()
         self.ingredients = ingredients
         self.task = task
         self.motion = ""
@@ -119,12 +119,12 @@ class MixingActionSWRL(MixingWhirlstormAction):
                 other_rule.set_as_rule(rule_as_string)
 
     def parameters_from_owl(self):
-        motion_instance = self.knowledge_graph.Motion("motion")
-        self.run_inference()
-        self.assign_parameters(motion_instance)
+        #motion_instance = self.knowledge_graph.Motion("motion")
+        #self.run_inference()
+        #self.assign_parameters(motion_instance)
         # "Supported motions are: circular, folding, whirlstorm and vertical circular"
-        # self.motion = "vertical circular"
-        # self.motion_parameters = {"radius_bounds": [0.7, 0.0], "angle_shift1": 22.5, "angle_shift2": 90}
+        self.motion = "horizontal elliptical"
+        self.motion_parameters = {"radius_bounds": [0.7, 0.0], "angle_shift1": 22.5, "angle_shift2": 90}
         return self.Action(self.object_designator_description.ground(),
                            self.object_tool_designator_description.ground(),
                            self.arms[0], self.grasps[0], self.motion, self.motion_parameters)
