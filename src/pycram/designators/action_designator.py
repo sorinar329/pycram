@@ -1326,8 +1326,8 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
                 x_start, y_start, z_start = pose.pose.position.x, pose.pose.position.y, pose.pose.position.z
                 line_start = x_start + radius_upper_bound
                 line = np.linspace([x_start, line_start], [x_start, y_start], num=4)
-                radian_shift1 = np.radians(self.motion_parameters.get("angle_shift1"))
-                radian_shift2 = np.radians(self.motion_parameters.get("angle_shift2"))
+                radian_shift1 = np.radians(self.motion_parameters.get("folding_rotation_shift"))
+                radian_shift2 = np.radians(self.motion_parameters.get("repetitive_folding_rotation_shift"))
 
                 rotation_matrix = np.array([[np.cos(radian_shift1), -np.sin(radian_shift1)],
                                             [np.sin(radian_shift1), np.cos(radian_shift1)]])
@@ -1344,12 +1344,14 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
                     line = line @ rotation_matrix
                 return folding_poses
 
-            def generate_vertical_circular_motion(pose, num_circles):
+            def generate_horizontal_elliptical_motion(pose, num_circles):
                 x_start, y_start, z_start = pose.pose.position.x, pose.pose.position.y, pose.pose.position.z
+
+                horizontal_increment = self.motion_parameters.get("horizontal_increment")
                 radians = np.radians(np.linspace(0, 360, num=5))
                 semi_major_x = np.linspace(radius_upper_bound, radius_upper_bound / 2,
                                            num=12)
-                semi_major_y = 0.01
+                semi_major_y = 0.05
 
                 vertical_circular_poses = []
                 y = y_start + semi_major_y * np.sin(radians)
@@ -1366,11 +1368,11 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
                             vertical_circular_poses.extend(build_poses(pose, coordinates))
                             break
                     if increment_y:
-                        y += 0.01
+                        y += horizontal_increment
                         if np.all(np.linalg.norm([y - y_start], axis=0) > radius_upper_bound):
                             increment_y = False
                     else:
-                        y -= 0.01
+                        y -= horizontal_increment
                         if np.all(np.linalg.norm([y - y_start], axis=0) > radius_upper_bound):
                             increment_y = True
                 return vertical_circular_poses
@@ -1411,12 +1413,12 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
                 spiral_poses = generate_whirlstorm_motion(object_pose, 8)
             elif self.motion == "folding":
                 spiral_poses = generate_folding_motion(object_pose, 3)
-            elif self.motion == "vertical circular":
-                spiral_poses = generate_vertical_circular_motion(object_pose, 15)
+            elif self.motion == "horizontal elliptical":
+                spiral_poses = generate_horizontal_elliptical_motion(object_pose, 15)
             else:
                 spiral_poses = None
 
-            BulletWorld.current_bullet_world.remove_vis_axis()
+            #BulletWorld.current_bullet_world.remove_vis_axis()
             for spiral_pose in spiral_poses:
                 oriR = axis_angle_to_quaternion([1, 0, 0], 180)
                 ori = multiply_quaternions([spiral_pose.orientation.x, spiral_pose.orientation.y,

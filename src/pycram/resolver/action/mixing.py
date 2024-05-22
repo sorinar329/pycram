@@ -1,21 +1,12 @@
-import dataclasses
-
-import owlready2
-import regex
-from ...designators.action_designator import (MixingWhirlstormAction)
-
-from ...designators.motion_designator import *
-
+import rapidfuzz
 from owlready2 import *
 
-from ontology.task import *
-from ontology.container import *
-from ontology.ingredient import *
-from ontology.motion import *
-from ontology.rules import onto
+from ...designators.action_designator import (MixingWhirlstormAction)
+from ...designators.motion_designator import *
 
-SOMA = get_ontology("http://www.ease-crc.org/ont/SOMA.owl")
-MIXING = onto
+SOMA = get_namespace("http://www.ease-crc.org/ont/SOMA.owl")
+MIXING = get_namespace("http://www.ease-crc.org/ont/mixing#")
+DUL = get_namespace("http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#")
 
 
 class MixingActionSWRL(MixingWhirlstormAction):
@@ -24,7 +15,7 @@ class MixingActionSWRL(MixingWhirlstormAction):
                  object_tool_designator_description: ObjectDesignatorDescription,
                  ingredients: List[str], task: str, arms: List[str], grasps: List[str]):
         super().__init__(object_designator_description, object_tool_designator_description, arms, grasps)
-        #self.knowledge_graph = get_ontology("/home/mkuempel/workspace/cram/src/PouringLiquids/src/mixing").load()
+        self.knowledge_graph = get_ontology("/home/naser/workspace/cram/src/PouringLiquids/src/mixing.owl").load()
         self.ingredients = ingredients
         self.task = task
         self.motion = ""
@@ -32,99 +23,121 @@ class MixingActionSWRL(MixingWhirlstormAction):
 
     def create_ingredient_instances(self):
         ingredient_instances = []
-        ingredient_classes = list(self.knowledge_graph.Ingredient.descendants())
+        label_cls = {}
+
+        for ing in self.knowledge_graph.Ingredient.descendants():
+            labels = [lbl for lbl in ing.label if isinstance(lbl, owlready2.util.locstr) and lbl.lang == 'en']
+            if len(labels) > 0:
+                label_cls.update({labels[0]: ing})
+
         for ingredient_name in self.ingredients:
-            for ingredient in ingredient_classes:
-                for lbl in ingredient.label:
-                    if ingredient_name in lbl:
-                        ingredient_instance = ingredient(ingredient_name)
-                        ingredient_instances.append(ingredient_instance)
+            matched_ing, _, _ = rapidfuzz.process.extractOne(query=ingredient_name, choices=label_cls.keys())
+            ing_cls = label_cls.get(matched_ing)
+            ingredient_instance = ing_cls(ingredient_name)
+            ingredient_instances.append(ingredient_instance)
         return ingredient_instances
 
     def create_container_tool_instances(self):
         container_name = self.object_designator_description.names[0]
         tool_name = self.object_tool_designator_description.names[0]
-        tools_classes = list(SOMA.DesignedTool.descendants())
 
-        container_instance = None
-        tool_instance = None
+        label_cls = {}
+        for ing in SOMA.DesignedTool.descendants():
+            labels = [lbl for lbl in ing.label if isinstance(lbl, owlready2.util.locstr) and lbl.lang == 'en']
+            if len(labels) > 0:
+                label_cls.update({labels[0]: ing})
 
-        for tool_class in tools_classes:
-            if len(tool_class.label) > 0 and tool_class.label[0] in container_name:
-                container_instance = tool_class(tool_name)
-            if len(tool_class.label) > 0 and tool_name in tool_class.label[0]:
-                tool_instance = tool_class(tool_name)
+        matched_container, _, _ = rapidfuzz.process.extractOne(query=container_name, choices=label_cls.keys())
+        cls = label_cls.get(matched_container)
+        container_instance = cls(container_name)
+
+        matched_tool, _, _ = rapidfuzz.process.extractOne(query=tool_name, choices=label_cls.keys())
+        cls = label_cls.get(matched_tool)
+        tool_instance = cls(tool_name)
+
         return container_instance, tool_instance
 
     def create_task_instance(self):
-        tasks = list(self.knowledge_graph.Task.subclasses())
-        task_instance = None
-        for task in tasks:
-            if self.task in task.label[0]:
-                task_instance = task(self.task)
+        label_cls = {}
+        for ing in DUL.Task.subclasses():
+            labels = [lbl for lbl in ing.label if isinstance(lbl, owlready2.util.locstr) and lbl.lang == 'en']
+            if len(labels) > 0:
+                label_cls.update({labels[0]: ing})
+
+        matched_task, _, _ = rapidfuzz.process.extractOne(query=self.task, choices=label_cls.keys())
+        cls = label_cls.get(matched_task)
+        task_instance = cls(self.task)
         return task_instance
 
     def assign_parameters(self, motion: owlready2.NamedIndividual):
-        motion_cls = motion.is_a[0]
+        motion_cls = [cls for cls in motion.is_a if "Then" not in cls.name][0]
         self.motion = motion_cls.label[0].split('motion')[0].strip()
+        """
+        Get parameters from class restrictions
+        """
+        if len(motion_cls.folding_rotation_shift) > 0:
+            self.motion_parameters.update({'folding_rotation_shift': motion_cls.folding_rotation_shift[0]})
 
-        if self.knowledge_graph.angle_shift1 in motion.get_properties():
-            self.motion_parameters.update({'angle_shift1': motion.angle_shift1[0]})
-
-        if self.knowledge_graph.angle_shift2 in motion.get_properties():
-            self.motion_parameters.update({'angle_shift2': motion.angle_shift2[0]})
-
-        if self.knowledge_graph.height_increment in motion.get_properties():
-            self.motion_parameters.update({'height_increment': motion.height_increment[0]})
-
-        if self.knowledge_graph.radius_upper_bound_relative in motion.get_properties() and \
-                self.knowledge_graph.radius_lower_bound_relative in motion.get_properties():
+        if len(motion_cls.repetitive_folding_rotation_shift) > 0:
             self.motion_parameters.update(
-                {'radius_bounds': [motion.radius_upper_bound_absolute, motion.radius_lower_bound_absolute]})
+                {'repetitive_folding_rotation_shift': motion_cls.repetitive_folding_rotation_shift[0]})
 
-        if self.knowledge_graph.vertical_increment in motion.get_properties():
-            self.motion_parameters.update({'vertical_increment': motion.vertical_increment[0]})
+        if len(motion_cls.height_increment) > 0:
+            self.motion_parameters.update({'height_increment': motion_cls.height_increment[0]})
 
-    def run_inference(self):
-        self.create_container_tool_instances()
-        ingredient_instances = self.create_ingredient_instances()
-        task_instance = self.create_task_instance()
-        union = set()
+        if len(motion_cls.radius_upper_bound_relative) > 0 and len(motion_cls.radius_lower_bound_relative) > 0:
+            self.motion_parameters.update(
+                {'radius_bounds': [motion_cls.radius_upper_bound_relative[0],
+                                   motion_cls.radius_lower_bound_relative[0]]}
+            )
 
-        for ingredient_instance in ingredient_instances:
-            task_instance.ingredient.append(ingredient_instance)
-            ing_ancestors = set(ingredient_instance.is_a[0].ancestors())
-            union = union.union(ing_ancestors)
-        intersection1 = set(self.knowledge_graph.Ingredient.subclasses()).intersection(union)
-        rules = set()
-        for r in self.knowledge_graph.rules():
-            body_classes = {pred.class_predicate for pred in r.body}
+        if len(motion_cls.horizontal_increment) > 0:
+            self.motion_parameters.update({'horizontal_increment': motion.horizontal_increment[0]})
 
-            if len(body_classes.intersection(intersection1)) == len(intersection1) \
-                    and task_instance.is_a[0] in body_classes:
-                rules.add(r)
-
-        other_rules = list(set(self.knowledge_graph.rules()).difference(rules))
-        for i in range(len(other_rules)):
-            name = other_rules[i].name
-            rule_as_string = str(other_rules[i])
-            destroy_entity(other_rules[i])
-            other_rules[i] = (name, rule_as_string)
-
-        sync_reasoner_pellet(infer_property_values=True, infer_data_property_values=True)
-
+    def run_inference(self, motion):
         with self.knowledge_graph:
+            self.create_container_tool_instances()
+            ingredient_instances = self.create_ingredient_instances()
+            task_instance = self.create_task_instance()
+            task_instance.performMotion.append(motion)
+            union = set()
+
+            for ingredient_instance in ingredient_instances:
+                task_instance.hasIngredient.append(ingredient_instance)
+                ing_ancestors = set(ingredient_instance.is_a[0].ancestors())
+                union = union.union(ing_ancestors)
+
+            intersection1 = set(self.knowledge_graph.Ingredient.subclasses()).intersection(union)
+            rules = set()
+            for r in self.knowledge_graph.rules():
+                body_classes = {pred.class_predicate for pred in r.body}
+
+                if len(body_classes.intersection(intersection1)) == len(intersection1) \
+                        and task_instance.is_a[0] in body_classes:
+                    rules.add(r)
+
+            other_rules = list(set(self.knowledge_graph.rules()).difference(rules))
+            for i in range(len(other_rules)):
+                name = other_rules[i].name
+                rule_as_string = str(other_rules[i])
+                destroy_entity(other_rules[i])
+                other_rules[i] = (name, rule_as_string)
+
+            sync_reasoner_pellet()
+
             for name, rule_as_string in other_rules:
                 other_rule = Imp(name=name)
                 other_rule.set_as_rule(rule_as_string)
 
     def parameters_from_owl(self):
-        #motion_instance = self.knowledge_graph.Motion("motion")
-        #self.run_inference()
-        #self.assign_parameters(motion_instance)
-        # "Supported motions are: circular, folding, whirlstorm and vertical circular"
-        self.motion = "horizontal elliptical"
-        self.motion_parameters = {"radius_bounds": [0.7, 0.0], "angle_shift1": 22.5, "angle_shift2": 90}
+        motion_instance = self.knowledge_graph.Motion("motion")
+        self.run_inference(motion_instance)
+        self.assign_parameters(motion_instance)
+        print(self.motion)
+        print(self.motion_parameters)
+        # "Supported motions are: circular, folding, whirlstorm and horizontal elliptical"
+        # self.motion = "horizontal elliptical"
+        # self.motion_parameters = {"radius_bounds": [0.7, 0.0], "angle_shift1": 22.5, "angle_shift2": 90}
         return self.Action(self.object_designator_description.ground(),
                            self.object_tool_designator_description.ground(),
                            self.arms[0], self.grasps[0], self.motion, self.motion_parameters)
