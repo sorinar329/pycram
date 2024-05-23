@@ -1,5 +1,8 @@
+import owlready2.util
 import rapidfuzz
 from owlready2 import *
+
+import pathlib
 
 from ...designators.action_designator import (MixingWhirlstormAction)
 from ...designators.motion_designator import *
@@ -15,7 +18,10 @@ class MixingActionSWRL(MixingWhirlstormAction):
                  object_tool_designator_description: ObjectDesignatorDescription,
                  ingredients: List[str], task: str, arms: List[str], grasps: List[str]):
         super().__init__(object_designator_description, object_tool_designator_description, arms, grasps)
-        self.knowledge_graph = get_ontology("/home/naser/workspace/cram/src/PouringLiquids/src/mixing.owl").load()
+
+        path_mixing_onto = str(pathlib.Path(__file__).parent.joinpath("mixing_ontologies", "mixing.owl"))
+
+        self.knowledge_graph = get_ontology(path_mixing_onto).load()
         self.ingredients = ingredients
         self.task = task
         self.motion = ""
@@ -92,7 +98,7 @@ class MixingActionSWRL(MixingWhirlstormAction):
             )
 
         if len(motion_cls.horizontal_increment) > 0:
-            self.motion_parameters.update({'horizontal_increment': motion.horizontal_increment[0]})
+            self.motion_parameters.update({'horizontal_increment': motion_cls.horizontal_increment[0]})
 
     def run_inference(self, motion):
         with self.knowledge_graph:
@@ -106,14 +112,14 @@ class MixingActionSWRL(MixingWhirlstormAction):
                 task_instance.hasIngredient.append(ingredient_instance)
                 ing_ancestors = set(ingredient_instance.is_a[0].ancestors())
                 union = union.union(ing_ancestors)
-
-            intersection1 = set(self.knowledge_graph.Ingredient.subclasses()).intersection(union)
+            union.add(task_instance.is_a[0])
+            matched_rule = -1
             rules = set()
             for r in self.knowledge_graph.rules():
                 body_classes = {pred.class_predicate for pred in r.body}
-
-                if len(body_classes.intersection(intersection1)) == len(intersection1) \
-                        and task_instance.is_a[0] in body_classes:
+                if matched_rule < len(union.intersection(body_classes)):
+                    rules = set()
+                    matched_rule = len(union.intersection(body_classes))
                     rules.add(r)
 
             other_rules = list(set(self.knowledge_graph.rules()).difference(rules))
@@ -122,7 +128,6 @@ class MixingActionSWRL(MixingWhirlstormAction):
                 rule_as_string = str(other_rules[i])
                 destroy_entity(other_rules[i])
                 other_rules[i] = (name, rule_as_string)
-
             sync_reasoner_pellet()
 
             for name, rule_as_string in other_rules:
@@ -131,8 +136,10 @@ class MixingActionSWRL(MixingWhirlstormAction):
 
     def parameters_from_owl(self):
         motion_instance = self.knowledge_graph.Motion("motion")
+
         self.run_inference(motion_instance)
         self.assign_parameters(motion_instance)
+
         print(self.motion)
         print(self.motion_parameters)
         # "Supported motions are: circular, folding, whirlstorm and horizontal elliptical"

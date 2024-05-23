@@ -54,7 +54,7 @@ with simulated_robot:
     LookAtAction(targets=[big_bowl_BO.resolve().pose]).resolve().perform()
     mixing_resolver = MixingActionSWRL(object_designator_description=big_bowl_BO,
                                        object_tool_designator_description=wooden_spoon_BO,
-                                       ingredients=["water", "sugar", "flour"],
-                                       task="stirring task",
+                                       ingredients=["flour", "butter"],
+                                       task="beating task",
                                        arms=["left"],
                                        grasps=["top"]).parameters_from_owl().perform()
