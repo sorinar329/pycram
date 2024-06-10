@@ -1286,14 +1286,19 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
 
             obj_dim = object.get_object_dimensions()
             tool_dim = tool.get_object_dimensions()
+
+            print(f'Objects dimensions: {obj_dim}')
+            print(f'Tool dimensions: {tool_dim}')
+
             dim = [max(obj_dim[0], obj_dim[1]), min(obj_dim[0], obj_dim[1]), obj_dim[2]]
             dim2 = [max(tool_dim[0], tool_dim[1]), min(tool_dim[0], tool_dim[1]), tool_dim[2]]
 
             obj_height = dim[2]
             radius_bounds = self.motion_parameters.get("radius_bounds")
-            radius_upper_bound = ((dim[0] * radius_bounds[0]) - max(dim2[0], dim2[1]))
-            radius_lower_bound = max(0, ((dim[0] * radius_bounds[1]) - max(dim2[0], dim2[1])))
-
+            radius_upper_bound = ((dim[0] * radius_bounds[0]) - max(dim2[0], dim2[1])) / 2
+            radius_lower_bound = max(0, ((dim[0] * radius_bounds[1]) - max(dim2[0], dim2[1]))) / 2
+            print(f'Absolute lower bound radius: {radius_lower_bound}')
+            print(f'Absolute upper bound radius: {radius_upper_bound}')
             oTm = object.get_pose()
             object_pose = object.local_transformer.transform_to_object_frame(oTm, object)
 
@@ -1340,27 +1345,29 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
                     for j in range(4):
                         folding_poses.extend(build_poses(pose, line))
                         folding_poses.extend(build_poses(pose, np.flip(line, axis=0)))
-                        line = line @ rotation_matrix2
-                    line = line @ rotation_matrix
+                        line = line @ rotation_matrix
+                    line = line @ rotation_matrix2
                 return folding_poses
 
             def generate_horizontal_elliptical_motion(pose, num_circles):
                 x_start, y_start, z_start = pose.pose.position.x, pose.pose.position.y, pose.pose.position.z
 
                 horizontal_increment = self.motion_parameters.get("horizontal_increment")
+                horizontal_increment = 0.06
                 radians = np.radians(np.linspace(0, 360, num=5))
-                semi_major_x = np.linspace(radius_upper_bound, radius_upper_bound / 2,
+                semi_major_x = 0.05
+                semi_major_y = np.linspace(radius_upper_bound, radius_upper_bound / 2,
                                            num=12)
-                semi_major_y = 0.05
+
 
                 vertical_circular_poses = []
-                y = y_start + semi_major_y * np.sin(radians)
-                y -= radius_upper_bound
+                x = x_start + semi_major_x * np.sin(radians)
+                x -= radius_upper_bound
                 increment_y = True
 
                 for i in range(num_circles):
-                    for width in semi_major_x:
-                        x = x_start + width * np.cos(radians)
+                    for width in semi_major_y:
+                        y = x_start + width * np.cos(radians)
                         coordinates = np.column_stack([x, y])
                         inside_circle = np.linalg.norm(coordinates - np.array(x_start, y_start),
                                                        axis=1) < radius_upper_bound
@@ -1368,12 +1375,12 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
                             vertical_circular_poses.extend(build_poses(pose, coordinates))
                             break
                     if increment_y:
-                        y += horizontal_increment
-                        if np.all(np.linalg.norm([y - y_start], axis=0) > radius_upper_bound):
+                        x += horizontal_increment
+                        if np.all(np.linalg.norm([x - x_start], axis=0) > radius_upper_bound):
                             increment_y = False
                     else:
-                        y -= horizontal_increment
-                        if np.all(np.linalg.norm([y - y_start], axis=0) > radius_upper_bound):
+                        x -= horizontal_increment
+                        if np.all(np.linalg.norm([x - x_start], axis=0) > radius_upper_bound):
                             increment_y = True
                 return vertical_circular_poses
 
@@ -1414,7 +1421,7 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
             elif self.motion == "folding":
                 spiral_poses = generate_folding_motion(object_pose, 3)
             elif self.motion == "horizontal elliptical":
-                spiral_poses = generate_horizontal_elliptical_motion(object_pose, 15)
+                spiral_poses = generate_horizontal_elliptical_motion(object_pose, 120)
             else:
                 spiral_poses = None
 
@@ -1432,7 +1439,7 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
 
                 # Adjust the position of the object pose by grasp in MAP
                 lift_pose = adjusted_slice_pose.copy()
-                lift_pose.pose.position.z += (obj_height + 0.08)
+                lift_pose.pose.position.z += (obj_height + 0.09)
                 # Perform the motion for lifting the tool
                 # BulletWorld.current_bullet_world.add_vis_axis(lift_pose)
                 MoveTCPMotion(lift_pose, self.arm).resolve().perform()
