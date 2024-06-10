@@ -113,15 +113,13 @@ class MixingActionSWRL(MixingWhirlstormAction):
                 ing_ancestors = set(ingredient_instance.is_a[0].ancestors())
                 union = union.union(ing_ancestors)
             union.add(task_instance.is_a[0])
-            matched_rule = -1
             rules = set()
             for r in self.knowledge_graph.rules():
-                body_classes = {pred.class_predicate for pred in r.body}
-                if matched_rule < len(union.intersection(body_classes)):
+                body_classes = {pred.class_predicate for pred in r.body if pred.class_predicate != MIXING.Motion and
+                                pred.class_predicate is not None}
+                if len(body_classes) == len(union.intersection(body_classes)):
                     rules = set()
-                    matched_rule = len(union.intersection(body_classes))
                     rules.add(r)
-
             other_rules = list(set(self.knowledge_graph.rules()).difference(rules))
             for i in range(len(other_rules)):
                 name = other_rules[i].name
