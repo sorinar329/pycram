@@ -18,18 +18,16 @@ kitchen_desig = ObjectDesignatorDescription(names=["kitchen"])
 spawning_poses = {
     'whisk': Pose([0.9, 0.6, 0.8], [0, 0, 0, 1]),
     'woodenspoon': Pose([0.7, 0.6, 0.8], [0, 0, 0, 1]),
-    'fork': Pose([0.55, 0.6, 0.8], [0, 0, 0, 1]),
     'big-bowl': Pose([-0.85, 0.9, 0.91], [0, 0, -1, -1]),
     'pot': Pose([-0.85, 0.9, 0.86], [0, 0, -1, -1])
 }
 
 whisk = Object("whisk", "whisk", "whisk.stl", spawning_poses["whisk"])
 wooden_spoon = Object("woodenspoon", "woodenspoon", "woodenspoon.stl", spawning_poses["woodenspoon"])
-fork = Object("fork", "fork", "fork.stl", spawning_poses['fork'])
+#fork = Object("fork", "fork", "fork.stl", spawning_poses['fork'])
 #big_bowl = Object("big-bowl", "big-bowl", "big-bowl.stl", spawning_poses["big-bowl"])
 pot = Object("pot", "pot", "pot.stl", spawning_poses['pot'])
 whisk_BO = BelieveObject(names=["whisk"])
-fork_BO = BelieveObject(names=['fork'])
 #big_bowl_BO = BelieveObject(names=["big-bowl"])
 wooden_spoon_BO = BelieveObject(names=["woodenspoon"])
 pot_BO = BelieveObject(names=["pot"])
@@ -39,11 +37,11 @@ with simulated_robot:
     MoveTorsoAction([0.33]).resolve().perform()
     arm = "left"
 
-    pickup_pose_knife = CostmapLocation(target=fork_BO.resolve(), reachable_for=robot_desig).resolve()
+    pickup_pose_knife = CostmapLocation(target=wooden_spoon_BO.resolve(), reachable_for=robot_desig).resolve()
 
     NavigateAction(target_locations=[pickup_pose_knife.pose]).resolve().perform()
 
-    PickUpAction(object_designator_description=fork_BO,
+    PickUpAction(object_designator_description=wooden_spoon_BO,
                  arms=pickup_pose_knife.reachable_arms,
                  grasps=["top"]).resolve().perform()
 
@@ -59,8 +57,8 @@ with simulated_robot:
     NavigateAction(target_locations=[nav_pose]).resolve().perform()
     LookAtAction(targets=[pot_BO.resolve().pose]).resolve().perform()
     mixing_resolver = MixingActionSWRL(object_designator_description=pot_BO,
-                                       object_tool_designator_description=fork_BO,
+                                       object_tool_designator_description=wooden_spoon_BO,
                                        ingredients=["butter"],
-                                       task="folding task",
+                                       task="beating task",
                                        arms=["left"],
                                        grasps=["top"]).parameters_from_owl().perform()
