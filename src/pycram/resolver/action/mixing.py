@@ -19,7 +19,7 @@ class MixingActionSWRL(MixingWhirlstormAction):
                  ingredients: List[str], task: str, arms: List[str], grasps: List[str]):
         super().__init__(object_designator_description, object_tool_designator_description, arms, grasps)
 
-        path_mixing_onto = str(pathlib.Path(__file__).parent.joinpath("mixing_ontologies", "mixing.owl"))
+        path_mixing_onto = str(pathlib.Path(__file__).parent.joinpath("ontologies", "mixing.owl"))
 
         self.knowledge_graph = get_ontology(path_mixing_onto).load()
         self.ingredients = ingredients
