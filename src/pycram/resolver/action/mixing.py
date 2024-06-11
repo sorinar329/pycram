@@ -24,8 +24,8 @@ class MixingActionSWRL(MixingWhirlstormAction):
         self.knowledge_graph = get_ontology(path_mixing_onto).load()
         self.ingredients = ingredients
         self.task = task
-        self.motion = ""
-        self.motion_parameters = {}
+        self.motions = []
+        self.motion_parameters = []
 
     def create_ingredient_instances(self):
         ingredient_instances = []
@@ -76,29 +76,42 @@ class MixingActionSWRL(MixingWhirlstormAction):
         return task_instance
 
     def assign_parameters(self, motion: owlready2.NamedIndividual):
-        motion_cls = [cls for cls in motion.is_a if "Then" not in cls.name][0]
-        self.motion = motion_cls.label[0].split('motion')[0].strip()
-        """
-        Get parameters from class restrictions
-        """
-        if len(motion_cls.folding_rotation_shift) > 0:
-            self.motion_parameters.update({'folding_rotation_shift': motion_cls.folding_rotation_shift[0]})
+        motion_cls = [cls for cls in motion.is_a][0]
+        motions = []
+        if motion_cls.is_a[0] == MIXING.CompoundMotion:
+            for operand in motion_cls.hasMotion[0].Classes:
+                if isinstance(operand, ThingClass):
+                    motions.append(operand)
+                if isinstance(operand, Restriction) and MIXING.MixingMotion in operand.value.is_a:
+                    motions.append(operand.value)
+        else:
+            motions.append(motion_cls)
 
-        if len(motion_cls.repetitive_folding_rotation_shift) > 0:
-            self.motion_parameters.update(
-                {'repetitive_folding_rotation_shift': motion_cls.repetitive_folding_rotation_shift[0]})
+        for motion in motions:
+            self.motions.append(motion.label[0].split('motion')[0].strip())
+            params = {}
+            """
+            Get parameters from class restrictions
+            """
+            if len(motion.folding_rotation_shift) > 0:
+                params.update({'folding_rotation_shift': motion.folding_rotation_shift[0]})
 
-        if len(motion_cls.height_increment) > 0:
-            self.motion_parameters.update({'height_increment': motion_cls.height_increment[0]})
+            if len(motion.repetitive_folding_rotation_shift) > 0:
+                params.update(
+                    {'repetitive_folding_rotation_shift': motion.repetitive_folding_rotation_shift[0]})
 
-        if len(motion_cls.radius_upper_bound_relative) > 0 and len(motion_cls.radius_lower_bound_relative) > 0:
-            self.motion_parameters.update(
-                {'radius_bounds': [motion_cls.radius_upper_bound_relative[0],
-                                   motion_cls.radius_lower_bound_relative[0]]}
-            )
+            if len(motion.height_increment) > 0:
+                params.update({'height_increment': motion.height_increment[0]})
 
-        if len(motion_cls.horizontal_increment) > 0:
-            self.motion_parameters.update({'horizontal_increment': motion_cls.horizontal_increment[0]})
+            if len(motion.radius_upper_bound_relative) > 0 and len(motion.radius_lower_bound_relative) > 0:
+                params.update(
+                    {'radius_bounds': [motion.radius_upper_bound_relative[0],
+                                       motion.radius_lower_bound_relative[0]]}
+                )
+
+            if len(motion.ellipse_shift) > 0:
+                params.update({'ellipse_shift': motion.ellipse_shift[0]})
+            self.motion_parameters.append(params)
 
     def run_inference(self, motion):
         with self.knowledge_graph:
@@ -138,11 +151,11 @@ class MixingActionSWRL(MixingWhirlstormAction):
         self.run_inference(motion_instance)
         self.assign_parameters(motion_instance)
 
-        print(self.motion)
+        print(self.motions)
         print(self.motion_parameters)
         # "Supported motions are: circular, folding, whirlstorm and horizontal elliptical"
         # self.motion = "horizontal elliptical"
         # self.motion_parameters = {"radius_bounds": [0.7, 0.0], "angle_shift1": 22.5, "angle_shift2": 90}
         return self.Action(self.object_designator_description.ground(),
                            self.object_tool_designator_description.ground(),
-                           self.arms[0], self.grasps[0], self.motion, self.motion_parameters)
+                           self.arms[0], self.grasps[0], self.motions, self.motion_parameters)

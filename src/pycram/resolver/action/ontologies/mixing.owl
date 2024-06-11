@@ -66,7 +66,7 @@
   <rdfs:subPropertyOf rdf:resource="#motion_parameters"/>
 </owl:DatatypeProperty>
 
-<owl:DatatypeProperty rdf:about="#horizontal_increment">
+<owl:DatatypeProperty rdf:about="#ellipse_shift">
   <rdfs:subPropertyOf rdf:resource="#motion_parameters"/>
 </owl:DatatypeProperty>
 
@@ -289,7 +289,7 @@
       <owl:intersectionOf rdf:parseType="Collection">
         <owl:Restriction>
           <owl:onProperty rdf:resource="#radius_lower_bound_relative"/>
-          <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.8</owl:hasValue>
+          <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.7</owl:hasValue>
         </owl:Restriction>
         <owl:Restriction>
           <owl:onProperty rdf:resource="#radius_upper_bound_relative"/>
@@ -350,8 +350,8 @@
   </rdfs:subClassOf>
   <rdfs:subClassOf>
     <owl:Restriction>
-      <owl:onProperty rdf:resource="#horizontal_increment"/>
-      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.1</owl:hasValue>
+      <owl:onProperty rdf:resource="#ellipse_shift"/>
+      <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.04</owl:hasValue>
     </owl:Restriction>
   </rdfs:subClassOf>
   <rdfs:label xml:lang="en">horizontal elliptical motion</rdfs:label>
