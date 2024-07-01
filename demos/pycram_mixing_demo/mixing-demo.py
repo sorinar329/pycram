@@ -26,11 +26,14 @@ whisk = Object("whisk", "whisk", "whisk.stl", spawning_poses["whisk"])
 wooden_spoon = Object("woodenspoon", "woodenspoon", "woodenspoon.stl", spawning_poses["woodenspoon"])
 #fork = Object("fork", "fork", "fork.stl", spawning_poses['fork'])
 #big_bowl = Object("big-bowl", "big-bowl", "big-bowl.stl", spawning_poses["big-bowl"])
+#pan = Object("pan", "pan", "pan.stl", spawning_poses['big-bowl'])
 pot = Object("pot", "pot", "pot.stl", spawning_poses['pot'])
 whisk_BO = BelieveObject(names=["whisk"])
 #big_bowl_BO = BelieveObject(names=["big-bowl"])
 wooden_spoon_BO = BelieveObject(names=["woodenspoon"])
+#pan_BO = BelieveObject(names=["pan"])
 pot_BO = BelieveObject(names=["pot"])
+
 
 with simulated_robot:
     ParkArmsAction([Arms.BOTH]).resolve().perform()
@@ -59,6 +62,6 @@ with simulated_robot:
     mixing_resolver = MixingActionSWRL(object_designator_description=pot_BO,
                                        object_tool_designator_description=wooden_spoon_BO,
                                        ingredients=["butter"],
-                                       task="beating task",
+                                       task="mixing task",
                                        arms=["left"],
                                        grasps=["top"]).parameters_from_owl().perform()
