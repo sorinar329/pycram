@@ -1278,32 +1278,31 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
             """
             Perform the mixing action using the specified object, tool, arm, and grasp.
             """
-            for idx in range(len(self.motions)):
-                # Store the object's data copy at execution
-                self.object_at_execution = self.object_designator.data_copy()
-                # Retrieve object and robot from designators
-                object = self.object_designator.bullet_world_object
-                tool = self.object_tool_designator.bullet_world_object
+            self.object_at_execution = self.object_designator.data_copy()
+            # Retrieve object and robot from designators
+            container = self.object_designator.bullet_world_object
+            tool = self.object_tool_designator.bullet_world_object
 
-                obj_dim = object.get_object_dimensions()
-                tool_dim = tool.get_object_dimensions()
+            obj_dim = container.get_object_dimensions()
+            tool_dim = tool.get_object_dimensions()
 
-                print(f'Objects dimensions: {obj_dim}')
-                print(f'Tool dimensions: {tool_dim}')
+            print(f'Objects dimensions: {obj_dim}')
+            print(f'Tool dimensions: {tool_dim}')
 
-                dim = [max(obj_dim[0], obj_dim[1]), min(obj_dim[0], obj_dim[1]), obj_dim[2]]
-                dim2 = [max(tool_dim[0], tool_dim[1]), min(tool_dim[0], tool_dim[1]), tool_dim[2]]
+            dim = [max(obj_dim[0], obj_dim[1]), min(obj_dim[0], obj_dim[1]), obj_dim[2]]
+            dim2 = [max(tool_dim[0], tool_dim[1]), min(tool_dim[0], tool_dim[1]), tool_dim[2]]
 
-                obj_height = dim[2]
+            obj_height = dim[2]
+
+            for idx in range(1, len(self.motions)):
                 radius_bounds = self.motion_parameters[idx].get("radius_bounds")
                 radius_upper_bound = ((dim[0] * radius_bounds[0]) - max(dim2[0], dim2[1])) / 2
-                # Absolute upper bound radius: 0.08220650557603063
-
                 radius_lower_bound = max(0, ((dim[0] * radius_bounds[1]) - max(dim2[0], dim2[1])) / 2)
+
                 print(f'Absolute lower bound radius: {radius_lower_bound}')
                 print(f'Absolute upper bound radius: {radius_upper_bound}')
-                oTm = object.get_pose()
-                object_pose = object.local_transformer.transform_to_object_frame(oTm, object)
+                oTm = container.get_pose()
+                object_pose = container.local_transformer.transform_to_object_frame(oTm, container)
                 mixing_poses = []
 
                 def build_poses(pose, coordinates):
@@ -1314,9 +1313,9 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
                         tmp_pose.pose.position.x = x
                         tmp_pose.pose.position.y = y
 
-                        spiralTm = object.local_transformer.transform_pose(tmp_pose, "map")
+                        spiralTm = container.local_transformer.transform_pose(tmp_pose, "map")
                         poses.append(spiralTm)
-                        # BulletWorld.current_bullet_world.add_vis_axis(spiralTm)
+                        #BulletWorld.current_bullet_world.add_vis_axis(spiralTm)
                     return poses
 
                 def generate_circular_motion(pose, num_circles):
@@ -1353,9 +1352,10 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
                 def generate_horizontal_elliptical_motion(pose, num_circles):
                     x_start, y_start, z_start = pose.pose.position.x, pose.pose.position.y, pose.pose.position.z
                     ellipse_shift = self.motion_parameters[idx].get("ellipse_shift")
+                    radius_upper_bound2 = radius_upper_bound + (radius_upper_bound * 0.2)
                     radians = np.radians(np.linspace(0, 360, num=5))
                     semi_major_x = 0.05
-                    semi_major_y = np.linspace(radius_upper_bound, radius_upper_bound / 2,
+                    semi_major_y = np.linspace(radius_upper_bound2, radius_upper_bound2 / 2,
                                                num=12)
 
                     x = x_start + semi_major_x * np.sin(radians)
@@ -1366,17 +1366,17 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
                             y = x_start + width * np.cos(radians)
                             coordinates = np.column_stack([x, y])
                             inside_circle = np.linalg.norm(coordinates - np.array(x_start, y_start),
-                                                           axis=1) < radius_upper_bound
+                                                           axis=1) < radius_upper_bound2
                             if np.all(inside_circle):
                                 mixing_poses.extend(build_poses(pose, coordinates))
                                 break
                         if increment_y:
                             x += ellipse_shift
-                            if np.all(np.linalg.norm([x - x_start], axis=0) > radius_upper_bound):
+                            if np.all(np.linalg.norm([x - x_start], axis=0) > radius_upper_bound2):
                                 increment_y = False
                         else:
                             x -= ellipse_shift
-                            if np.all(np.linalg.norm([x - x_start], axis=0) > radius_upper_bound):
+                            if np.all(np.linalg.norm([x - x_start], axis=0) > radius_upper_bound2):
                                 increment_y = True
                     return mixing_poses
 
@@ -1384,7 +1384,6 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
                     x_start, y_start, z_start = pose.pose.position.x, pose.pose.position.y, pose.pose.position.z
                     radius = np.linspace(radius_upper_bound, radius_lower_bound, num=8)
                     angle = np.radians(np.linspace(0, 360, num=8))
-
 
                     for i in range(num_circles):
                         if i % 4 == 0:
@@ -1415,7 +1414,7 @@ class MixingWhirlstormAction(ActionDesignatorDescription):
                 elif self.motions[idx] == "folding":
                     generate_folding_motion(object_pose, 3)
                 elif self.motions[idx] == "horizontal elliptical":
-                    generate_horizontal_elliptical_motion(object_pose, 25)
+                    generate_horizontal_elliptical_motion(object_pose, 20)
                 else:
                     print(f"Can't build poses for motion: {self.motions[idx]} with parameters: "
                           f"{self.motion_parameters[idx]}")
