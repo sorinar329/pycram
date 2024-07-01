@@ -193,7 +193,7 @@
   <rdfs:subClassOf rdf:resource="#WetIngredient"/>
 </owl:Class>
 
-<owl:Class rdf:about="#FOODON_03302116">
+<owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03302116">
   <rdfs:subClassOf rdf:resource="#LiquidIngredient"/>
   <rdfs:label xml:lang="en">cows milk</rdfs:label>
 </owl:Class>
@@ -242,7 +242,7 @@
   <rdfs:label xml:lang="en">butter</rdfs:label>
 </owl:Class>
 
-<owl:Class rdf:about="#FOODON_03315102">
+<owl:Class rdf:about="http://purl.obolibrary.org/obo/FOODON_03315102">
   <rdfs:subClassOf rdf:resource="#SemiLiquidIngredient"/>
   <rdfs:label xml:lang="en">egg</rdfs:label>
 </owl:Class>
